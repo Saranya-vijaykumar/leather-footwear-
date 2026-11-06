@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+  <!-- Theme Initializer Script -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('vv_theme') || 'dark';
+      if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      const savedDir = localStorage.getItem('vv_dir') || 'ltr';
+      document.documentElement.setAttribute('dir', savedDir);
+    })();
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vernon & Vale — Master Leather Footwear Manufacturer</title>
+  <meta name="description" content="Vernon & Vale crafts bespoke and B2B private label leather footwear: Goodyear welted oxfords, Chelsea boots, hand-sewn loafers, and museum patina wholecuts since 1974.">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  
+  <!-- Tailwind CSS CDN + Custom Configuration -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            gold: 'var(--color-gold)',
+            'gold-hover': 'var(--color-gold-hover)',
+            cognac: 'var(--color-cognac)',
+            tan: 'var(--color-tan)',
+            'text-primary': 'var(--text-primary)',
+            'text-secondary': 'var(--text-secondary)',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#FAF7F0] text-[#1C1C1C] dark:bg-[#0F0F0F] dark:text-[#F3ECE0] transition-colors duration-500 index-page">
+
+    <!-- Premium Sticky Header Navbar -->
+  <header class="fixed top-0 left-0 w-full z-50 py-3 lg:py-5 transition-all duration-300" id="site-header">
+    <div class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 xl:px-10 flex items-center justify-between gap-4 lg:gap-6 xl:gap-8">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-2.5 shrink-0 group">
+        <img src="assets/images/logo.png" alt="Vernon &amp; Vale Logo" class="w-8 h-8 rounded-full border border-gold/40 object-cover shrink-0 group-hover:scale-105 transition-transform">
+        <span class="font-serif text-lg sm:text-xl xl:text-2xl font-bold tracking-wider text-gold-gradient whitespace-nowrap">VERNON &amp; VALE</span>
+      </a>
+
+      <!-- Desktop Navigation links with Dropdowns -->
+      <nav class="hidden lg:flex items-center gap-2.5 xl:gap-5 2xl:gap-7 text-[11px] xl:text-xs uppercase tracking-wider font-bold whitespace-nowrap">
+        <a href="index.html" class="text-gold active font-semibold py-1">Home</a>
+        <a href="home2.html" class="hover:text-gold transition py-1 text-text-primary">Home 2</a>
+        <a href="about.html" class="hover:text-gold transition py-1 text-text-primary">About</a>
+
+        <!-- Products Dropdown -->
+        <a href="products.html" class="hover:text-gold transition py-1 text-text-primary">Products</a>
+
+        <a href="collections.html" class="hover:text-gold transition py-1 text-text-primary">Collections</a>
+        <a href="wholesale.html" class="hover:text-gold transition py-1 text-text-primary">Wholesale</a>
+        <a href="craftsmanship.html" class="hover:text-gold transition py-1 text-text-primary">Craftsmanship</a>
+        <a href="contact.html" class="hover:text-gold transition py-1 text-text-primary">Contact</a>
+      </nav>
+
+      <!-- Right Action Items -->
+      <div class="hidden lg:flex items-center gap-2 xl:gap-3 shrink-0">
+        <!-- Theme Toggle Circular Button -->
+        <button id="theme-toggle" class="theme-circle-btn shrink-0" title="Toggle Theme" aria-label="Toggle Theme">
+          <i class="bi bi-sun-fill text-base xl:text-lg"></i>
+        </button>
+        <!-- Language/RTL Toggle Pill Button -->
+        <button id="lang-toggle" class="rtl-toggle-pill shrink-0 px-2.5 xl:px-3 py-1.5 text-[11px] xl:text-xs" title="Toggle RTL" aria-label="Toggle RTL">
+          <i class="bi bi-arrow-left-right text-xs"></i>
+          <span id="lang-text">RTL</span>
+        </button>
+        <!-- Wholesale B2B Link (Visible on xl screens) -->
+        <a href="wholesale.html" class="hidden xl:inline-flex h-9 xl:h-10 items-center justify-center border border-gold text-gold hover:bg-gold hover:text-black transition px-3.5 xl:px-4 rounded-full text-[11px] xl:text-xs font-bold uppercase tracking-wider shrink-0">
+          B2B Portal
+        </a>
+        <!-- CTA button (Solid Gold Pill) -->
+        <a href="contact.html" class="magnetic-btn h-9 xl:h-10 inline-flex items-center justify-center bg-gold hover:bg-gold-hover text-black text-[11px] xl:text-xs uppercase tracking-wider font-bold px-4 xl:px-5 rounded-full shadow-lg transition shrink-0">
+          Inquire Now
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger button -->
+      <button id="mobile-menu-btn" class="lg:hidden text-text-primary p-2 shrink-0" aria-label="Open Menu">
+        <i class="bi bi-list text-2xl"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay -->
+  <div id="mobile-drawer-overlay" class="fixed inset-0 bg-black/60 z-[9998] hidden opacity-0 transition-opacity duration-300"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="fixed top-0 right-0 h-full w-full sm:w-[85vw] sm:max-w-[380px] bg-[#0F0F0F] text-[#F3ECE0] z-[9999] transform translate-x-full transition-transform duration-300 overflow-y-auto flex flex-col justify-between border-l border-gold/15 shadow-2xl">
+    <div>
+      <!-- Drawer Header -->
+      <div class="p-6 flex items-center justify-between border-b border-gold/15">
+        <a href="index.html" class="flex items-center gap-2">
+          <img src="assets/images/logo.png" alt="Vernon &amp; Vale Logo" class="w-8 h-8 rounded-full border border-gold/30 object-cover">
+          <span class="font-serif text-xl font-bold tracking-wider text-gold-gradient">VERNON &amp; VALE</span>
+        </a>
+        <button id="mobile-drawer-close" class="text-[#F3ECE0] hover:text-gold transition p-2">
+          <i class="bi bi-x-lg text-xl"></i>
+        </button>
+      </div>
+
+      <!-- Theme & Orientation Toggles -->
+      <div class="px-6 py-4 flex gap-4 border-b border-gold/10 text-xs uppercase tracking-wider font-bold">
+        <button id="mobile-theme-toggle" class="flex-1 py-2.5 px-4 rounded-full border border-gold/20 hover:border-gold bg-[#171717] flex items-center justify-center gap-2 text-[#FAF7F0] transition" title="Toggle Theme">
+          <i class="bi bi-sun-fill text-gold"></i>
+        </button>
+        <button id="mobile-lang-toggle" class="flex-1 py-2.5 px-4 rounded-full border border-gold/20 hover:border-gold bg-[#171717] flex items-center justify-center gap-2 text-[#FAF7F0] transition">
+          <i class="bi bi-arrow-left-right text-gold"></i> <span id="mobile-lang-text">RTL</span>
+        </button>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="px-6 py-6 space-y-2 text-sm uppercase tracking-widest font-bold">
+        <a href="index.html" class="block py-3 hover:text-gold transition border-b border-gold/5 text-gold font-semibold">Home</a>
+        <a href="home2.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Home 2</a>
+        <a href="about.html" class="block py-3 hover:text-gold transition border-b border-gold/5">About Us</a>
+        
+        <!-- Products Dropdown inside mobile -->
+        <a href="products.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Products</a>
+
+        <a href="collections.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Collections</a>
+        <a href="wholesale.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Wholesale (B2B)</a>
+        <a href="craftsmanship.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Craftsmanship</a>
+        <a href="contact.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Contact</a>
+        <a href="privacy.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Privacy Policy</a>
+      </nav>
+    </div>
+
+    <!-- Drawer Footer CTA -->
+    <div class="p-6 border-t border-gold/15 space-y-3">
+      <a href="wholesale.html" class="w-full text-center py-3 rounded-full bg-gold hover:bg-gold-hover text-black font-bold uppercase tracking-wider text-xs block transition">
+        B2B Wholesale Inquiry
+      </a>
+      <p class="text-[11px] text-gray-400 text-center">Vernon &amp; Vale Footwear Atelier &bull; Est. 1974</p>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO SECTION (Matching Sole Craft's Exact 3D Orbiting Trail, Floating Badges, and Editorial Layout) -->
+    <section class="min-h-screen pt-32 pb-20 flex items-center relative overflow-hidden bg-cover bg-center" style="background-image: url('assets/images/hero_home_bg.jpg');">
+      <div class="absolute inset-0 bg-black/80 dark:bg-black/85 backdrop-blur-[1px]"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-black/95 via-black/85 to-black/60 pointer-events-none"></div>
+      
+      <!-- Decorative background gold glows -->
+      <div class="absolute inset-0 pointer-events-none overflow-hidden">
+        <div class="absolute w-[550px] h-[550px] rounded-full bg-gold/15 filter blur-3xl -top-20 -left-20"></div>
+        <div class="absolute w-[650px] h-[650px] rounded-full bg-gold/10 filter blur-3xl bottom-10 right-10"></div>
+      </div>
+
+      <div class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 xl:px-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
+        
+        <!-- Left Hero Text Area -->
+        <div class="lg:col-span-5 xl:col-span-5 space-y-6 text-white">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold/15 border border-gold/40 text-gold text-xs font-mono tracking-wider uppercase">
+            <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span> Florence Atelier &bull; Master Shoemakers Est. 1974
+          </div>
+          <h1 class="text-4xl sm:text-6xl xl:text-7xl font-bold font-serif leading-[1.1] text-white">
+            Handcrafted Footwear<br>
+            <span class="text-gold-gradient">Built For Decades.</span>
+          </h1>
+          <p class="text-base sm:text-lg text-gray-300 max-w-xl leading-relaxed">
+            Master leather footwear manufacturing engineered exclusively for luxury private labels and bespoke houses worldwide. We combine century-old Goodyear welting with hand-burnished Tuscan vegetable calfskin to craft footwear collections of timeless structural longevity.
+          </p>
+          <div class="flex flex-wrap gap-4 pt-2">
+            <a href="products.html" class="magnetic-btn bg-gold hover:bg-gold-hover text-black font-bold px-8 py-4 rounded-full shadow-xl transition uppercase text-xs tracking-wider flex items-center gap-2">
+              <span>Explore Footwear Catalog</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+            <a href="wholesale.html" class="border border-gold/50 text-white hover:bg-gold hover:text-black hover:border-gold font-bold px-8 py-4 rounded-full transition uppercase text-xs tracking-wider">
+              B2B Wholesale Portal
+            </a>
+          </div>
+          <div class="flex items-center gap-6 pt-4 text-xs text-gray-400 font-mono border-t border-white/10">
+            <div><strong class="text-gold">100%</strong> Hand-Lasted</div>
+            <div>&bull;</div>
+            <div><strong class="text-gold">Goodyear 360°</strong> Inseam</div>
+            <div>&bull;</div>
+            <div><strong class="text-gold">LWG Gold</strong> Tanned</div>
+          </div>
+        </div>
+
+        <!-- Right 3D Orbiting Gold Trail & Parallax Shoe Section -->
+        <div class="lg:col-span-7 xl:col-span-7 relative flex items-center justify-center w-full">
+          <div class="relative flex flex-col lg:block items-center justify-center w-full max-w-[760px] xl:max-w-[860px]">
+            
+            <div class="interactive-shoe-wrapper mx-auto">
+              <!-- Particles Background Canvas -->
+              <div id="canvas-3d" class="absolute inset-0 z-0"></div>
+              <!-- Rotating Gold Ring -->
+              <div class="orbit-gold-ring"></div>
+              <!-- Floating shoe image (Magnificent Glowing Cognac Oxford) -->
+              <div class="shoe-image-container">
+                <img src="assets/images/hero_shoe_cutout.png" alt="Vernon &amp; Vale Bespoke Goodyear Welted Oxford (Handcrafted Patina)">
+              </div>
+            </div>
+            
+            <!-- Experience Card (Top Left) -->
+            <div class="relative lg:absolute lg:top-2 lg:left-0 top-auto left-auto w-fit glass-panel p-4 rounded-xl flex items-center gap-3 hover:-translate-y-1 transition duration-300 z-20 mt-4 lg:mt-0 backdrop-blur-md border border-gold/30 shadow-2xl">
+              <i class="bi bi-clock-history text-gold text-xl"></i>
+              <div>
+                <div class="text-xs text-text-secondary uppercase">Heritage</div>
+                <div class="text-sm font-bold text-text-primary">50+ Years Mastercraft</div>
+              </div>
+            </div>
+
+            <!-- Manufactured / Exported Card (Bottom Right) -->
+            <div class="relative lg:absolute lg:bottom-2 lg:right-0 top-auto right-auto w-fit glass-panel p-4 rounded-xl flex items-center gap-3 hover:-translate-y-1 transition duration-300 z-20 mt-4 lg:mt-0 backdrop-blur-md border border-gold/30 shadow-2xl">
+              <i class="bi bi-award-fill text-gold text-xl"></i>
+              <div>
+                <div class="text-xs text-text-secondary uppercase">Manufactured</div>
+                <div class="text-sm font-bold text-text-primary">120K+ Pairs Exported</div>
+              </div>
+            </div>
+
+            <!-- Rating Card (Bottom Left) -->
+            <div class="relative lg:absolute lg:-bottom-4 lg:left-28 top-auto left-auto w-fit glass-panel p-3.5 rounded-xl flex items-center gap-3 hover:-translate-y-1 transition duration-300 z-20 mt-4 lg:mt-0 backdrop-blur-md border border-gold/30 shadow-2xl">
+              <i class="bi bi-star-fill text-gold text-lg"></i>
+              <div>
+                <div class="text-xs text-text-secondary uppercase">Quality Score</div>
+                <div class="text-sm font-bold text-text-primary">4.9/5 Master Grade</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST & STATS STRIP (Matching Sole Craft's Exact Stats Layout) -->
+    <section class="py-16 bg-[#F3ECE0] dark:bg-[#171717] border-y border-[#8C6239]/10 relative z-10">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          
+          <div>
+            <div class="text-4xl lg:text-5xl font-bold font-serif text-gold mb-2">1974</div>
+            <p class="text-xs lg:text-sm text-text-secondary uppercase tracking-widest font-semibold">Founding Year</p>
+          </div>
+
+          <div>
+            <div class="text-4xl lg:text-5xl font-bold font-serif text-gold mb-2">120,000+</div>
+            <p class="text-xs lg:text-sm text-text-secondary uppercase tracking-widest font-semibold">Pairs Crafted Yearly</p>
+          </div>
+
+          <div>
+            <div class="text-4xl lg:text-5xl font-bold font-serif text-gold mb-2">180</div>
+            <p class="text-xs lg:text-sm text-text-secondary uppercase tracking-widest font-semibold">Manual Bench Steps</p>
+          </div>
+
+          <div>
+            <div class="text-4xl lg:text-5xl font-bold font-serif text-gold mb-2">99.8%</div>
+            <p class="text-xs lg:text-sm text-text-secondary uppercase tracking-widest font-semibold">Satisfaction Rate</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED FOOTWEAR SHOWCASE SECTION (Matching Sole Craft 4-Card Grid) -->
+    <section class="py-24 relative z-10">
+      <div class="container mx-auto px-6">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="text-gold font-serif italic text-lg font-semibold uppercase tracking-wider">Manufactured Flagships</span>
+          <h2 class="text-4xl lg:text-5xl font-serif font-bold text-text-primary mt-2">Footwear Crafted to Perfection</h2>
+          <div class="w-24 h-0.5 bg-gold mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          
+          <!-- Card 1: Oxford -->
+          <div class="glass-panel hover-lift relative group flex flex-col justify-between overflow-hidden rounded-2xl">
+            <div>
+              <div class="h-48 bg-gray-900 relative overflow-hidden rounded-t-2xl mb-5">
+                <img src="assets/images/shoe_captoe_oxford.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="The Kensington Captoe Oxford">
+              </div>
+              <div class="px-6">
+                <h3 class="text-2xl font-serif font-bold text-text-primary mb-3">Captoe Oxford</h3>
+                <p class="text-text-secondary text-sm leading-relaxed mb-6">
+                  Goodyear-welted Balmoral oxford in vegetable-tanned French calfskin with oak-bark soles.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-6">
+              <div class="flex justify-between items-center text-xs text-text-secondary mb-4 border-t border-gray-200 dark:border-gray-800 pt-4">
+                <span>MOQ: <strong class="text-gold">50 Pairs</strong></span>
+                <span>Tier: <strong>Tier 1 ($145)</strong></span>
+              </div>
+              <a href="product-details.html?id=oxford-captoe-heritage" class="text-xs uppercase tracking-wider font-bold text-gold group-hover:text-black dark:group-hover:text-white flex items-center gap-2 group transition-colors duration-200">
+                View Specifications <i class="bi bi-arrow-right group-hover:translate-x-1 transition duration-200"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2: Chelsea Boot -->
+          <div class="glass-panel hover-lift relative group flex flex-col justify-between overflow-hidden rounded-2xl">
+            <div>
+              <div class="h-48 bg-gray-900 relative overflow-hidden rounded-t-2xl mb-5">
+                <img src="assets/images/shoe_chelsea_boot.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="The Tuscan Chelsea Boot">
+              </div>
+              <div class="px-6">
+                <h3 class="text-2xl font-serif font-bold text-text-primary mb-3">Tuscan Chelsea</h3>
+                <p class="text-text-secondary text-sm leading-relaxed mb-6">
+                  Whole-cut Chelsea boot with heavy-gauge elastic side gores and Dainite studded rubber outsoles.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-6">
+              <div class="flex justify-between items-center text-xs text-text-secondary mb-4 border-t border-gray-200 dark:border-gray-800 pt-4">
+                <span>MOQ: <strong class="text-gold">50 Pairs</strong></span>
+                <span>Tier: <strong>Tier 2 ($165)</strong></span>
+              </div>
+              <a href="product-details.html?id=chelsea-boot-tuscan" class="text-xs uppercase tracking-wider font-bold text-gold group-hover:text-black dark:group-hover:text-white flex items-center gap-2 group transition-colors duration-200">
+                View Specifications <i class="bi bi-arrow-right group-hover:translate-x-1 transition duration-200"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 3: Loafer -->
+          <div class="glass-panel hover-lift relative group flex flex-col justify-between overflow-hidden rounded-2xl">
+            <div>
+              <div class="h-48 bg-gray-900 relative overflow-hidden rounded-t-2xl mb-5">
+                <img src="assets/images/shoe_penny_loafer.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="The Verona Penny Loafer">
+              </div>
+              <div class="px-6">
+                <h3 class="text-2xl font-serif font-bold text-text-primary mb-3">Penny Loafer</h3>
+                <p class="text-text-secondary text-sm leading-relaxed mb-6">
+                  Blake-stitched saddle penny loafer with hand-sewn beefroll detailing and Italian leather soles.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-6">
+              <div class="flex justify-between items-center text-xs text-text-secondary mb-4 border-t border-gray-200 dark:border-gray-800 pt-4">
+                <span>MOQ: <strong class="text-gold">60 Pairs</strong></span>
+                <span>Tier: <strong>Tier 1 ($130)</strong></span>
+              </div>
+              <a href="product-details.html?id=penny-loafer-verona" class="text-xs uppercase tracking-wider font-bold text-gold group-hover:text-black dark:group-hover:text-white flex items-center gap-2 group transition-colors duration-200">
+                View Specifications <i class="bi bi-arrow-right group-hover:translate-x-1 transition duration-200"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 4: Patina Wholecut -->
+          <div class="glass-panel hover-lift relative group flex flex-col justify-between overflow-hidden rounded-2xl">
+            <div>
+              <div class="h-48 bg-gray-900 relative overflow-hidden rounded-t-2xl mb-5">
+                <img src="assets/images/shoe_patina_wholecut.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="The Monarch Patina Wholecut">
+              </div>
+              <div class="px-6">
+                <h3 class="text-2xl font-serif font-bold text-text-primary mb-3">Patina Wholecut</h3>
+                <p class="text-text-secondary text-sm leading-relaxed mb-6">
+                  Single-piece crust calfskin hand-painted with layered alcohol dyes and violin fiddleback waist.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-6">
+              <div class="flex justify-between items-center text-xs text-text-secondary mb-4 border-t border-gray-200 dark:border-gray-800 pt-4">
+                <span>MOQ: <strong class="text-gold">25 Pairs</strong></span>
+                <span>Tier: <strong>Artisanal ($210)</strong></span>
+              </div>
+              <a href="product-details.html?id=patina-wholecut-monarch" class="text-xs uppercase tracking-wider font-bold text-gold group-hover:text-black dark:group-hover:text-white flex items-center gap-2 group transition-colors duration-200">
+                View Specifications <i class="bi bi-arrow-right group-hover:translate-x-1 transition duration-200"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="text-center mt-12">
+          <a href="products.html" class="inline-flex items-center gap-2 text-gold hover:text-gold-hover border-b border-gold hover:border-gold-hover font-bold uppercase tracking-wider pb-1 transition">
+            View All 12 Manufactured Models <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- THE MANUFACTURING COBBLER PROCESS (Matching Sole Craft's Exact 3-Step Numbers) -->
+    <section class="py-24 border-t border-[#8C6239]/10 relative z-10">
+      <div class="container mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="text-gold font-serif italic text-lg font-semibold uppercase tracking-wider">Our Manufacturing Method</span>
+          <h2 class="text-4xl lg:text-5xl font-serif font-bold text-text-primary mt-2">The Vernon &amp; Vale Process</h2>
+          <div class="w-24 h-0.5 bg-gold mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+          <!-- Step 1 -->
+          <div class="space-y-4">
+            <div class="w-16 h-16 rounded-full bg-gold/10 text-gold text-2xl font-serif font-bold flex items-center justify-center mx-auto border border-gold/30">1</div>
+            <h3 class="font-serif text-xl font-bold text-text-primary">Hide Selection &amp; Clicking</h3>
+            <p class="text-text-secondary text-xs leading-relaxed max-w-xs mx-auto">
+              Master clickers inspect tight-grain Tuscan hides over illuminated tables, orienting cut patterns along the spine grain for dimensional stability.
+            </p>
+          </div>
+          <!-- Step 2 -->
+          <div class="space-y-4">
+            <div class="w-16 h-16 rounded-full bg-gold/10 text-gold text-2xl font-serif font-bold flex items-center justify-center mx-auto border border-gold/30">2</div>
+            <h3 class="font-serif text-xl font-bold text-text-primary">72-Hour Wooden Lasting &amp; Welt</h3>
+            <p class="text-text-secondary text-xs leading-relaxed max-w-xs mx-auto">
+              Uppers rest 72 hours over carved beechwood lasts under tension. Heavy-gauge linen cord stitches the Goodyear welt and natural granulated corkbed.
+            </p>
+          </div>
+          <!-- Step 3 -->
+          <div class="space-y-4">
+            <div class="w-16 h-16 rounded-full bg-gold/10 text-gold text-2xl font-serif font-bold flex items-center justify-center mx-auto border border-gold/30">3</div>
+            <h3 class="font-serif text-xl font-bold text-text-primary">Iron Wax Burnish &amp; Export QC</h3>
+            <p class="text-text-secondary text-xs leading-relaxed max-w-xs mx-auto">
+              Heated friction irons seal carnauba waxes into sole edges. Pairs undergo 14-point benchmark optical inspections before insured worldwide export.
+            </p>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <a href="craftsmanship.html" class="inline-block border border-gold text-text-primary hover:bg-gold hover:text-black font-semibold px-8 py-3 rounded-full transition uppercase text-xs tracking-wider">
+            Explore 6-Stage Cordwaining Guide
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ATELIER IN MOTION: MASTER BENCHCRAFT VIDEO REEL -->
+    <section class="py-24 border-t border-[#8C6239]/10 relative z-10 bg-black/40">
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="text-gold font-serif italic text-lg font-semibold uppercase tracking-wider">Visual Benchcraft</span>
+          <h2 class="text-4xl lg:text-5xl font-serif font-bold text-text-primary mt-2">The Atelier in Motion</h2>
+          <div class="w-24 h-0.5 bg-gold mx-auto mt-4 mb-4"></div>
+          <p class="text-text-secondary text-xs sm:text-sm">
+            Experience the rhythmic precision of master cordwaining: from hand-clicking full-grain skins to channel grooving, welt lock-stitching, and mirror gloss burnishing.
+          </p>
+        </div>
+
+        <div class="max-w-5xl mx-auto rounded-3xl overflow-hidden border-2 border-gold/30 shadow-[0_0_50px_rgba(197,160,89,0.15)] relative group bg-black">
+          <video class="w-full aspect-video object-cover" controls playsinline poster="assets/images/video_poster_index.jpg">
+            <source src="assets/videos/shoemaking_craft_atelier.webm" type="video/webm">
+            Your browser does not support HTML5 video.
+          </video>
+          <div class="p-6 sm:p-8 bg-card-bg/95 border-t border-gold/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+              <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-gold/15 text-gold border border-gold/30 inline-block mb-1">
+                Atelier Master Reel &bull; 1080p
+              </span>
+              <h3 class="font-serif text-lg sm:text-xl font-bold text-text-primary">Generational Cordwaining &amp; Sole Channeling</h3>
+              <p class="text-xs text-text-muted mt-0.5">Filmed on location in our European workshop benches.</p>
+            </div>
+            <div class="flex items-center gap-3 shrink-0">
+              <a href="home2.html" class="px-5 py-2.5 rounded-full bg-gold hover:bg-gold-hover text-black font-bold uppercase tracking-wider text-xs transition">
+                Open Atelier Hub (Home 2)
+              </a>
+              <a href="craftsmanship.html" class="px-5 py-2.5 rounded-full border border-gold/40 hover:border-gold text-gold font-bold uppercase tracking-wider text-xs transition">
+                Cordwaining Guide
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDITORIAL SIGNATURE COLLECTIONS SHOWCASE -->
+    <section class="py-24 border-t border-[#8C6239]/10 relative z-10">
+      <div class="container mx-auto px-6">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="text-gold font-serif italic text-lg font-semibold uppercase tracking-wider">Curated Design Lines</span>
+          <h2 class="text-4xl lg:text-5xl font-serif font-bold text-text-primary mt-2">Signature Footwear Capsules</h2>
+          <div class="w-24 h-0.5 bg-gold mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          
+          <!-- Collection 1 -->
+          <div class="glass-panel hover-lift relative group flex flex-col justify-between overflow-hidden rounded-2xl border border-gold/15">
+            <div>
+              <div class="h-52 bg-gray-900 relative overflow-hidden rounded-t-2xl mb-5">
+                <img src="assets/images/capsule_mayfair_editorial.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="The Mayfair Sartorial Line">
+                <span class="absolute top-3 left-3 bg-black/75 backdrop-blur-md text-gold text-[10px] font-mono uppercase px-2.5 py-1 rounded-full border border-gold/30">
+                  Goodyear 360°
+                </span>
+                <span class="absolute bottom-3 right-3 bg-black/75 backdrop-blur-md text-white text-[10px] font-mono px-2 py-0.5 rounded">
+                  38 Bench Hours
+                </span>
+              </div>
+              <div class="px-6">
+                <span class="text-xs uppercase text-gold font-bold tracking-widest block mb-1">Capsule I &bull; Formal Dress</span>
+                <h3 class="text-xl font-serif font-bold text-text-primary mb-2">The Sovereign Formal Line</h3>
+                <p class="text-text-secondary text-xs leading-relaxed mb-4">
+                  Balmorals, Derbies, and Monkstraps hand-lasted on our sculpted chiseled almond lasts using grade-A French Boxcalf.
+                </p>
+                <div class="space-y-1.5 text-[11px] text-text-secondary border-t border-gold/10 pt-3 mb-4">
+                  <div class="flex justify-between"><span>Hide Origin:</span> <strong class="text-text-primary">Tanneries d'Annonay</strong></div>
+                  <div class="flex justify-between"><span>Sole Spec:</span> <strong class="text-text-primary">Oak-Bark Channeled</strong></div>
+                  <div class="flex justify-between"><span>Wholesale MOQ:</span> <strong class="text-gold">25 Pairs</strong></div>
+                </div>
+              </div>
+            </div>
+            <div class="px-6 pb-6">
+              <a href="collections.html#formal" class="text-xs uppercase tracking-wider font-bold text-gold group-hover:text-black dark:group-hover:text-white flex items-center gap-2 group transition-colors duration-200">
+                Explore Line Dossier <i class="bi bi-arrow-right group-hover:translate-x-1 transition duration-200"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Collection 2 -->
+          <div class="glass-panel hover-lift relative group flex flex-col justify-between overflow-hidden rounded-2xl border border-gold/15">
+            <div>
+              <div class="h-52 bg-gray-900 relative overflow-hidden rounded-t-2xl mb-5">
+                <img src="assets/images/img2.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="The Alpine & Urban Boot Series">
+                <span class="absolute top-3 left-3 bg-black/75 backdrop-blur-md text-gold text-[10px] font-mono uppercase px-2.5 py-1 rounded-full border border-gold/30">
+                  Stormwelted
+                </span>
+                <span class="absolute bottom-3 right-3 bg-black/75 backdrop-blur-md text-white text-[10px] font-mono px-2 py-0.5 rounded">
+                  44 Bench Hours
+                </span>
+              </div>
+              <div class="px-6">
+                <span class="text-xs uppercase text-gold font-bold tracking-widest block mb-1">Capsule II &bull; Rugged Heritage</span>
+                <h3 class="text-xl font-serif font-bold text-text-primary mb-2">The Alpine &amp; Urban Boots</h3>
+                <p class="text-text-secondary text-xs leading-relaxed mb-4">
+                  Dainite studded and commando lug soles paired with water-impervious storm welts and heavy Tuscan pull-up hides.
+                </p>
+                <div class="space-y-1.5 text-[11px] text-text-secondary border-t border-gold/10 pt-3 mb-4">
+                  <div class="flex justify-between"><span>Hide Origin:</span> <strong class="text-text-primary">Conceria Walpier Tuscany</strong></div>
+                  <div class="flex justify-between"><span>Sole Spec:</span> <strong class="text-text-primary">British Dainite Studded</strong></div>
+                  <div class="flex justify-between"><span>Wholesale MOQ:</span> <strong class="text-gold">25 Pairs</strong></div>
+                </div>
+              </div>
+            </div>
+            <div class="px-6 pb-6">
+              <a href="collections.html#boots" class="text-xs uppercase tracking-wider font-bold text-gold group-hover:text-black dark:group-hover:text-white flex items-center gap-2 group transition-colors duration-200">
+                Explore Line Dossier <i class="bi bi-arrow-right group-hover:translate-x-1 transition duration-200"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Collection 3 -->
+          <div class="glass-panel hover-lift relative group flex flex-col justify-between overflow-hidden rounded-2xl border border-gold/15">
+            <div>
+              <div class="h-52 bg-gray-900 relative overflow-hidden rounded-t-2xl mb-5">
+                <img src="assets/images/capsule_amalfi_editorial.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="The Amalfi Riviera Casuals">
+                <span class="absolute top-3 left-3 bg-black/75 backdrop-blur-md text-gold text-[10px] font-mono uppercase px-2.5 py-1 rounded-full border border-gold/30">
+                  Bologna Saccotto
+                </span>
+                <span class="absolute bottom-3 right-3 bg-black/75 backdrop-blur-md text-white text-[10px] font-mono px-2 py-0.5 rounded">
+                  28 Bench Hours
+                </span>
+              </div>
+              <div class="px-6">
+                <span class="text-xs uppercase text-gold font-bold tracking-widest block mb-1">Capsule III &bull; Leisure &amp; Travel</span>
+                <h3 class="text-xl font-serif font-bold text-text-primary mb-2">The Mediterranean Loafers</h3>
+                <p class="text-text-secondary text-xs leading-relaxed mb-4">
+                  Featherweight tubular moccasins and Belgian penny slip-ons engineered for unlined, barefoot sockless flexibility.
+                </p>
+                <div class="space-y-1.5 text-[11px] text-text-secondary border-t border-gold/10 pt-3 mb-4">
+                  <div class="flex justify-between"><span>Hide Origin:</span> <strong class="text-text-primary">CF Stead Janus Calf Suede</strong></div>
+                  <div class="flex justify-between"><span>Sole Spec:</span> <strong class="text-text-primary">Ultra-Flex Veg Leather</strong></div>
+                  <div class="flex justify-between"><span>Wholesale MOQ:</span> <strong class="text-gold">30 Pairs</strong></div>
+                </div>
+              </div>
+            </div>
+            <div class="px-6 pb-6">
+              <a href="collections.html#loafers" class="text-xs uppercase tracking-wider font-bold text-gold group-hover:text-black dark:group-hover:text-white flex items-center gap-2 group transition-colors duration-200">
+                Explore Line Dossier <i class="bi bi-arrow-right group-hover:translate-x-1 transition duration-200"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Collection 4 -->
+          <div class="glass-panel hover-lift relative group flex flex-col justify-between overflow-hidden rounded-2xl border border-gold/15">
+            <div>
+              <div class="h-52 bg-gray-900 relative overflow-hidden rounded-t-2xl mb-5">
+                <img src="assets/images/capsule_firenze_patina.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="The Firenze Patina Series">
+                <span class="absolute top-3 left-3 bg-black/75 backdrop-blur-md text-gold text-[10px] font-mono uppercase px-2.5 py-1 rounded-full border border-gold/30">
+                  Museum Crust Hand-Dyed
+                </span>
+                <span class="absolute bottom-3 right-3 bg-black/75 backdrop-blur-md text-white text-[10px] font-mono px-2 py-0.5 rounded">
+                  52 Bench Hours
+                </span>
+              </div>
+              <div class="px-6">
+                <span class="text-xs uppercase text-gold font-bold tracking-widest block mb-1">Capsule IV &bull; Artisanal Vault</span>
+                <h3 class="text-xl font-serif font-bold text-text-primary mb-2">The Museum Patina Series</h3>
+                <p class="text-text-secondary text-xs leading-relaxed mb-4">
+                  Raw unfinished crust calfskin dyed stroke-by-stroke with alcohol stains, beveled fiddleback waists, and lemonwood pegs.
+                </p>
+                <div class="space-y-1.5 text-[11px] text-text-secondary border-t border-gold/10 pt-3 mb-4">
+                  <div class="flex justify-between"><span>Hide Origin:</span> <strong class="text-text-primary">Tuscan Crust &amp; Cordovan</strong></div>
+                  <div class="flex justify-between"><span>Sole Spec:</span> <strong class="text-text-primary">Fiddleback Pegged Waist</strong></div>
+                  <div class="flex justify-between"><span>Wholesale MOQ:</span> <strong class="text-gold">20 Pairs</strong></div>
+                </div>
+              </div>
+            </div>
+            <div class="px-6 pb-6">
+              <a href="collections.html#patina" class="text-xs uppercase tracking-wider font-bold text-gold group-hover:text-black dark:group-hover:text-white flex items-center gap-2 group transition-colors duration-200">
+                Explore Line Dossier <i class="bi bi-arrow-right group-hover:translate-x-1 transition duration-200"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+        
+        <div class="text-center mt-16">
+          <a href="collections.html" class="inline-block border border-gold text-text-primary hover:bg-gold hover:text-black font-semibold px-8 py-3 rounded-full transition uppercase text-xs tracking-wider">
+            View All Signature Collections
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SHOE CONSTRUCTION ARCHITECTURES (Engineering Disciplines - Pure Content Architecture) -->
+    <section class="py-24 bg-[#F3ECE0] dark:bg-[#171717] border-t border-[#8C6239]/10 relative z-10">
+      <div class="container mx-auto px-6">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-gold font-serif italic text-lg font-semibold uppercase tracking-wider">Engineering Disciplines</span>
+          <h2 class="text-4xl lg:text-5xl font-serif font-bold text-text-primary mt-2">Shoe Construction Architectures</h2>
+          <div class="w-24 h-0.5 bg-gold mx-auto mt-4 mb-6"></div>
+          <p class="text-text-secondary text-sm leading-relaxed">
+            Private label clients can select from four master structural welt disciplines, tailored precisely to target price tiers, flexibility, and regional climate resilience.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Method 1 -->
+          <div class="glass-panel p-7 rounded-2xl flex flex-col justify-between hover-lift border border-gold/20 shadow-lg relative overflow-hidden group">
+            <div class="absolute top-0 right-0 w-28 h-28 bg-gold/5 rounded-full blur-2xl pointer-events-none group-hover:bg-gold/10 transition-colors"></div>
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-12 h-12 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-2xl shadow-inner">
+                  <i class="bi bi-shield-check"></i>
+                </div>
+                <span class="text-[10px] font-mono tracking-widest uppercase bg-gold/15 text-gold border border-gold/30 px-2.5 py-1 rounded-full font-semibold">Method I</span>
+              </div>
+              <h3 class="text-xl font-serif font-bold text-text-primary mb-1">Goodyear Welted</h3>
+              <p class="text-[11px] font-mono uppercase tracking-wider text-gold font-medium mb-3">Lockstitch Inseam & Gemming Rib</p>
+              <p class="text-text-secondary text-xs leading-relaxed mb-4">
+                The undisputed benchmark in handcrafted footwear. A perimeter leather welt is lockstitched directly through both the upper and insole rib, encasing an insulated organic cork chamber that gradually molds to the wearer's anatomy.
+              </p>
+
+              <!-- Technical Specifications Grid -->
+              <div class="bg-gold/5 dark:bg-black/30 border border-gold/15 rounded-xl p-3 my-4 space-y-2 text-[11px]">
+                <div class="flex justify-between items-center border-b border-gold/10 pb-1.5">
+                  <span class="text-text-secondary">Stitch Route:</span>
+                  <span class="font-mono font-bold text-text-primary">8–10 SPI Lockstitch</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-gold/10 pb-1.5">
+                  <span class="text-text-secondary">Cavity Core:</span>
+                  <span class="font-mono font-bold text-text-primary">Portuguese Oak Cork</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-gold/10 pb-1.5">
+                  <span class="text-text-secondary">Insole Spec:</span>
+                  <span class="font-mono font-bold text-text-primary">4.5mm Veg-Tan Shoulder</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-text-secondary">Resoling Recraft:</span>
+                  <span class="font-mono font-bold text-gold">Infinite Cycles</span>
+                </div>
+              </div>
+
+              <ul class="text-xs space-y-2 text-text-secondary mb-4">
+                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-gold text-sm shrink-0 mt-0.5"></i> <span>Zero upper disruption during full outsole replacement</span></li>
+                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-gold text-sm shrink-0 mt-0.5"></i> <span>Moisture-resistant labyrinth barrier prevents water ingress</span></li>
+                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-gold text-sm shrink-0 mt-0.5"></i> <span>16-gauge spring-tempered steel shank supports foot arch</span></li>
+              </ul>
+            </div>
+            <div class="border-t border-gold/15 pt-4 flex justify-between items-center text-xs">
+              <span class="text-text-secondary font-medium">Durability Index:</span>
+              <span class="font-bold text-gold font-mono">10 / 10 Master</span>
+            </div>
+          </div>
+
+          <!-- Method 2 -->
+          <div class="glass-panel p-7 rounded-2xl flex flex-col justify-between hover-lift border border-gold/20 shadow-lg relative overflow-hidden group">
+            <div class="absolute top-0 right-0 w-28 h-28 bg-gold/5 rounded-full blur-2xl pointer-events-none group-hover:bg-gold/10 transition-colors"></div>
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-12 h-12 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-2xl shadow-inner">
+                  <i class="bi bi-sliders"></i>
+                </div>
+                <span class="text-[10px] font-mono tracking-widest uppercase bg-gold/15 text-gold border border-gold/30 px-2.5 py-1 rounded-full font-semibold">Method II</span>
+              </div>
+              <h3 class="text-xl font-serif font-bold text-text-primary mb-1">Blake Rapid</h3>
+              <p class="text-[11px] font-mono uppercase tracking-wider text-gold font-medium mb-3">Dual Midsole Lock & Fiddleback Waist</p>
+              <p class="text-text-secondary text-xs leading-relaxed mb-4">
+                The Italian sartorial compromise pairing svelte, close-cut sole waists with true exterior resolability. Connects the insole to an intermediary leather midsole, followed by a secondary exterior Rapid stitch to the outsole.
+              </p>
+
+              <!-- Technical Specifications Grid -->
+              <div class="bg-gold/5 dark:bg-black/30 border border-gold/15 rounded-xl p-3 my-4 space-y-2 text-[11px]">
+                <div class="flex justify-between items-center border-b border-gold/10 pb-1.5">
+                  <span class="text-text-secondary">Stitch System:</span>
+                  <span class="font-mono font-bold text-text-primary">Dual-Pass Rapid Route</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-gold/10 pb-1.5">
+                  <span class="text-text-secondary">Waist Profile:</span>
+                  <span class="font-mono font-bold text-text-primary">Ultra-Beveled Violin</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-gold/10 pb-1.5">
+                  <span class="text-text-secondary">Break-in Period:</span>
+                  <span class="font-mono font-bold text-text-primary">Zero (Instant Flex)</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-text-secondary">Resoling Recraft:</span>
+                  <span class="font-mono font-bold text-gold">4–6 Full Solings</span>
+                </div>
+              </div>
+
+              <ul class="text-xs space-y-2 text-text-secondary mb-4">
+                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-gold text-sm shrink-0 mt-0.5"></i> <span>Unmatched sleekness along the inner waist and arch</span></li>
+                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-gold text-sm shrink-0 mt-0.5"></i> <span>35% lighter footbed mass compared to traditional welts</span></li>
+                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-gold text-sm shrink-0 mt-0.5"></i> <span>Midsole isolates footbed during bottom sole replacement</span></li>
+              </ul>
+            </div>
+            <div class="border-t border-gold/15 pt-4 flex justify-between items-center text-xs">
+              <span class="text-text-secondary font-medium">Flexibility Index:</span>
+              <span class="font-bold text-gold font-mono">9.8 / 10 Agile</span>
+            </div>
+          </div>
+
+          <!-- Method 3 -->
+          <div class="glass-panel p-7 rounded-2xl flex flex-col justify-between hover-lift border border-gold/20 shadow-lg relative overflow-hidden group">
+            <div class="absolute top-0 right-0 w-28 h-28 bg-gold/5 rounded-full blur-2xl pointer-events-none group-hover:bg-gold/10 transition-colors"></div>
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-12 h-12 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-2xl shadow-inner">
+                  <i class="bi bi-snow2"></i>
+                </div>
+                <span class="text-[10px] font-mono tracking-widest uppercase bg-gold/15 text-gold border border-gold/30 px-2.5 py-1 rounded-full font-semibold">Method III</span>
+              </div>
+              <h3 class="text-xl font-serif font-bold text-text-primary mb-1">Norwegian (Tirolese)</h3>
+              <p class="text-[11px] font-mono uppercase tracking-wider text-gold font-medium mb-3">Alpine Double-Braided Storm Welt</p>
+              <p class="text-text-secondary text-xs leading-relaxed mb-4">
+                Originating in Alpine mountain expeditions. The upper leather is turned 90° outward rather than tucked underneath, then anchored with twin hand-waxed braided threads forming an impermeable physical moisture barrier.
+              </p>
+
+              <!-- Technical Specifications Grid -->
+              <div class="bg-gold/5 dark:bg-black/30 border border-gold/15 rounded-xl p-3 my-4 space-y-2 text-[11px]">
+                <div class="flex justify-between items-center border-b border-gold/10 pb-1.5">
+                  <span class="text-text-secondary">Seam Architecture:</span>
+                  <span class="font-mono font-bold text-text-primary">Twin Braided Chain</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-gold/10 pb-1.5">
+                  <span class="text-text-secondary">Water Barrier:</span>
+                  <span class="font-mono font-bold text-text-primary">100% Hermetic Seal</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-gold/10 pb-1.5">
+                  <span class="text-text-secondary">Upper Lasting:</span>
+                  <span class="font-mono font-bold text-text-primary">Turned-Out Alpine Hide</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-text-secondary">Sole Pairing:</span>
+                  <span class="font-mono font-bold text-gold">Vibram Lug / Double Oak</span>
+                </div>
+              </div>
+
+              <ul class="text-xs space-y-2 text-text-secondary mb-4">
+                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-gold text-sm shrink-0 mt-0.5"></i> <span>Deflects torrential downpours, mountain slush, and snow</span></li>
+                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-gold text-sm shrink-0 mt-0.5"></i> <span>Iconic artisan braided white stitch perimeter detailing</span></li>
+                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-gold text-sm shrink-0 mt-0.5"></i> <span>Built for heavy mountain boots and rugged storm oxfords</span></li>
+              </ul>
+            </div>
+            <div class="border-t border-gold/15 pt-4 flex justify-between items-center text-xs">
+              <span class="text-text-secondary font-medium">Weather Resistance:</span>
+              <span class="font-bold text-gold font-mono">10 / 10 Stormproof</span>
+            </div>
+          </div>
+
+          <!-- Method 4 -->
+          <div class="glass-panel p-7 rounded-2xl flex flex-col justify-between hover-lift border border-gold/20 shadow-lg relative overflow-hidden group">
+            <div class="absolute top-0 right-0 w-28 h-28 bg-gold/5 rounded-full blur-2xl pointer-events-none group-hover:bg-gold/10 transition-colors"></div>
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-12 h-12 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-2xl shadow-inner">
+                  <i class="bi bi-feather"></i>
+                </div>
+                <span class="text-[10px] font-mono tracking-widest uppercase bg-gold/15 text-gold border border-gold/30 px-2.5 py-1 rounded-full font-semibold">Method IV</span>
+              </div>
+              <h3 class="text-xl font-serif font-bold text-text-primary mb-1">Bologna (Saccotto)</h3>
+              <p class="text-[11px] font-mono uppercase tracking-wider text-gold font-medium mb-3">Tubular 360° Glove Envelope</p>
+              <p class="text-text-secondary text-xs leading-relaxed mb-4">
+                The pinnacle Italian technique for featherweight loafers and dress slippers. The upper lining is machine-sewn into a continuous cylindrical pouch ("saccotto") enclosing the foot with no rigid insole board.
+              </p>
+
+              <!-- Technical Specifications Grid -->
+              <div class="bg-gold/5 dark:bg-black/30 border border-gold/15 rounded-xl p-3 my-4 space-y-2 text-[11px]">
+                <div class="flex justify-between items-center border-b border-gold/10 pb-1.5">
+                  <span class="text-text-secondary">Footbed Type:</span>
+                  <span class="font-mono font-bold text-text-primary">Tubular Glove Saccotto</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-gold/10 pb-1.5">
+                  <span class="text-text-secondary">Rigid Board:</span>
+                  <span class="font-mono font-bold text-text-primary">0mm (Complete Freedom)</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-gold/10 pb-1.5">
+                  <span class="text-text-secondary">Flex Arc:</span>
+                  <span class="font-mono font-bold text-text-primary">180° Full Toe Bend</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-text-secondary">Primary Purpose:</span>
+                  <span class="font-mono font-bold text-gold">Sartorial Penny Loafers</span>
+                </div>
+              </div>
+
+              <ul class="text-xs space-y-2 text-text-secondary mb-4">
+                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-gold text-sm shrink-0 mt-0.5"></i> <span>Glove-soft slipper interior hugs anatomical foot contours</span></li>
+                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-gold text-sm shrink-0 mt-0.5"></i> <span>Effortless heel-to-toe stride with no foot fatigue</span></li>
+                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-gold text-sm shrink-0 mt-0.5"></i> <span>Choice construction for Mediterranean summer loafers</span></li>
+              </ul>
+            </div>
+            <div class="border-t border-gold/15 pt-4 flex justify-between items-center text-xs">
+              <span class="text-text-secondary font-medium">Comfort Index:</span>
+              <span class="font-bold text-gold font-mono">10 / 10 Glove Fit</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION (Matching Sole Craft's Exact Testimonials Grid & Quotes) -->
+    <section class="py-24 bg-[#F3ECE0] dark:bg-[#171717] relative z-10">
+      <div class="container mx-auto px-6">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="text-gold font-serif italic text-lg font-semibold uppercase tracking-wider">Verified Retail Partners</span>
+          <h2 class="text-4xl lg:text-5xl font-serif font-bold text-text-primary mt-2">What Luxury Retailers Say</h2>
+          <div class="w-24 h-0.5 bg-gold mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <!-- Review 1 -->
+          <div class="glass-panel p-8 rounded-2xl relative">
+            <div class="text-gold mb-4 flex gap-1">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="text-text-secondary text-sm italic mb-6 leading-relaxed">
+              "We transitioned our luxury footwear line from our previous overseas factory to Vernon &amp; Vale three years ago. The consistency of their Goodyear welting and French boxcalf sourcing has dropped our customer return rate to under 0.4%."
+            </p>
+            <div class="flex items-center gap-3">
+              <img src="assets/images/avatar_client_henrik.jpg" class="w-10 h-10 rounded-full object-cover border border-gold/40" alt="Henrik Lindqvist">
+              <div>
+                <div class="text-sm font-bold text-text-primary">Henrik Lindqvist</div>
+                <div class="text-xs text-gray-500">Founder, Nordics Sartorial Footwear</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="glass-panel p-8 rounded-2xl relative">
+            <div class="text-gold mb-4 flex gap-1">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="text-text-secondary text-sm italic mb-6 leading-relaxed">
+              "Their private label sample development is lightning-fast without sacrificing bench quality. Within four weeks we had custom lasts carved, prototypes approved, and our 2,500-pair Chelsea boot production on schedule."
+            </p>
+            <div class="flex items-center gap-3">
+              <img src="assets/images/avatar_client_elena.jpg" class="w-10 h-10 rounded-full object-cover border border-gold/40" alt="Elena Marchetti">
+              <div>
+                <div class="text-sm font-bold text-text-primary">Elena Marchetti</div>
+                <div class="text-xs text-gray-500">Creative Director, Marchetti Milano</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="glass-panel p-8 rounded-2xl relative">
+            <div class="text-gold mb-4 flex gap-1">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="text-text-secondary text-sm italic mb-6 leading-relaxed">
+              "The museum patina wholecuts they produce for our private vault are works of art. The hand-painted depth is something machines simply cannot replicate. Truly world-class footwear manufacturing."
+            </p>
+            <div class="flex items-center gap-3">
+              <img src="assets/images/avatar_client_marcus.jpg" class="w-10 h-10 rounded-full object-cover border border-gold/40" alt="Marcus Sterling">
+              <div>
+                <div class="text-sm font-bold text-text-primary">Marcus Sterling</div>
+                <div class="text-xs text-gray-500">Head of Sourcing, Sterling &amp; Co. London</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BANNER SECTION (Matching Sole Craft's Exact Style) -->
+    <section class="py-20 relative overflow-hidden bg-cover bg-center">
+      <div class="absolute inset-0 bg-[#FAF7F0] dark:bg-[#0F0F0F] transition-all"></div>
+      <div class="absolute inset-0 bg-gold/5 dark:bg-gold/10 pointer-events-none"></div>
+      <div class="container mx-auto px-6 relative z-10 text-center max-w-3xl">
+        <h2 class="text-4xl lg:text-5xl font-serif font-bold text-text-primary mb-6">Ready to Scale Your Footwear Label?</h2>
+        <p class="text-text-secondary mb-8 leading-relaxed max-w-xl mx-auto">
+          From custom lasts and private label debossing to volume export runs, partner with Vernon &amp; Vale for European bench quality and transparent manufacturing.
+        </p>
+        <a href="wholesale.html" class="magnetic-btn bg-gold hover:bg-gold-hover text-black font-bold uppercase text-sm tracking-wider px-10 py-4 rounded-full shadow-xl transition inline-block">
+          Submit B2B Bulk Enquiry
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Complete Stylist Footer matching Sole Craft mockup -->
+  <footer class="bg-[#0C0C0C] text-[#FAF7F0] pt-16 sm:pt-20 pb-8 font-sans border-t border-gold/15 relative z-10 w-full">
+    <div class="container mx-auto px-4 sm:px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[2.3fr_2.1fr_1.1fr_1.4fr_1.1fr_2fr] gap-8 lg:gap-6 xl:gap-8 mb-16 text-left items-start">
+      
+      <!-- Column 1: Brand details & Socials -->
+      <div class="space-y-4">
+        <a href="index.html" class="h-8 flex items-center gap-2 mb-6">
+          <div class="w-8 h-8 rounded-full border border-gold/40 bg-gradient-to-br from-amber-950 to-amber-700 flex items-center justify-center text-gold font-serif font-bold text-sm shadow-md">VV</div>
+          <span class="font-serif text-xl xl:text-2xl font-bold tracking-wider text-gold-gradient whitespace-nowrap">VERNON &amp; VALE</span>
+        </a>
+        <p class="text-gray-400 text-xs leading-relaxed font-sans">
+          We Craft. You Walk Better. Master leather footwear manufacturing, private label supply, and bespoke cordwaining since 1974.
+        </p>
+        <!-- Social Icons -->
+        <div class="flex items-center gap-2 xl:gap-2.5 flex-nowrap pt-1">
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full border border-gray-800 flex items-center justify-center text-gold hover:border-gold hover:bg-gold hover:text-black transition shrink-0"><i class="bi bi-facebook text-xs"></i></a>
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full border border-gray-800 flex items-center justify-center text-gold hover:border-gold hover:bg-gold hover:text-black transition shrink-0"><i class="bi bi-instagram text-xs"></i></a>
+          <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full border border-gray-800 flex items-center justify-center text-gold hover:border-gold hover:bg-gold hover:text-black transition shrink-0"><i class="bi bi-twitter-x text-xs"></i></a>
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full border border-gray-800 flex items-center justify-center text-gold hover:border-gold hover:bg-gold hover:text-black transition shrink-0"><i class="bi bi-linkedin text-xs"></i></a>
+        </div>
+      </div>
+
+      <!-- Column 2: Newsletter Subscribe -->
+      <div class="space-y-4">
+        <h4 class="font-serif text-lg font-bold text-gold tracking-wide">Subscribe</h4>
+        <p class="text-gray-400 text-xs leading-relaxed">
+          Get seasonal leather allocations, new last releases, and exclusive wholesale trade alerts.
+        </p>
+        <form class="newsletter-form relative flex items-center pt-2">
+          <input type="email" placeholder="Your work email" required class="w-full bg-[#171717] border border-gray-800 rounded-full py-2.5 pl-4 pr-12 text-xs text-white focus:outline-none focus:border-gold transition">
+          <button type="submit" class="absolute right-1.5 w-8 h-8 rounded-full bg-gold text-black flex items-center justify-center hover:bg-gold-hover transition">
+            <i class="bi bi-arrow-right text-xs"></i>
+          </button>
+        </form>
+      </div>
+
+      <!-- Column 3: Explore -->
+      <div class="space-y-4">
+        <h4 class="font-serif text-lg font-bold text-gold tracking-wide">Explore</h4>
+        <ul class="space-y-2 text-xs text-gray-400">
+          <li><a href="index.html" class="hover:text-gold transition">Home</a></li>
+          <li><a href="about.html" class="hover:text-gold transition">About Us</a></li>
+          <li><a href="products.html" class="hover:text-gold transition">Footwear Catalog</a></li>
+          <li><a href="collections.html" class="hover:text-gold transition">Collections</a></li>
+          <li><a href="wholesale.html" class="hover:text-gold transition">Wholesale B2B</a></li>
+          <li><a href="craftsmanship.html" class="hover:text-gold transition">Craftsmanship</a></li>
+          <li><a href="contact.html" class="hover:text-gold transition">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Footwear Lines -->
+      <div class="space-y-4">
+        <h4 class="font-serif text-lg font-bold text-gold tracking-wide">Footwear Lines</h4>
+        <ul class="space-y-2 text-xs text-gray-400">
+          <li><a href="products.html?category=formal" class="hover:text-gold transition">Captoe Oxfords</a></li>
+          <li><a href="products.html?category=boots" class="hover:text-gold transition">Chelsea Boots</a></li>
+          <li><a href="products.html?category=loafers" class="hover:text-gold transition">Penny Loafers</a></li>
+          <li><a href="products.html?category=casual" class="hover:text-gold transition">Casual Driving</a></li>
+          <li><a href="products.html?category=handmade" class="hover:text-gold transition">Museum Patina</a></li>
+          <li><a href="craftsmanship.html" class="hover:text-gold transition">Goodyear Welting</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 5: Legal & B2B -->
+      <div class="space-y-4">
+        <h4 class="font-serif text-lg font-bold text-gold tracking-wide">Governance</h4>
+        <ul class="space-y-2 text-xs text-gray-400">
+          <li><a href="wholesale.html" class="hover:text-gold transition">B2B Terms</a></li>
+          <li><a href="privacy.html" class="hover:text-gold transition">Privacy Policy</a></li>
+          <li><a href="privacy.html" class="hover:text-gold transition">NDA Secrecy</a></li>
+          <li><a href="404.html" class="hover:text-gold transition">404 Error</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 6: Contact Info -->
+      <div class="space-y-4">
+        <h4 class="font-serif text-lg font-bold text-gold tracking-wide">Contact</h4>
+        <div class="space-y-2 text-xs text-gray-400">
+          <p class="flex items-start gap-2">
+            <i class="bi bi-geo-alt text-gold shrink-0"></i>
+            <span>Via San Niccolò 48, 50125 Firenze, Italy</span>
+          </p>
+          <p class="flex items-center gap-2">
+            <i class="bi bi-telephone text-gold shrink-0"></i>
+            <span>+44 (0) 20 7946 0812</span>
+          </p>
+          <p class="flex items-center gap-2">
+            <i class="bi bi-envelope text-gold shrink-0"></i>
+            <a href="mailto:wholesale@vernonvale-craft.com" class="hover:text-gold transition">wholesale@vernonvale-craft.com</a>
+          </p>
+          <p class="flex items-center gap-2">
+            <i class="bi bi-clock text-gold shrink-0"></i>
+            <span>Mon–Fri: 8:30 AM – 6:30 PM CET</span>
+          </p>
+          <div class="pt-2">
+            <a href="contact.html" class="inline-flex items-center gap-1.5 text-gold hover:text-gold-hover text-xs font-bold uppercase tracking-wider transition">
+              Get Directions <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="container mx-auto px-4 sm:px-6 pt-8 border-t border-gray-900 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-500 text-center sm:text-left">
+      <p>&copy; 1974 &ndash; 2026 Vernon &amp; Vale Leather Footwear Manufacturers Ltd. All Rights Reserved.</p>
+      <div class="flex gap-6">
+        <a href="wholesale.html" class="hover:text-gold transition">Terms of Supply</a>
+        <a href="privacy.html" class="hover:text-gold transition">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button id="back-to-top" class="back-to-top fixed bottom-6 right-6 w-11 h-11 rounded-full bg-gold text-black flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 shadow-xl z-40 hover:bg-gold-hover" aria-label="Return to top">
+    <i class="bi bi-arrow-up text-lg font-bold"></i>
+  </button>
+
+  <!-- Notification Toast Container -->
+  <div id="toastContainer" class="fixed bottom-6 left-6 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/products-data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/3d.js"></script>
+</body>
+</html>

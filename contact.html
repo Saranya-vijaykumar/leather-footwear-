@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+  <!-- Theme Initializer Script -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('vv_theme') || 'dark';
+      if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      const savedDir = localStorage.getItem('vv_dir') || 'ltr';
+      document.documentElement.setAttribute('dir', savedDir);
+    })();
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact &amp; Global Showrooms — Vernon &amp; Vale Footwear Atelier</title>
+  <meta name="description" content="Connect with Vernon & Vale footwear manufacturing desks in Florence, London, and Mumbai. Schedule atelier consultations or submit bespoke business enquiries.">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  
+  <!-- Tailwind CSS CDN + Custom Configuration -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            gold: 'var(--color-gold)',
+            'gold-hover': 'var(--color-gold-hover)',
+            cognac: 'var(--color-cognac)',
+            tan: 'var(--color-tan)',
+            'text-primary': 'var(--text-primary)',
+            'text-secondary': 'var(--text-secondary)',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#FAF7F0] text-[#1C1C1C] dark:bg-[#0F0F0F] dark:text-[#F3ECE0] transition-colors duration-500">
+
+  <!-- Header Navbar matching Sole Craft -->
+    <!-- Premium Sticky Header Navbar -->
+  <header class="fixed top-0 left-0 w-full z-50 py-3 lg:py-5 transition-all duration-300" id="site-header">
+    <div class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 xl:px-10 flex items-center justify-between gap-4 lg:gap-6 xl:gap-8">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-2.5 shrink-0 group">
+        <img src="assets/images/logo.png" alt="Vernon &amp; Vale Logo" class="w-8 h-8 rounded-full border border-gold/40 object-cover shrink-0 group-hover:scale-105 transition-transform">
+        <span class="font-serif text-lg sm:text-xl xl:text-2xl font-bold tracking-wider text-gold-gradient whitespace-nowrap">VERNON &amp; VALE</span>
+      </a>
+
+      <!-- Desktop Navigation links with Dropdowns -->
+      <nav class="hidden lg:flex items-center gap-2.5 xl:gap-5 2xl:gap-7 text-[11px] xl:text-xs uppercase tracking-wider font-bold whitespace-nowrap">
+        <a href="index.html" class="hover:text-gold transition py-1 text-text-primary">Home</a>
+        <a href="home2.html" class="hover:text-gold transition py-1 text-text-primary">Home 2</a>
+        <a href="about.html" class="hover:text-gold transition py-1 text-text-primary">About</a>
+
+        <!-- Products Dropdown -->
+        <a href="products.html" class="hover:text-gold transition py-1 text-text-primary">Products</a>
+
+        <a href="collections.html" class="hover:text-gold transition py-1 text-text-primary">Collections</a>
+        <a href="wholesale.html" class="hover:text-gold transition py-1 text-text-primary">Wholesale</a>
+        <a href="craftsmanship.html" class="hover:text-gold transition py-1 text-text-primary">Craftsmanship</a>
+        <a href="contact.html" class="text-gold active font-semibold py-1">Contact</a>
+      </nav>
+
+      <!-- Right Action Items -->
+      <div class="hidden lg:flex items-center gap-2 xl:gap-3 shrink-0">
+        <!-- Theme Toggle Circular Button -->
+        <button id="theme-toggle" class="theme-circle-btn shrink-0" title="Toggle Theme" aria-label="Toggle Theme">
+          <i class="bi bi-sun-fill text-base xl:text-lg"></i>
+        </button>
+        <!-- Language/RTL Toggle Pill Button -->
+        <button id="lang-toggle" class="rtl-toggle-pill shrink-0 px-2.5 xl:px-3 py-1.5 text-[11px] xl:text-xs" title="Toggle RTL" aria-label="Toggle RTL">
+          <i class="bi bi-arrow-left-right text-xs"></i>
+          <span id="lang-text">RTL</span>
+        </button>
+        <!-- Wholesale B2B Link (Visible on xl screens) -->
+        <a href="wholesale.html" class="hidden xl:inline-flex h-9 xl:h-10 items-center justify-center border border-gold text-gold hover:bg-gold hover:text-black transition px-3.5 xl:px-4 rounded-full text-[11px] xl:text-xs font-bold uppercase tracking-wider shrink-0">
+          B2B Portal
+        </a>
+        <!-- CTA button (Solid Gold Pill) -->
+        <a href="contact.html" class="magnetic-btn h-9 xl:h-10 inline-flex items-center justify-center bg-gold hover:bg-gold-hover text-black text-[11px] xl:text-xs uppercase tracking-wider font-bold px-4 xl:px-5 rounded-full shadow-lg transition shrink-0">
+          Inquire Now
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger button -->
+      <button id="mobile-menu-btn" class="lg:hidden text-text-primary p-2 shrink-0" aria-label="Open Menu">
+        <i class="bi bi-list text-2xl"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay -->
+  <div id="mobile-drawer-overlay" class="fixed inset-0 bg-black/60 z-[9998] hidden opacity-0 transition-opacity duration-300"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="fixed top-0 right-0 h-full w-full sm:w-[85vw] sm:max-w-[380px] bg-[#0F0F0F] text-[#F3ECE0] z-[9999] transform translate-x-full transition-transform duration-300 overflow-y-auto flex flex-col justify-between border-l border-gold/15 shadow-2xl">
+    <div class="p-6 flex items-center justify-between border-b border-gold/15">
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="assets/images/logo.png" alt="Vernon &amp; Vale Logo" class="w-8 h-8 rounded-full border border-gold/30 object-cover">
+        <span class="font-serif text-xl font-bold tracking-wider text-gold-gradient">VERNON &amp; VALE</span>
+      </a>
+      <button id="mobile-drawer-close" class="text-[#F3ECE0] hover:text-gold transition p-2" aria-label="Close menu">
+        <i class="bi bi-x-lg text-xl"></i>
+      </button>
+    </div>
+
+    <!-- Theme & Orientation Toggles -->
+    <div class="px-6 py-4 flex gap-4 border-b border-gold/10 text-xs uppercase tracking-wider font-bold">
+      <button id="mobile-theme-toggle" class="flex-1 py-2.5 px-4 rounded-full border border-gold/20 hover:border-gold bg-[#171717] flex items-center justify-center gap-2 text-[#FAF7F0] transition" title="Toggle Theme">
+        <i class="bi bi-sun-fill text-gold"></i> Theme
+      </button>
+      <button id="mobile-lang-toggle" class="flex-1 py-2.5 px-4 rounded-full border border-gold/20 hover:border-gold bg-[#171717] flex items-center justify-center gap-2 text-[#FAF7F0] transition">
+        <i class="bi bi-arrow-left-right text-gold"></i> <span id="mobile-lang-text">RTL</span>
+      </button>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="flex-1 px-6 py-6 space-y-2 text-sm uppercase tracking-widest font-bold">
+      <a href="index.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Home</a>
+        <a href="home2.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Home 2</a>
+      <a href="about.html" class="block py-3 hover:text-gold transition border-b border-gold/5">About Us</a>
+      <a href="products.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Products</a>
+      <a href="collections.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Collections</a>
+      <a href="wholesale.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Wholesale (B2B)</a>
+      <a href="craftsmanship.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Craftsmanship</a>
+      <a href="contact.html" class="block py-3 text-gold transition border-b border-gold/5">Contact</a>
+      <a href="privacy.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Privacy Policy</a>
+    </nav>
+
+    <!-- Bottom Actions -->
+    <div class="p-6 border-t border-gold/15 bg-[#121212]">
+      <a href="wholesale.html" class="block text-center bg-gold hover:bg-gold-hover text-black py-4 rounded-full text-xs font-bold uppercase tracking-widest transition shadow-lg">
+        B2B Wholesale Inquiry
+      </a>
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero Banner Section matching Sole Craft -->
+    <section class="relative min-h-[75vh] flex items-center justify-center pt-32 pb-20 bg-cover bg-center" style="background-image: url('assets/images/hero_contact_bg.jpg');">
+      <div class="absolute inset-0 bg-black/80 dark:bg-black/85 backdrop-blur-[1px]"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-black/90 via-black/75 to-black/90 pointer-events-none"></div>
+      
+      <div class="container mx-auto px-4 sm:px-6 text-center max-w-3xl relative z-10 page-transition text-white">
+        <span class="text-gold font-serif italic text-base sm:text-lg font-semibold tracking-wider uppercase block mb-3">
+          Institutional Procurement &bull; Global Salons
+        </span>
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-serif font-bold text-white mt-1 mb-6 leading-tight">
+          Atelier Inquiries &amp; Bulk Orders
+        </h1>
+        <div class="w-24 h-0.5 bg-gold mx-auto mb-6"></div>
+        <p class="text-gray-300 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+          Connect directly with our senior cordwainers and export directors. Submit wholesale bulk manufacturing inquiries, request evaluation benchmark samples, or schedule private showroom appointments.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Form & Info Grid matching Sole Craft 1/3 and 2/3 Layout -->
+    <section class="py-20 relative z-10">
+      <div class="container mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-12 items-start">
+        
+        <!-- Left Side: Contact Details Cards (1 Col) -->
+        <div class="space-y-6">
+          
+          <!-- Florence Atelier -->
+          <div class="glass-panel p-6 rounded-2xl flex gap-4 hover-lift border border-gold/15">
+            <div class="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center text-gold shrink-0">
+              <i class="bi bi-geo-alt-fill text-lg"></i>
+            </div>
+            <div>
+              <h4 class="font-serif font-bold text-lg text-text-primary mb-1">Florence Atelier</h4>
+              <p class="text-xs text-text-secondary leading-relaxed">
+                Via San Niccolò 48, 50125 Firenze, Tuscany, Italy<br>
+                <span class="text-[11px] text-gold font-mono mt-1 block">Tannery &amp; Cordwaining Hub</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- London Mayfair -->
+          <div class="glass-panel p-6 rounded-2xl flex gap-4 hover-lift border border-gold/15">
+            <div class="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center text-gold shrink-0">
+              <i class="bi bi-building text-lg"></i>
+            </div>
+            <div>
+              <h4 class="font-serif font-bold text-lg text-text-primary mb-1">London Mayfair</h4>
+              <p class="text-xs text-text-secondary leading-relaxed">
+                14 Savile Row, Mayfair, London W1S 3JN, UK<br>
+                <span class="text-[11px] text-gold font-mono mt-1 block">Private Client Showroom</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Phone & Direct Desk -->
+          <div class="glass-panel p-6 rounded-2xl flex gap-4 hover-lift border border-gold/15">
+            <div class="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center text-gold shrink-0">
+              <i class="bi bi-telephone-fill text-lg"></i>
+            </div>
+            <div>
+              <h4 class="font-serif font-bold text-lg text-text-primary mb-1">Direct Line</h4>
+              <p class="text-xs text-text-secondary leading-relaxed">
+                <a href="tel:+390552491870" class="hover:text-gold transition font-mono">+39 055 249 1870 (IT)</a><br>
+                <a href="tel:+442079460812" class="hover:text-gold transition font-mono">+44 (0) 20 7946 0812 (UK)</a>
+              </p>
+            </div>
+          </div>
+
+          <!-- Direct Email -->
+          <div class="glass-panel p-6 rounded-2xl flex gap-4 hover-lift border border-gold/15">
+            <div class="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center text-gold shrink-0">
+              <i class="bi bi-envelope-fill text-lg"></i>
+            </div>
+            <div>
+              <h4 class="font-serif font-bold text-lg text-text-primary mb-1">Direct Email</h4>
+              <p class="text-xs text-text-secondary leading-relaxed">
+                <a href="mailto:firenze@vernonvale-craft.com" class="hover:text-gold transition">firenze@vernonvale-craft.com</a><br>
+                <a href="mailto:wholesale@vernonvale-craft.com" class="hover:text-gold transition text-gold font-semibold">wholesale@vernonvale-craft.com</a>
+              </p>
+            </div>
+          </div>
+
+          <!-- Embedded Map -->
+          <div class="glass-panel rounded-2xl h-52 overflow-hidden relative border border-gold/15 shadow-xl">
+            <iframe 
+              class="w-full h-full rounded-2xl border-0" 
+              src="https://maps.google.com/maps?q=Via%20San%20Niccol%C3%B2%2048,%20Firenze&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Florence Atelier Location"
+            ></iframe>
+          </div>
+
+        </div>
+
+                <!-- Right Side: Interactive Forms with Tabs (2 Cols) -->
+        <div class="lg:col-span-2">
+          
+          <!-- Mode Tabs: Bulk Order vs General Showroom -->
+          <div class="flex items-center gap-2 sm:gap-3 mb-6 p-1.5 glass-panel rounded-full border border-gold/25 max-w-lg">
+            <button id="tabBulkBtn" type="button" class="flex-1 py-2.5 px-4 rounded-full text-xs font-bold uppercase tracking-wider transition bg-gold text-black shadow-md flex items-center justify-center gap-2">
+              <i class="bi bi-box-seam-fill"></i>
+              <span>Bulk Order / OEM Form</span>
+            </button>
+            <button id="tabGeneralBtn" type="button" class="flex-1 py-2.5 px-4 rounded-full text-xs font-bold uppercase tracking-wider transition text-text-secondary hover:text-gold flex items-center justify-center gap-2">
+              <i class="bi bi-chat-dots-fill"></i>
+              <span>General / Showroom</span>
+            </button>
+          </div>
+
+          <!-- 1. BULK MANUFACTURING ENQUIRY FORM (Craft-Focused & Deeply Detailed) -->
+          <div id="bulkFormContainer" class="glass-panel p-8 sm:p-10 rounded-2xl border border-gold/25 shadow-2xl relative">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-gold/15 pb-5 mb-8">
+              <div>
+                <span class="text-gold text-[10px] font-bold uppercase tracking-widest block mb-1">Direct Factory Procurement</span>
+                <h3 class="text-2xl sm:text-3xl font-serif font-bold text-text-primary">Bulk Footwear Manufacturing Enquiry</h3>
+              </div>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[11px] font-mono shrink-0">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Production Slots Open
+              </span>
+            </div>
+
+            <p class="text-xs text-text-secondary mb-8 leading-relaxed">
+              Every production run is overseen by a designated Master Cordwainer and export account director. We accommodate private label collections, OEM bespoke lasts, and boutique wholesale orders from 25 pairs to 5,000+ pairs per season.
+            </p>
+
+            <form id="bulkEnquiryForm" novalidate class="space-y-6">
+              
+              <!-- Company & Representative Details -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-xs uppercase font-bold text-text-secondary mb-2" for="bulkCompany">Company / Brand Label *</label>
+                  <input type="text" id="bulkCompany" class="w-full bg-[#FAF7F0] dark:bg-[#171717] border border-gold/25 rounded-lg py-3 px-4 text-xs text-text-primary focus:outline-none focus:border-gold" placeholder="e.g. Sartorial Savile Row Ltd" required>
+                </div>
+                <div>
+                  <label class="block text-xs uppercase font-bold text-text-secondary mb-2" for="bulkRepresentative">Authorized Representative *</label>
+                  <input type="text" id="bulkRepresentative" class="w-full bg-[#FAF7F0] dark:bg-[#171717] border border-gold/25 rounded-lg py-3 px-4 text-xs text-text-primary focus:outline-none focus:border-gold" placeholder="e.g. Arthur Sterling (Buying Director)" required>
+                </div>
+              </div>
+
+              <!-- Contact Coordinates -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <div>
+                  <label class="block text-xs uppercase font-bold text-text-secondary mb-2" for="bulkEmail">Corporate Email *</label>
+                  <input type="email" id="bulkEmail" class="w-full bg-[#FAF7F0] dark:bg-[#171717] border border-gold/25 rounded-lg py-3 px-4 text-xs text-text-primary focus:outline-none focus:border-gold" placeholder="procurement@brand.com" required>
+                </div>
+                <div>
+                  <label class="block text-xs uppercase font-bold text-text-secondary mb-2" for="bulkPhone">Phone / WhatsApp *</label>
+                  <input type="tel" id="bulkPhone" class="w-full bg-[#FAF7F0] dark:bg-[#171717] border border-gold/25 rounded-lg py-3 px-4 text-xs text-text-primary focus:outline-none focus:border-gold" placeholder="+44 20 7946 0812" required>
+                </div>
+                <div>
+                  <label class="block text-xs uppercase font-bold text-text-secondary mb-2" for="bulkCountry">Destination Country / Port *</label>
+                  <input type="text" id="bulkCountry" class="w-full bg-[#FAF7F0] dark:bg-[#171717] border border-gold/25 rounded-lg py-3 px-4 text-xs text-text-primary focus:outline-none focus:border-gold" placeholder="e.g. United Kingdom (London Port)" required>
+                </div>
+              </div>
+
+              <!-- Silhouette & Volume Tier -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-xs uppercase font-bold text-text-secondary mb-2" for="bulkSilhouette">Target Footwear Silhouette *</label>
+                  <select id="bulkSilhouette" class="w-full bg-[#FAF7F0] dark:bg-[#171717] border border-gold/25 rounded-lg py-3 px-4 text-xs text-text-primary focus:outline-none focus:border-gold">
+                    <option value="formal">Formal Dress Shoes (Captoe Oxfords, Derbies, Monkstraps)</option>
+                    <option value="boots">Heritage Boots (Goodyear Chelsea, Field Boots, Service Boots)</option>
+                    <option value="loafers">Mediterranean Loafers (Penny, Tassel, Belgian Slip-ons)</option>
+                    <option value="patina">Artisanal Patina Wholecuts (Hand-Dyed Museum Crust)</option>
+                    <option value="bespoke">Custom Bespoke Last &amp; Mixed Collection Run</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-xs uppercase font-bold text-text-secondary mb-2" for="bulkVolume">Target Order Run / MOQ Tier *</label>
+                  <select id="bulkVolume" class="w-full bg-[#FAF7F0] dark:bg-[#171717] border border-gold/25 rounded-lg py-3 px-4 text-xs text-text-primary focus:outline-none focus:border-gold">
+                    <option value="25">Tier I &bull; Pilot Atelier Batch (25 - 99 Pairs)</option>
+                    <option value="100" selected>Tier II &bull; Established Label Run (100 - 499 Pairs) - Best Value</option>
+                    <option value="500">Tier III &bull; Department Store Run (500 - 1,999 Pairs)</option>
+                    <option value="2000">Tier IV &bull; Enterprise Global Contract (2,000+ Pairs)</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Leather Spec & Construction Method -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-xs uppercase font-bold text-text-secondary mb-2" for="bulkLeather">Upper Leather Grade &amp; Origin *</label>
+                  <select id="bulkLeather" class="w-full bg-[#FAF7F0] dark:bg-[#171717] border border-gold/25 rounded-lg py-3 px-4 text-xs text-text-primary focus:outline-none focus:border-gold">
+                    <option value="boxcalf">French Full-Grain Box Calf (Tanneries d'Annonay)</option>
+                    <option value="tuscan">Tuscan Vegetable Crust Leather (Conceria Walpier)</option>
+                    <option value="suede">CF Stead Janus Calf Suede (Leeds, England)</option>
+                    <option value="cordovan">Genuine Horween Shell Cordovan (Chicago, USA)</option>
+                    <option value="custom">Client-Supplied Proprietary Leather / Custom Dye</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-xs uppercase font-bold text-text-secondary mb-2" for="bulkConstruction">Cordwaining Construction Engineering *</label>
+                  <select id="bulkConstruction" class="w-full bg-[#FAF7F0] dark:bg-[#171717] border border-gold/25 rounded-lg py-3 px-4 text-xs text-text-primary focus:outline-none focus:border-gold">
+                    <option value="goodyear">Goodyear Welted (360° Gemming &amp; Cork Infill)</option>
+                    <option value="blake">Blake Rapid (Midsole Stitched &amp; Resolable)</option>
+                    <option value="norwegian">Norwegian Tirolese (Braided Storm Welt - 100% Waterproof)</option>
+                    <option value="bologna">Bologna Tubular Saccotto (Barefoot Flex &amp; Softness)</option>
+                    <option value="handwelted">100% Hand-Welted with Lemonwood Pegging</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Private Label Branding Options (Multi-select Checkboxes) -->
+              <div>
+                <label class="block text-xs uppercase font-bold text-text-secondary mb-3">Private Label Customization Protocols</label>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                  <label class="flex items-center gap-2.5 p-3 rounded-lg border border-gold/20 bg-white/5 cursor-pointer hover:border-gold transition">
+                    <input type="checkbox" id="brandDeboss" checked class="accent-gold rounded">
+                    <span>Heat-Embossed Sockliner &amp; Tongue Monogram</span>
+                  </label>
+                  <label class="flex items-center gap-2.5 p-3 rounded-lg border border-gold/20 bg-white/5 cursor-pointer hover:border-gold transition">
+                    <input type="checkbox" id="brandOutsole" checked class="accent-gold rounded">
+                    <span>Laser-Engraved Leather Waist &amp; Brass Toe Tap</span>
+                  </label>
+                  <label class="flex items-center gap-2.5 p-3 rounded-lg border border-gold/20 bg-white/5 cursor-pointer hover:border-gold transition">
+                    <input type="checkbox" id="brandLast" class="accent-gold rounded">
+                    <span>Bespoke Carved Beechwood Production Lasts</span>
+                  </label>
+                  <label class="flex items-center gap-2.5 p-3 rounded-lg border border-gold/20 bg-white/5 cursor-pointer hover:border-gold transition">
+                    <input type="checkbox" id="brandPackaging" checked class="accent-gold rounded">
+                    <span>Rigid Magnetic Luxury Box &amp; Embroidered Dust Bags</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Real-Time Volume & Lead-Time Estimator Widget -->
+              <div class="p-5 rounded-xl border border-gold/30 bg-gold/5 space-y-3">
+                <div class="flex items-center justify-between text-xs font-bold text-gold uppercase tracking-wider">
+                  <span class="flex items-center gap-1.5"><i class="bi bi-calculator"></i> Real-Time Order Run Estimator</span>
+                  <span class="text-[10px] text-text-secondary lowercase">factory floor baseline</span>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs pt-1">
+                  <div>
+                    <span class="text-text-secondary block">Estimated Unit Cost:</span>
+                    <strong id="estimateUnitCost" class="text-base text-gold font-serif font-bold">$135 - $155 / pair</strong>
+                  </div>
+                  <div>
+                    <span class="text-text-secondary block">Benchmark Sample:</span>
+                    <strong class="text-base text-text-primary font-serif font-bold">14 Calendar Days</strong>
+                  </div>
+                  <div>
+                    <span class="text-text-secondary block">Bulk Production Slot:</span>
+                    <strong id="estimateLeadTime" class="text-base text-text-primary font-serif font-bold">4 - 6 Weeks Dispatch</strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tech Pack / Design File Drag & Drop Simulation -->
+              <div>
+                <label class="block text-xs uppercase font-bold text-text-secondary mb-2">Technical Specification / Tech Pack Upload (Optional)</label>
+                <div id="techPackDropzone" class="border-2 border-dashed border-gold/30 rounded-xl p-6 text-center hover:border-gold transition cursor-pointer bg-white/5">
+                  <i class="bi bi-cloud-arrow-up-fill text-3xl text-gold mb-2 block"></i>
+                  <span class="text-xs text-text-primary font-bold block mb-1">Click to attach Tech Pack or Drag CAD / PDF files</span>
+                  <span class="text-[11px] text-text-secondary block">Supports PDF, AI, STEP, CAD, JPG (Max 50MB)</span>
+                  <div id="techPackFileDisplay" class="hidden mt-3 text-xs font-mono text-emerald-400 bg-emerald-950/40 py-1.5 px-3 rounded-md border border-emerald-500/30">
+                    <i class="bi bi-file-earmark-check-fill"></i> <span id="techPackFileName">specification_dossier.pdf</span> (14.2 MB) attached
+                  </div>
+                </div>
+              </div>
+
+              <!-- Custom Notes -->
+              <div>
+                <label class="block text-xs uppercase font-bold text-text-secondary mb-2" for="bulkNotes">Atelier Notes &amp; Specification Nuances</label>
+                <textarea id="bulkNotes" rows="3" class="w-full bg-[#FAF7F0] dark:bg-[#171717] border border-gold/25 rounded-lg py-3 px-4 text-xs text-text-primary focus:outline-none focus:border-gold" placeholder="Specify last profile preferences, channel stitch concealments, arch support metrics, or custom edge burnishing..."></textarea>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="pt-2">
+                <button type="submit" class="w-full bg-gold hover:bg-gold-hover text-black py-4 rounded-full font-bold uppercase tracking-widest text-xs transition shadow-xl flex items-center justify-center gap-2 hover-lift">
+                  <span>Submit Wholesale Manufacturing Dossier</span>
+                  <i class="bi bi-arrow-right"></i>
+                </button>
+              </div>
+
+              <div class="flex items-center justify-center gap-4 text-[11px] text-text-secondary pt-2">
+                <span class="flex items-center gap-1"><i class="bi bi-shield-lock-fill text-gold"></i> Non-Disclosure Agreement Governed</span>
+                <span>&bull;</span>
+                <span class="flex items-center gap-1"><i class="bi bi-clock-history text-gold"></i> 4-Hour Response Commitment</span>
+              </div>
+            </form>
+          </div>
+
+          <!-- 2. GENERAL INQUIRY & SHOWROOM FORM (Hidden by Default) -->
+          <div id="generalFormContainer" class="hidden glass-panel p-8 sm:p-10 rounded-2xl border border-gold/25 shadow-2xl relative">
+            <h3 class="text-2xl sm:text-3xl font-serif font-bold text-text-primary mb-2">Showroom &amp; General Inquiry</h3>
+            <p class="text-xs text-text-secondary mb-8">
+              Schedule an atelier tour in Florence or Savile Row Mayfair, or submit bespoke footwear questions.
+            </p>
+            
+            <form id="generalContactForm" novalidate class="space-y-6">
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-xs uppercase font-bold text-text-secondary mb-2" for="contactName">Full Name *</label>
+                  <input type="text" id="contactName" class="w-full bg-[#FAF7F0] dark:bg-[#171717] border border-gold/20 rounded-lg py-3 px-4 text-xs text-text-primary focus:outline-none focus:border-gold" placeholder="Lord Alistair Sterling" required>
+                </div>
+                <div>
+                  <label class="block text-xs uppercase font-bold text-text-secondary mb-2" for="contactEmail">Email Address *</label>
+                  <input type="email" id="contactEmail" class="w-full bg-[#FAF7F0] dark:bg-[#171717] border border-gold/20 rounded-lg py-3 px-4 text-xs text-text-primary focus:outline-none focus:border-gold" placeholder="a.sterling@house.com" required>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs uppercase font-bold text-text-secondary mb-2" for="contactSubject">Inquiry Department / Subject *</label>
+                <select id="contactSubject" class="w-full bg-[#FAF7F0] dark:bg-[#171717] border border-gold/20 rounded-lg py-3 px-4 text-xs text-text-primary focus:outline-none focus:border-gold">
+                  <option value="Showroom Appointment">Schedule Showroom / Workshop Appointment (Florence or London)</option>
+                  <option value="Bespoke Sample Order">Individual Bespoke Consultation Request</option>
+                  <option value="Press & Media">Press, Editorial &amp; Media Inquiries</option>
+                  <option value="Raw Leather Sourcing">Tannery &amp; Sourcing Inquiries</option>
+                  <option value="General Question">General Craftsmanship Question</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs uppercase font-bold text-text-secondary mb-2" for="contactMessage">Your Message *</label>
+                <textarea id="contactMessage" rows="5" class="w-full bg-[#FAF7F0] dark:bg-[#171717] border border-gold/20 rounded-lg py-3 px-4 text-xs text-text-primary focus:outline-none focus:border-gold" placeholder="Please elaborate on your requirements, collection timelines, or bespoke last specifications..." required></textarea>
+              </div>
+
+              <div class="pt-2">
+                <button type="submit" class="w-full bg-gold hover:bg-gold-hover text-black py-4 rounded-full font-bold uppercase tracking-wider text-xs transition shadow-lg flex items-center justify-center gap-2 hover-lift">
+                  <span>Send Message</span>
+                  <i class="bi bi-arrow-right"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+        <!-- ATELIER BULK PROCUREMENT PROTOCOL & QUALITY GATES -->
+    <section class="py-24 border-t border-gold/15 relative z-10 bg-[#FAF7F0] dark:bg-[#0C0C0C]">
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="text-gold font-serif italic text-lg font-semibold uppercase tracking-wider">Manufacturing Governance</span>
+          <h2 class="text-3xl sm:text-5xl font-serif font-bold text-text-primary mt-2">Bulk Procurement Protocol</h2>
+          <div class="w-20 h-0.5 bg-gold mx-auto mt-4"></div>
+          <p class="text-text-secondary text-xs sm:text-sm mt-4">
+            A transparent, audit-ready 5-phase cordwaining workflow engineered for global luxury brands, bespoke bootmakers, and retail department houses.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          <!-- Step 1 -->
+          <div class="glass-panel p-6 rounded-2xl border border-gold/15 hover-lift flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-full bg-gold/15 text-gold flex items-center justify-center font-serif font-bold text-base mb-4 border border-gold/30">
+                01
+              </div>
+              <span class="text-[10px] text-gold uppercase tracking-widest font-mono block mb-1">48 Hours</span>
+              <h4 class="font-serif font-bold text-text-primary text-base mb-2">Tech Pack Review &amp; Last Ergonomics</h4>
+              <p class="text-xs text-text-secondary leading-relaxed">
+                Analysis of upper patterns, featherline pitch, ball girth, and anatomical toe-spring specifications.
+              </p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-gold/10 text-[11px] text-text-secondary font-mono">
+              Deliverable: CAD Blueprint
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="glass-panel p-6 rounded-2xl border border-gold/15 hover-lift flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-full bg-gold/15 text-gold flex items-center justify-center font-serif font-bold text-base mb-4 border border-gold/30">
+                02
+              </div>
+              <span class="text-[10px] text-gold uppercase tracking-widest font-mono block mb-1">14 Calendar Days</span>
+              <h4 class="font-serif font-bold text-text-primary text-base mb-2">Benchmark Sample Prototyping</h4>
+              <p class="text-xs text-text-secondary leading-relaxed">
+                Individual master shoe carved on test lasts in your exact specified hide, welt density, and edge wax tone.
+              </p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-gold/10 text-[11px] text-text-secondary font-mono">
+              Deliverable: Evaluation Pair
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="glass-panel p-6 rounded-2xl border border-gold/15 hover-lift flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-full bg-gold/15 text-gold flex items-center justify-center font-serif font-bold text-base mb-4 border border-gold/30">
+                03
+              </div>
+              <span class="text-[10px] text-gold uppercase tracking-widest font-mono block mb-1">5-7 Business Days</span>
+              <h4 class="font-serif font-bold text-text-primary text-base mb-2">Leather Hide Batch Clicking</h4>
+              <p class="text-xs text-text-secondary leading-relaxed">
+                A-grade hide allocation with directional grain matching and flaw eradication across left and right pairs.
+              </p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-gold/10 text-[11px] text-text-secondary font-mono">
+              Deliverable: Certified Hides
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="glass-panel p-6 rounded-2xl border border-gold/15 hover-lift flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-full bg-gold/15 text-gold flex items-center justify-center font-serif font-bold text-base mb-4 border border-gold/30">
+                04
+              </div>
+              <span class="text-[10px] text-gold uppercase tracking-widest font-mono block mb-1">3-5 Weeks</span>
+              <h4 class="font-serif font-bold text-text-primary text-base mb-2">Artisanal Welted Production</h4>
+              <p class="text-xs text-text-secondary leading-relaxed">
+                Goodyear inseam cordwaining, hot cork infilling, tempered steel shanks, and hand-rubbed carnauba finishing.
+              </p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-gold/10 text-[11px] text-text-secondary font-mono">
+              Deliverable: Finished Pairs
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="glass-panel p-6 rounded-2xl border border-gold/15 hover-lift flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-full bg-gold/15 text-gold flex items-center justify-center font-serif font-bold text-base mb-4 border border-gold/30">
+                05
+              </div>
+              <span class="text-[10px] text-gold uppercase tracking-widest font-mono block mb-1">Bonded Freight</span>
+              <h4 class="font-serif font-bold text-text-primary text-base mb-2">LWG Audit &amp; Global Customs Dispatch</h4>
+              <p class="text-xs text-text-secondary leading-relaxed">
+                200-point inspection protocol, silica vapor barrier packaging, and bonded door-to-door air/sea transport.
+              </p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-gold/10 text-[11px] text-text-secondary font-mono">
+              Deliverable: Cleared Cargo
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BULK FOOTWEAR PROCUREMENT FAQ ACCORDION -->
+    <section class="py-24 border-t border-gold/15 relative z-10 bg-[#F3ECE0] dark:bg-[#171717]">
+      <div class="container mx-auto px-4 sm:px-6 max-w-4xl">
+        <div class="text-center mb-16">
+          <span class="text-gold font-serif italic text-lg font-semibold uppercase tracking-wider">Institutional Insights</span>
+          <h2 class="text-3xl sm:text-5xl font-serif font-bold text-text-primary mt-2">Bulk Footwear Procurement FAQ</h2>
+          <div class="w-20 h-0.5 bg-gold mx-auto mt-4"></div>
+        </div>
+
+        <div class="space-y-4">
+          <!-- FAQ 1 -->
+          <div class="glass-panel p-6 rounded-xl border border-gold/15">
+            <h4 class="font-serif font-bold text-text-primary text-base flex items-center justify-between cursor-pointer">
+              <span>What is the minimum commercial order quantity (MOQ) for custom private label production?</span>
+              <i class="bi bi-chevron-down text-gold text-xs"></i>
+            </h4>
+            <p class="text-xs text-text-secondary leading-relaxed mt-3 pt-3 border-t border-gold/10">
+              Our flexible Tier 1 entry run starts at just 25 pairs per model across assorted sizes (EU 39–46 / US 6–13). This allows emerging luxury houses and bespoke boutiques to launch capsule collections with zero excess inventory waste. Larger scale runs of 100 to 2,000+ pairs access significant volume tier discounts.
+            </p>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="glass-panel p-6 rounded-xl border border-gold/15">
+            <h4 class="font-serif font-bold text-text-primary text-base flex items-center justify-between cursor-pointer">
+              <span>How does Vernon &amp; Vale protect our proprietary shoe lasts and design copyright?</span>
+              <i class="bi bi-chevron-down text-gold text-xs"></i>
+            </h4>
+            <p class="text-xs text-text-secondary leading-relaxed mt-3 pt-3 border-t border-gold/10">
+              Every B2B collaboration is protected under a strict bilateral Non-Disclosure Agreement (NDA) governed under Italian and International Commercial Law. Your customized lasts are numbered, securely archived in our private vault, and never shared or repurposed for any other brand.
+            </p>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="glass-panel p-6 rounded-xl border border-gold/15">
+            <h4 class="font-serif font-bold text-text-primary text-base flex items-center justify-between cursor-pointer">
+              <span>What is the turnaround time for benchmark evaluation samples?</span>
+              <i class="bi bi-chevron-down text-gold text-xs"></i>
+            </h4>
+            <p class="text-xs text-text-secondary leading-relaxed mt-3 pt-3 border-t border-gold/10">
+              Benchmark prototypes are dispatched within 14 calendar days from technical blueprint sign-off. We ship evaluation pairs via express air courier directly to your design studio for wear-testing, leather patina evaluation, and fit approval before batch production begins.
+            </p>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="glass-panel p-6 rounded-xl border border-gold/15">
+            <h4 class="font-serif font-bold text-text-primary text-base flex items-center justify-between cursor-pointer">
+              <span>What international certifications accompany our bulk shipments?</span>
+              <i class="bi bi-chevron-down text-gold text-xs"></i>
+            </h4>
+            <p class="text-xs text-text-secondary leading-relaxed mt-3 pt-3 border-t border-gold/10">
+              Every production crate includes certified Leather Working Group (LWG) Gold environmental audit certificates, EU REACH chemical compliance declarations, and authenticated Certificates of Origin verifying authentic Tuscan cordwaining origin.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GLOBAL SHOWROOMS & REGIONAL COMMERCIAL REPRESENTATIVES -->
+    <section class="py-24 bg-[#F3ECE0] dark:bg-[#171717] border-t border-gold/15 relative z-10">
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="text-gold font-serif italic text-lg font-semibold uppercase tracking-wider">International Presence</span>
+          <h2 class="text-3xl sm:text-5xl font-serif font-bold text-text-primary mt-2">Global Showrooms &amp; Trade Salons</h2>
+          <div class="w-20 h-0.5 bg-gold mx-auto mt-4"></div>
+          <p class="text-text-secondary text-sm mt-4">
+            Private label executives, bespoke tailors, and luxury buyers are welcome to schedule private consultations with our commercial directors.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Florence HQ -->
+          <div class="glass-panel p-6 rounded-2xl hover-lift">
+            <div class="h-44 rounded-xl overflow-hidden mb-4">
+              <img src="assets/images/showroom_florence_atelier.jpg" class="w-full h-full object-cover hover:scale-105 transition duration-500" alt="Florence Master Atelier">
+            </div>
+            <span class="text-xs font-mono text-gold uppercase block mb-1">HQ &amp; Manufacturing Hub</span>
+            <h3 class="font-serif font-bold text-lg text-text-primary mb-1">Florence Master Atelier</h3>
+            <p class="text-xs text-text-secondary leading-relaxed mb-3">Via San Niccolò 48, 50125 Firenze, Italy</p>
+            <span class="text-xs text-gold font-mono font-semibold">+39 055 249 1870</span>
+          </div>
+
+          <!-- London Mayfair -->
+          <div class="glass-panel p-6 rounded-2xl hover-lift">
+            <div class="h-44 rounded-xl overflow-hidden mb-4">
+              <img src="assets/images/showroom_london_mayfair.jpg" class="w-full h-full object-cover hover:scale-105 transition duration-500" alt="London Mayfair Showroom">
+            </div>
+            <span class="text-xs font-mono text-gold uppercase block mb-1">UK &amp; Commonwealth Salon</span>
+            <h3 class="font-serif font-bold text-lg text-text-primary mb-1">London Mayfair Suite</h3>
+            <p class="text-xs text-text-secondary leading-relaxed mb-3">14 Savile Row, Mayfair, London W1S 3JN</p>
+            <span class="text-xs text-gold font-mono font-semibold">+44 (0) 20 7946 0812</span>
+          </div>
+
+          <!-- New York -->
+          <div class="glass-panel p-6 rounded-2xl hover-lift">
+            <div class="h-44 rounded-xl overflow-hidden mb-4">
+              <img src="assets/images/showroom_newyork_madison.jpg" class="w-full h-full object-cover hover:scale-105 transition duration-500" alt="New York Madison Ave Trade Salon">
+            </div>
+            <span class="text-xs font-mono text-gold uppercase block mb-1">North America Desk</span>
+            <h3 class="font-serif font-bold text-lg text-text-primary mb-1">New York Trade Suite</h3>
+            <p class="text-xs text-text-secondary leading-relaxed mb-3">650 Madison Ave, New York, NY 10022</p>
+            <span class="text-xs text-gold font-mono font-semibold">+1 (212) 555-0198</span>
+          </div>
+
+          <!-- Tokyo Ginza -->
+          <div class="glass-panel p-6 rounded-2xl hover-lift">
+            <div class="h-44 rounded-xl overflow-hidden mb-4">
+              <img src="assets/images/showroom_tokyo_ginza.jpg" class="w-full h-full object-cover hover:scale-105 transition duration-500" alt="Tokyo Ginza B2B Salon">
+            </div>
+            <span class="text-xs font-mono text-gold uppercase block mb-1">Asia-Pacific Liaison</span>
+            <h3 class="font-serif font-bold text-lg text-text-primary mb-1">Tokyo Ginza Salon</h3>
+            <p class="text-xs text-text-secondary leading-relaxed mb-3">6-10-1 Ginza, Chuo-ku, Tokyo 104-0061</p>
+            <span class="text-xs text-gold font-mono font-semibold">+81 3 5555 0142</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Standard Stylist Footer matching Sole Craft -->
+    <!-- Standard Stylist Footer -->
+  <footer class="bg-[#0C0C0C] text-[#FAF7F0] pt-16 sm:pt-20 pb-8 font-sans border-t border-gold/15 relative z-10 w-full">
+    <div class="container mx-auto px-4 sm:px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[2.3fr_2.1fr_1.1fr_1.4fr_1.1fr_2fr] gap-8 lg:gap-6 xl:gap-8 mb-16 text-left items-start">
+      
+      <!-- Column 1: Brand & Socials -->
+      <div class="space-y-4">
+        <a href="index.html" class="flex items-center gap-2">
+          <img src="assets/images/logo.png" alt="Vernon &amp; Vale Logo" class="w-8 h-8 rounded-full border border-gold/30 object-cover shrink-0">
+          <span class="font-serif text-xl font-bold tracking-wider text-gold-gradient">VERNON &amp; VALE</span>
+        </a>
+        <p class="text-xs text-[#A69D90] leading-relaxed">
+          Atelier hubs and trade salons in Florence, London Mayfair, New York Madison Avenue, and Tokyo Ginza.
+        </p>
+        <div class="flex items-center gap-2.5 pt-2">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-[#1A1A1A] hover:bg-gold hover:text-black flex items-center justify-center transition border border-gold/20 text-[#FAF7F0] text-sm" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-[#1A1A1A] hover:bg-gold hover:text-black flex items-center justify-center transition border border-gold/20 text-[#FAF7F0] text-sm" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-[#1A1A1A] hover:bg-gold hover:text-black flex items-center justify-center transition border border-gold/20 text-[#FAF7F0] text-sm" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
+        </div>
+      </div>
+
+      <!-- Column 2: Specific Newsletter / Notification -->
+      <div class="space-y-4">
+        <h4 class="font-serif text-base font-bold text-gold tracking-wide">Showroom Access</h4>
+        <p class="text-xs text-[#A69D90] leading-relaxed">
+          Direct liaison with our master lastmakers and wholesale commercial directors worldwide.
+        </p>
+        <form class="newsletter-form relative flex items-center pt-1" onsubmit="event.preventDefault(); alert('Subscribed to Vernon &amp; Vale Atelier updates!'); this.reset();">
+          <input type="email" placeholder="trade.buyer@brand.com" required class="w-full bg-[#171717] border border-gold/20 rounded-full py-2.5 pl-4 pr-12 text-xs text-[#FAF7F0] focus:outline-none focus:border-gold transition">
+          <button type="submit" class="absolute right-1 w-8 h-8 rounded-full bg-gold text-black flex items-center justify-center hover:bg-gold-hover transition">
+            <i class="bi bi-arrow-right text-xs"></i>
+          </button>
+        </form>
+      </div>
+
+      <!-- Column 3: Navigation -->
+      <div class="space-y-4">
+        <h4 class="font-serif text-base font-bold text-gold tracking-wide">Explore</h4>
+        <ul class="space-y-2 text-xs text-[#A69D90]">
+          <li><a href="index.html" class="hover:text-gold transition">Home</a></li>
+          <li><a href="home2.html" class="hover:text-gold transition">Home 2 (Atelier)</a></li>
+          <li><a href="about.html" class="hover:text-gold transition">About Us</a></li>
+          <li><a href="products.html" class="hover:text-gold transition">Products</a></li>
+          <li><a href="collections.html" class="hover:text-gold transition">Collections</a></li>
+          <li><a href="craftsmanship.html" class="hover:text-gold transition">Craftsmanship</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Manufacturing -->
+      <div class="space-y-4">
+        <h4 class="font-serif text-base font-bold text-gold tracking-wide">Benchcraft</h4>
+        <ul class="space-y-2 text-xs text-[#A69D90]">
+          <li><a href="products.html?category=oxfords" class="hover:text-gold transition">Captoe Oxfords</a></li>
+          <li><a href="products.html?category=boots" class="hover:text-gold transition">Chelsea Boots</a></li>
+          <li><a href="products.html?category=loafers" class="hover:text-gold transition">Penny Loafers</a></li>
+          <li><a href="wholesale.html" class="hover:text-gold transition">Private Label OEM</a></li>
+          <li><a href="craftsmanship.html" class="hover:text-gold transition">Goodyear Welt</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 5: Governance -->
+      <div class="space-y-4">
+        <h4 class="font-serif text-base font-bold text-gold tracking-wide">Governance</h4>
+        <ul class="space-y-2 text-xs text-[#A69D90]">
+          <li><a href="wholesale.html" class="hover:text-gold transition">Supply Terms</a></li>
+          <li><a href="privacy.html" class="hover:text-gold transition">Privacy Policy</a></li>
+          <li><a href="privacy.html" class="hover:text-gold transition">NDA Secrecy</a></li>
+          <li><a href="404.html" class="hover:text-gold transition">404 Error</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 6: Atelier Contact Info -->
+      <div class="space-y-4">
+        <h4 class="font-serif text-base font-bold text-gold tracking-wide">Florence Atelier</h4>
+        <div class="space-y-2 text-xs text-[#A69D90]">
+          <p class="flex items-start gap-2">
+            <i class="bi bi-geo-alt text-gold shrink-0"></i>
+            <span>Via San Niccolò 48, 50125 Firenze, Italy</span>
+          </p>
+          <p class="flex items-center gap-2">
+            <i class="bi bi-telephone text-gold shrink-0"></i>
+            <span>+44 (0) 20 7946 0812</span>
+          </p>
+          <p class="flex items-center gap-2">
+            <i class="bi bi-envelope text-gold shrink-0"></i>
+            <a href="mailto:wholesale@vernonvale-craft.com" class="hover:text-gold transition">wholesale@vernonvale-craft.com</a>
+          </p>
+          <p class="flex items-center gap-2">
+            <i class="bi bi-clock text-gold shrink-0"></i>
+            <span>Mon–Fri: 8:30 AM – 6:30 PM CET</span>
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="container mx-auto px-4 sm:px-6 pt-8 border-t border-gold/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-[#8A8175] text-center sm:text-left">
+      <p>&copy; 1974 &ndash; 2026 Vernon &amp; Vale Leather Footwear Manufacturers Ltd. All Rights Reserved.</p>
+      <div class="flex gap-6">
+        <a href="wholesale.html" class="hover:text-gold transition">Terms of Supply</a>
+        <a href="privacy.html" class="hover:text-gold transition">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="fixed bottom-6 right-6 w-11 h-11 rounded-full bg-gold text-black flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 shadow-xl z-40 hover:bg-gold-hover" aria-label="Back to top">
+    <i class="bi bi-arrow-up text-lg font-bold"></i>
+  </button>
+
+  <!-- Notification Toast Container -->
+  <div id="toastContainer" class="fixed bottom-6 left-6 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/forms.js"></script>
+</body>
+</html>

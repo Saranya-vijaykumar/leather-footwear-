@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+  <!-- Theme Initializer Script -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('vv_theme') || 'dark';
+      if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      const savedDir = localStorage.getItem('vv_dir') || 'ltr';
+      document.documentElement.setAttribute('dir', savedDir);
+    })();
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Art of Master Footwear Craftsmanship &amp; Construction | Vernon &amp; Vale</title>
+  <meta name="description" content="Explore the 6-stage artisanal shoemaking process at Vernon & Vale: from leather clicking and lasting to Goodyear welting, hand edge burnishing, and champagne glazing.">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  
+  <!-- Tailwind CSS CDN + Custom Configuration -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            gold: 'var(--color-gold)',
+            'gold-hover': 'var(--color-gold-hover)',
+            cognac: 'var(--color-cognac)',
+            tan: 'var(--color-tan)',
+            'text-primary': 'var(--text-primary)',
+            'text-secondary': 'var(--text-secondary)',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#FAF7F0] text-[#1C1C1C] dark:bg-[#0F0F0F] dark:text-[#F3ECE0] transition-colors duration-500">
+
+  <!-- Header Navbar matching Sole Craft -->
+    <!-- Premium Sticky Header Navbar -->
+  <header class="fixed top-0 left-0 w-full z-50 py-3 lg:py-5 transition-all duration-300" id="site-header">
+    <div class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 xl:px-10 flex items-center justify-between gap-4 lg:gap-6 xl:gap-8">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-2.5 shrink-0 group">
+        <img src="assets/images/logo.png" alt="Vernon &amp; Vale Logo" class="w-8 h-8 rounded-full border border-gold/40 object-cover shrink-0 group-hover:scale-105 transition-transform">
+        <span class="font-serif text-lg sm:text-xl xl:text-2xl font-bold tracking-wider text-gold-gradient whitespace-nowrap">VERNON &amp; VALE</span>
+      </a>
+
+      <!-- Desktop Navigation links with Dropdowns -->
+      <nav class="hidden lg:flex items-center gap-2.5 xl:gap-5 2xl:gap-7 text-[11px] xl:text-xs uppercase tracking-wider font-bold whitespace-nowrap">
+        <a href="index.html" class="hover:text-gold transition py-1 text-text-primary">Home</a>
+        <a href="home2.html" class="hover:text-gold transition py-1 text-text-primary">Home 2</a>
+        <a href="about.html" class="hover:text-gold transition py-1 text-text-primary">About</a>
+
+        <!-- Products Dropdown -->
+        <a href="products.html" class="hover:text-gold transition py-1 text-text-primary">Products</a>
+
+        <a href="collections.html" class="hover:text-gold transition py-1 text-text-primary">Collections</a>
+        <a href="wholesale.html" class="hover:text-gold transition py-1 text-text-primary">Wholesale</a>
+        <a href="craftsmanship.html" class="text-gold active font-semibold py-1">Craftsmanship</a>
+        <a href="contact.html" class="hover:text-gold transition py-1 text-text-primary">Contact</a>
+      </nav>
+
+      <!-- Right Action Items -->
+      <div class="hidden lg:flex items-center gap-2 xl:gap-3 shrink-0">
+        <!-- Theme Toggle Circular Button -->
+        <button id="theme-toggle" class="theme-circle-btn shrink-0" title="Toggle Theme" aria-label="Toggle Theme">
+          <i class="bi bi-sun-fill text-base xl:text-lg"></i>
+        </button>
+        <!-- Language/RTL Toggle Pill Button -->
+        <button id="lang-toggle" class="rtl-toggle-pill shrink-0 px-2.5 xl:px-3 py-1.5 text-[11px] xl:text-xs" title="Toggle RTL" aria-label="Toggle RTL">
+          <i class="bi bi-arrow-left-right text-xs"></i>
+          <span id="lang-text">RTL</span>
+        </button>
+        <!-- Wholesale B2B Link (Visible on xl screens) -->
+        <a href="wholesale.html" class="hidden xl:inline-flex h-9 xl:h-10 items-center justify-center border border-gold text-gold hover:bg-gold hover:text-black transition px-3.5 xl:px-4 rounded-full text-[11px] xl:text-xs font-bold uppercase tracking-wider shrink-0">
+          B2B Portal
+        </a>
+        <!-- CTA button (Solid Gold Pill) -->
+        <a href="contact.html" class="magnetic-btn h-9 xl:h-10 inline-flex items-center justify-center bg-gold hover:bg-gold-hover text-black text-[11px] xl:text-xs uppercase tracking-wider font-bold px-4 xl:px-5 rounded-full shadow-lg transition shrink-0">
+          Inquire Now
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger button -->
+      <button id="mobile-menu-btn" class="lg:hidden text-text-primary p-2 shrink-0" aria-label="Open Menu">
+        <i class="bi bi-list text-2xl"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay -->
+  <div id="mobile-drawer-overlay" class="fixed inset-0 bg-black/60 z-[9998] hidden opacity-0 transition-opacity duration-300"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="fixed top-0 right-0 h-full w-full sm:w-[85vw] sm:max-w-[380px] bg-[#0F0F0F] text-[#F3ECE0] z-[9999] transform translate-x-full transition-transform duration-300 overflow-y-auto flex flex-col justify-between border-l border-gold/15 shadow-2xl">
+    <div class="p-6 flex items-center justify-between border-b border-gold/15">
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="assets/images/logo.png" alt="Vernon &amp; Vale Logo" class="w-8 h-8 rounded-full border border-gold/30 object-cover">
+        <span class="font-serif text-xl font-bold tracking-wider text-gold-gradient">VERNON &amp; VALE</span>
+      </a>
+      <button id="mobile-drawer-close" class="text-[#F3ECE0] hover:text-gold transition p-2" aria-label="Close menu">
+        <i class="bi bi-x-lg text-xl"></i>
+      </button>
+    </div>
+
+    <!-- Theme & Orientation Toggles -->
+    <div class="px-6 py-4 flex gap-4 border-b border-gold/10 text-xs uppercase tracking-wider font-bold">
+      <button id="mobile-theme-toggle" class="flex-1 py-2.5 px-4 rounded-full border border-gold/20 hover:border-gold bg-[#171717] flex items-center justify-center gap-2 text-[#FAF7F0] transition" title="Toggle Theme">
+        <i class="bi bi-sun-fill text-gold"></i> Theme
+      </button>
+      <button id="mobile-lang-toggle" class="flex-1 py-2.5 px-4 rounded-full border border-gold/20 hover:border-gold bg-[#171717] flex items-center justify-center gap-2 text-[#FAF7F0] transition">
+        <i class="bi bi-arrow-left-right text-gold"></i> <span id="mobile-lang-text">RTL</span>
+      </button>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="flex-1 px-6 py-6 space-y-2 text-sm uppercase tracking-widest font-bold">
+      <a href="index.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Home</a>
+        <a href="home2.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Home 2</a>
+      <a href="about.html" class="block py-3 hover:text-gold transition border-b border-gold/5">About Us</a>
+      <a href="products.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Products</a>
+      <a href="collections.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Collections</a>
+      <a href="wholesale.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Wholesale (B2B)</a>
+      <a href="craftsmanship.html" class="block py-3 text-gold transition border-b border-gold/5">Craftsmanship</a>
+      <a href="contact.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Contact</a>
+      <a href="privacy.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Privacy Policy</a>
+    </nav>
+
+    <!-- Bottom Actions -->
+    <div class="p-6 border-t border-gold/15 bg-[#121212]">
+      <a href="wholesale.html" class="block text-center bg-gold hover:bg-gold-hover text-black py-4 rounded-full text-xs font-bold uppercase tracking-widest transition shadow-lg">
+        B2B Wholesale Inquiry
+      </a>
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero Banner matching Sole Craft -->
+    <section class="relative min-h-[80vh] flex items-center justify-center pt-32 pb-20 bg-cover bg-center" style="background-image: url('assets/images/hero_craft_bg.jpg');">
+      <div class="absolute inset-0 bg-black/80 dark:bg-black/85 backdrop-blur-[1px]"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-black/90 via-black/75 to-black/90 pointer-events-none"></div>
+      
+      <div class="container mx-auto px-4 sm:px-6 text-center max-w-3xl relative z-10 page-transition text-white">
+        <span class="text-gold font-serif italic text-base sm:text-lg font-semibold tracking-wider uppercase block mb-3">
+          Century-Old Cordwaining Artistry &bull; Goodyear Anatomy
+        </span>
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-serif font-bold text-white mt-1 mb-6 leading-tight">
+          The Architecture of Mastercraft
+        </h1>
+        <div class="w-24 h-0.5 bg-gold mx-auto mb-6"></div>
+        <p class="text-gray-300 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+          Every pair requires up to 52 meticulous bench hours across 200 distinct operations. Explore the mechanical integrity of Goodyear inseams, oak-bark tanning, and hand-lasted ergonomics.
+        </p>
+      </div>
+    </section>
+
+    <!-- ANATOMICAL GOODYEAR WELT CUTAWAY -->
+    <section class="py-20 relative z-10">
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          
+          <div class="space-y-6">
+            <div class="flex items-center gap-3">
+              <span class="text-xs uppercase font-bold tracking-widest text-gold">The Benchmark</span>
+              <span class="w-12 h-px bg-gold/40"></span>
+              <span class="text-xs uppercase tracking-wider text-text-secondary">Charles Goodyear Jr. 1869</span>
+            </div>
+            
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-text-primary">
+              Anatomy of a Goodyear Welted Shoe
+            </h2>
+            
+            <p class="text-sm sm:text-base text-text-secondary leading-relaxed">
+              Goodyear welting remains the undisputed benchmark of world-class shoemaking. It forms a completely rebuildable, water-resistant chassis that sets our footwear apart from glued fast-fashion alternatives.
+            </p>
+
+            <!-- 5 Architectural Layers -->
+            <div class="space-y-3 pt-2">
+              <div class="glass-panel p-4 rounded-xl border border-gold/15 hover-lift">
+                <strong class="text-text-primary font-serif text-base block mb-0.5">1. Full-Grain Upper &amp; Glove Lining</strong>
+                <p class="text-xs text-text-secondary">Dual-layer leather upper skived to precise thicknesses to flex smoothly across the instep without bite.</p>
+              </div>
+              <div class="glass-panel p-4 rounded-xl border border-gold/15 hover-lift">
+                <strong class="text-text-primary font-serif text-base block mb-0.5">2. 5mm Carved Insole with Leather Holdfast</strong>
+                <p class="text-xs text-text-secondary">Thick vegetable leather insole provides the internal backbone. The welt is sewn directly to its downward carved rib.</p>
+              </div>
+              <div class="glass-panel p-4 rounded-xl border border-gold/15 hover-lift">
+                <strong class="text-text-primary font-serif text-base block mb-0.5">3. Natural Granulated Oak Cork Bed</strong>
+                <p class="text-xs text-text-secondary">Fills the cavity between insole and outsole. Molds to the exact contours of the wearer's footprint while absorbing walking shock.</p>
+              </div>
+              <div class="glass-panel p-4 rounded-xl border border-gold/15 hover-lift">
+                <strong class="text-text-primary font-serif text-base block mb-0.5">4. Tempered Steel Spring Shank</strong>
+                <p class="text-xs text-text-secondary">Embedded into the waist to prevent arch collapse and provide spring-assisted energy return on every stride.</p>
+              </div>
+              <div class="glass-panel p-4 rounded-xl border border-gold/15 hover-lift">
+                <strong class="text-text-primary font-serif text-base block mb-0.5">5. Oak-Bark Leather Outsole &amp; Lockstitch</strong>
+                <p class="text-xs text-text-secondary">Rapid-stitched to the welt strip through a concealed channel, keeping stitches protected from road grit and rain.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cutaway Image & Re-sole Callout -->
+          <div class="space-y-6">
+            <div class="glass-panel overflow-hidden rounded-2xl aspect-[4/3] border border-gold/20 shadow-2xl relative group">
+              <img src="assets/images/craft_anatomical_sole.jpg" alt="Master Cordwainer Stitching Goodyear Welt" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              <span class="absolute bottom-4 left-4 bg-black/60 backdrop-blur-md text-gold text-xs font-mono px-3 py-1.5 rounded-full border border-gold/30">
+                12 STITCHES PER INCH • WAXED HEMP
+              </span>
+            </div>
+
+            <div class="glass-panel p-6 rounded-2xl border-2 border-gold text-center bg-[#F3ECE0]/80 dark:bg-[#171717]/80">
+              <span class="text-xs uppercase font-bold tracking-widest text-gold block mb-1">Indefinite Longevity</span>
+              <p class="font-serif text-xl sm:text-2xl font-bold text-text-primary mb-2">Re-Soleable 8 to 10 Times</p>
+              <p class="text-xs text-text-secondary leading-relaxed">
+                Because the welt is sewn to the perimeter rather than directly to the upper leather, worn outsoles can be detached and replaced repeatedly without diminishing the shoe's customized shape.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- THE 6-STEP ARTISANAL STAGES -->
+    <section class="py-20 bg-[#F3ECE0]/50 dark:bg-[#171717]/50 border-y border-gold/15">
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="text-gold font-serif italic text-base uppercase tracking-widest font-semibold">Step-By-Step Mastery</span>
+          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-text-primary mt-2">The Six Crucial Atelier Stages</h2>
+          <div class="w-16 h-0.5 bg-gold mx-auto mt-4"></div>
+        </div>
+
+        <div class="space-y-16">
+          <!-- Stage 1 -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div class="space-y-4">
+              <span class="font-serif text-5xl font-bold text-gold block leading-none">01</span>
+              <h3 class="text-2xl sm:text-3xl font-serif font-bold text-text-primary">Leather Selection &amp; Grain Examination</h3>
+              <p class="text-xs sm:text-sm text-text-secondary leading-relaxed">
+                Before a single blade touches hide, master inspectors place the full cowhide over illuminated light tables. They examine dermal fiber density, reject vein marks or insect bites, and map the animal's natural spine grain. Only symmetrical, unblemished sections are reserved for vamp and toe caps.
+              </p>
+            </div>
+            <div class="glass-panel overflow-hidden rounded-2xl aspect-[16/10] border border-gold/15 shadow-xl">
+              <img src="assets/images/craft_stage1_inspect.jpg" alt="Inspecting Raw Leather Hides" class="w-full h-full object-cover">
+            </div>
+          </div>
+
+          <!-- Stage 2 -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div class="glass-panel overflow-hidden rounded-2xl aspect-[16/10] border border-gold/15 shadow-xl order-2 lg:order-1">
+              <img src="assets/images/craft_stage2_clicking.jpg" alt="Clicking and Pattern Cutting Bench" class="w-full h-full object-cover">
+            </div>
+            <div class="space-y-4 order-1 lg:order-2">
+              <span class="font-serif text-5xl font-bold text-gold block leading-none">02</span>
+              <h3 class="text-2xl sm:text-3xl font-serif font-bold text-text-primary">Precision Clicking &amp; Edge Skiving</h3>
+              <p class="text-xs sm:text-sm text-text-secondary leading-relaxed">
+                "Clicking" is the ancient term for hand-cutting leather patterns. Clickers orient each piece along the hide's zero-stretch axis so the finished shoe will never lose its tailored form or sag sideways. Cut components then pass to the skiving bench where edges are feathered down to 0.4mm to eliminate uncomfortable friction.
+              </p>
+            </div>
+          </div>
+
+          <!-- Stage 3 -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div class="space-y-4">
+              <span class="font-serif text-5xl font-bold text-gold block leading-none">03</span>
+              <h3 class="text-2xl sm:text-3xl font-serif font-bold text-text-primary">Upper Closing &amp; Glove Lining Assembly</h3>
+              <p class="text-xs sm:text-sm text-text-secondary leading-relaxed">
+                Closing brings all upper panels, heel counters, and linings together. Using German-engineered twin-needle machines and hand-guided awls, machinists stitch at 12 to 14 stitches per inch using high-tensile bonded nylon threads. Linings are crafted from vegetable-tanned full calf glove leather that actively absorbs transpiration.
+              </p>
+            </div>
+            <div class="glass-panel overflow-hidden rounded-2xl aspect-[16/10] border border-gold/15 shadow-xl">
+              <img src="assets/images/craft_stage3_closing.jpg" alt="Upper Closing and Sewing" class="w-full h-full object-cover">
+            </div>
+          </div>
+
+          <!-- Stage 4 -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div class="glass-panel overflow-hidden rounded-2xl aspect-[16/10] border border-gold/15 shadow-xl order-2 lg:order-1">
+              <img src="assets/images/craft_stage4_lasting.jpg" alt="Lasting Boots on Wooden Lasts" class="w-full h-full object-cover">
+            </div>
+            <div class="space-y-4 order-1 lg:order-2">
+              <span class="font-serif text-5xl font-bold text-gold block leading-none">04</span>
+              <h3 class="text-2xl sm:text-3xl font-serif font-bold text-text-primary">72-Hour Wooden Lasting &amp; Inseaming</h3>
+              <p class="text-xs sm:text-sm text-text-secondary leading-relaxed">
+                Mass manufacturers pull shoes over plastic lasts for mere seconds before heat-curing glue. At Vernon &amp; Vale, uppers are pulled over carved hornbeam lasts under multi-directional hydraulic tension and allowed to dwell for 72 full hours. This permanently molds the leather collagen to the 3D curves of the instep and toe box.
+              </p>
+            </div>
+          </div>
+
+          <!-- Stage 5 -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div class="space-y-4">
+              <span class="font-serif text-5xl font-bold text-gold block leading-none">05</span>
+              <h3 class="text-2xl sm:text-3xl font-serif font-bold text-text-primary">Edge Trimming, Wheeling &amp; Iron Waxing</h3>
+              <p class="text-xs sm:text-sm text-text-secondary leading-relaxed">
+                Once the heavy oak-bark outsole is stitched to the welt, sole edges are sculpted with hand trimming irons. Master cordwainers apply hot friction irons coated in organic carnauba and beeswax. The intense heat liquefies the wax deep into the leather pores, creating an impenetrable seal against road salt, moisture, and gravel abrasion.
+              </p>
+            </div>
+            <div class="glass-panel overflow-hidden rounded-2xl aspect-[16/10] border border-gold/15 shadow-xl">
+              <img src="assets/images/craft_stage5_welting.jpg" alt="Sole Edge Waxing" class="w-full h-full object-cover">
+            </div>
+          </div>
+
+          <!-- Stage 6 -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div class="glass-panel overflow-hidden rounded-2xl aspect-[16/10] border border-gold/15 shadow-xl order-2 lg:order-1">
+              <img src="assets/images/craft_stage6_glazing.jpg" alt="Mirror Glaze Polish" class="w-full h-full object-cover">
+            </div>
+            <div class="space-y-4 order-1 lg:order-2">
+              <span class="font-serif text-5xl font-bold text-gold block leading-none">06</span>
+              <h3 class="text-2xl sm:text-3xl font-serif font-bold text-text-primary">Multi-Point QA &amp; Champagne Glazing</h3>
+              <p class="text-xs sm:text-sm text-text-secondary leading-relaxed">
+                No pair leaves our workshop without passing a 14-point benchmark check: seam tension, last alignment, toe cap symmetry, and insole bed flatness. Finally, shoes receive our signature "glaçage" mirror polish: 30 minutes of rhythmic circular friction using fine champagne-dampened cotton cloths and high-wax pastes until the toe reflects like dark obsidian glass.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MASTER SHOEMAKING VIDEO DOCUMENTARY -->
+    <section class="py-20 relative z-10 bg-black/40 border-t border-gold/15">
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="text-gold font-serif italic text-base uppercase tracking-widest font-semibold">Generational Archive</span>
+          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-text-primary mt-2">The Master Cordwainer's Hands</h2>
+          <div class="w-16 h-0.5 bg-gold mx-auto mt-4 mb-4"></div>
+          <p class="text-xs sm:text-sm text-text-secondary">
+            Watch the meticulous transformation of raw hide into enduring footwear through generational hand-tooling and Goodyear welted lock-stitching.
+          </p>
+        </div>
+
+        <div class="max-w-4xl mx-auto rounded-3xl overflow-hidden border border-gold/30 shadow-2xl bg-black">
+          <video class="w-full aspect-video object-cover" controls playsinline poster="assets/images/video_poster_craft.jpg">
+            <source src="assets/videos/shoemaking_craft_atelier.webm" type="video/webm">
+            Your browser does not support HTML5 video.
+          </video>
+          <div class="p-6 bg-card-bg/90 border-t border-gold/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+              <h4 class="font-serif font-bold text-base text-text-primary">Mastercraft In Motion &bull; Live Atelier Reel</h4>
+              <p class="text-xs text-text-muted">Awl piercing, channel cutting, corkbed leveling, and edge burnishing.</p>
+            </div>
+            <a href="home2.html#welt-anatomy" class="px-5 py-2.5 rounded-full bg-gold hover:bg-gold-hover text-black font-bold uppercase tracking-wider text-xs transition whitespace-nowrap">
+              Explore 5-Layer Welt Anatomy
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MATERIAL COMPARISON MATRIX -->
+    <section class="py-20 relative z-10">
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <span class="text-gold font-serif italic text-base uppercase tracking-widest font-semibold">Consumer Education</span>
+          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-text-primary mt-2">Understanding Leather Grades</h2>
+          <div class="w-16 h-0.5 bg-gold mx-auto mt-4 mb-4"></div>
+          <p class="text-xs sm:text-sm text-text-secondary">
+            How to distinguish true bench-grade luxury hides from industrial corrected-grain substitutes.
+          </p>
+        </div>
+
+        <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-gold/15 overflow-x-auto shadow-xl">
+          <table class="w-full text-left text-xs sm:text-sm border-collapse min-w-[600px]">
+            <thead>
+              <tr class="border-b border-gold/20 text-gold uppercase tracking-wider text-[11px]">
+                <th class="py-4 px-4 font-bold">Property</th>
+                <th class="py-4 px-4 font-bold">Full-Grain French Calf (Our Standard)</th>
+                <th class="py-4 px-4 font-bold">Top-Grain Leather</th>
+                <th class="py-4 px-4 font-bold">Corrected Grain / "Genuine Leather"</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gold/10 text-text-secondary">
+              <tr>
+                <td class="py-3 px-4 font-bold text-text-primary">Surface Treatment</td>
+                <td class="py-3 px-4 text-text-primary font-semibold">100% Unaltered natural epidermis</td>
+                <td class="py-3 px-4">Lightly sanded to remove minor marks</td>
+                <td class="py-3 px-4">Sanded off completely; stamped with artificial grain</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-text-primary">Breathability</td>
+                <td class="py-3 px-4 text-text-primary font-semibold">Maximum; natural open pores breathe</td>
+                <td class="py-3 px-4">Moderate; light polymer topcoat</td>
+                <td class="py-3 px-4">Zero; plastic polyurethane coating traps heat</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-text-primary">Patina Ability</td>
+                <td class="py-3 px-4 text-text-primary font-semibold">Develops rich, glowing antique depth</td>
+                <td class="py-3 px-4">Minimal aging; tends to fade or scuff</td>
+                <td class="py-3 px-4">Cracks and peels over 6 to 12 months</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-text-primary">Tensile Strength</td>
+                <td class="py-3 px-4 text-text-primary font-semibold">Highest dense collagen fiber pack</td>
+                <td class="py-3 px-4">Good strength, moderate elasticity</td>
+                <td class="py-3 px-4">Prone to tearing under high stress</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-text-primary">Lifespan with Care</td>
+                <td class="py-3 px-4 text-gold font-bold">20 to 30+ Years (Re-soleable)</td>
+                <td class="py-3 px-4">4 to 7 Years</td>
+                <td class="py-3 px-4">1 to 2 Years maximum</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARTISAN TOOLS OF THE CORDWAINER'S BENCH -->
+    <section class="py-24 bg-[#F3ECE0] dark:bg-[#171717] border-t border-gold/15 relative z-10">
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="text-gold font-serif italic text-lg font-semibold uppercase tracking-wider">Historical Implements</span>
+          <h2 class="text-3xl sm:text-5xl font-serif font-bold text-text-primary mt-2">Tools of the Cordwainer's Bench</h2>
+          <div class="w-20 h-0.5 bg-gold mx-auto mt-4"></div>
+          <p class="text-text-secondary text-sm mt-4">
+            While computer-guided machinery assists cutting, the soul of a bench-grade shoe is shaped by traditional hand tools unchanged since the Italian Renaissance.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="glass-panel p-6 rounded-2xl hover-lift">
+            <div class="h-44 rounded-xl overflow-hidden mb-4">
+              <img src="assets/images/tool_clicking_knives.jpg" class="w-full h-full object-cover hover:scale-105 transition duration-500" alt="Clicking Knives">
+            </div>
+            <span class="text-xs font-mono text-gold uppercase block mb-1">Steel Cutters</span>
+            <h3 class="font-serif font-bold text-lg text-text-primary mb-2">French Clicking Knife</h3>
+            <p class="text-xs text-text-secondary leading-relaxed">Curved razor blades hand-sharpened on Arkansas oilstones to slice cleanly along hide grain lines without dragging leather fibers.</p>
+          </div>
+
+          <div class="glass-panel p-6 rounded-2xl hover-lift">
+            <div class="h-44 rounded-xl overflow-hidden mb-4">
+              <img src="assets/images/tool_hornbeam_lasts.jpg" class="w-full h-full object-cover hover:scale-105 transition duration-500" alt="Wooden Hornbeam Lasts">
+            </div>
+            <span class="text-xs font-mono text-gold uppercase block mb-1">Anatomical Form</span>
+            <h3 class="font-serif font-bold text-lg text-text-primary mb-2">Carved Hornbeam Lasts</h3>
+            <p class="text-xs text-text-secondary leading-relaxed">Turned from dense European hornbeam seasoned over two winters to resist warping under hydraulic lasting pressures.</p>
+          </div>
+
+          <div class="glass-panel p-6 rounded-2xl hover-lift">
+            <div class="h-44 rounded-xl overflow-hidden mb-4">
+              <img src="assets/images/tool_welt_awls.jpg" class="w-full h-full object-cover hover:scale-105 transition duration-500" alt="Curved Welt Sewing Awls">
+            </div>
+            <span class="text-xs font-mono text-gold uppercase block mb-1">Inseam Stitching</span>
+            <h3 class="font-serif font-bold text-lg text-text-primary mb-2">Curved Inseaming Awl</h3>
+            <p class="text-xs text-text-secondary leading-relaxed">Hand-forged curved bodkins that pierce the feather rib and welt in one motion, guiding heavy pitch-waxed boar bristles.</p>
+          </div>
+
+          <div class="glass-panel p-6 rounded-2xl hover-lift">
+            <div class="h-44 rounded-xl overflow-hidden mb-4">
+              <img src="assets/images/tool_edge_irons.jpg" class="w-full h-full object-cover hover:scale-105 transition duration-500" alt="Copper Edge Irons">
+            </div>
+            <span class="text-xs font-mono text-gold uppercase block mb-1">Edge Sealing</span>
+            <h3 class="font-serif font-bold text-lg text-text-primary mb-2">Heated Copper Edge Irons</h3>
+            <p class="text-xs text-text-secondary leading-relaxed">Gas-flame heated irons coated in carnauba wax to fuse edge fibers into a smooth, waterproof leather shield.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Standard Stylist Footer matching Sole Craft -->
+    <!-- Standard Stylist Footer -->
+  <footer class="bg-[#0C0C0C] text-[#FAF7F0] pt-16 sm:pt-20 pb-8 font-sans border-t border-gold/15 relative z-10 w-full">
+    <div class="container mx-auto px-4 sm:px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[2.3fr_2.1fr_1.1fr_1.4fr_1.1fr_2fr] gap-8 lg:gap-6 xl:gap-8 mb-16 text-left items-start">
+      
+      <!-- Column 1: Brand & Socials -->
+      <div class="space-y-4">
+        <a href="index.html" class="flex items-center gap-2">
+          <img src="assets/images/logo.png" alt="Vernon &amp; Vale Logo" class="w-8 h-8 rounded-full border border-gold/30 object-cover shrink-0">
+          <span class="font-serif text-xl font-bold tracking-wider text-gold-gradient">VERNON &amp; VALE</span>
+        </a>
+        <p class="text-xs text-[#A69D90] leading-relaxed">
+          Preserving 180-step Goodyear welting traditions with full-grain French calf, Portuguese cork, and Bavarian oak-bark soles.
+        </p>
+        <div class="flex items-center gap-2.5 pt-2">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-[#1A1A1A] hover:bg-gold hover:text-black flex items-center justify-center transition border border-gold/20 text-[#FAF7F0] text-sm" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-[#1A1A1A] hover:bg-gold hover:text-black flex items-center justify-center transition border border-gold/20 text-[#FAF7F0] text-sm" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-[#1A1A1A] hover:bg-gold hover:text-black flex items-center justify-center transition border border-gold/20 text-[#FAF7F0] text-sm" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
+        </div>
+      </div>
+
+      <!-- Column 2: Specific Newsletter / Notification -->
+      <div class="space-y-4">
+        <h4 class="font-serif text-base font-bold text-gold tracking-wide">Atelier Journal</h4>
+        <p class="text-xs text-[#A69D90] leading-relaxed">
+          Technical cordwaining monographs on gemming ribs, closed-channel stitching, and mirror glaze finishes.
+        </p>
+        <form class="newsletter-form relative flex items-center pt-1" onsubmit="event.preventDefault(); alert('Subscribed to Vernon &amp; Vale Atelier updates!'); this.reset();">
+          <input type="email" placeholder="trade.buyer@brand.com" required class="w-full bg-[#171717] border border-gold/20 rounded-full py-2.5 pl-4 pr-12 text-xs text-[#FAF7F0] focus:outline-none focus:border-gold transition">
+          <button type="submit" class="absolute right-1 w-8 h-8 rounded-full bg-gold text-black flex items-center justify-center hover:bg-gold-hover transition">
+            <i class="bi bi-arrow-right text-xs"></i>
+          </button>
+        </form>
+      </div>
+
+      <!-- Column 3: Navigation -->
+      <div class="space-y-4">
+        <h4 class="font-serif text-base font-bold text-gold tracking-wide">Explore</h4>
+        <ul class="space-y-2 text-xs text-[#A69D90]">
+          <li><a href="index.html" class="hover:text-gold transition">Home</a></li>
+          <li><a href="home2.html" class="hover:text-gold transition">Home 2 (Atelier)</a></li>
+          <li><a href="about.html" class="hover:text-gold transition">About Us</a></li>
+          <li><a href="products.html" class="hover:text-gold transition">Products</a></li>
+          <li><a href="collections.html" class="hover:text-gold transition">Collections</a></li>
+          <li><a href="craftsmanship.html" class="hover:text-gold transition">Craftsmanship</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Manufacturing -->
+      <div class="space-y-4">
+        <h4 class="font-serif text-base font-bold text-gold tracking-wide">Benchcraft</h4>
+        <ul class="space-y-2 text-xs text-[#A69D90]">
+          <li><a href="products.html?category=oxfords" class="hover:text-gold transition">Captoe Oxfords</a></li>
+          <li><a href="products.html?category=boots" class="hover:text-gold transition">Chelsea Boots</a></li>
+          <li><a href="products.html?category=loafers" class="hover:text-gold transition">Penny Loafers</a></li>
+          <li><a href="wholesale.html" class="hover:text-gold transition">Private Label OEM</a></li>
+          <li><a href="craftsmanship.html" class="hover:text-gold transition">Goodyear Welt</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 5: Governance -->
+      <div class="space-y-4">
+        <h4 class="font-serif text-base font-bold text-gold tracking-wide">Governance</h4>
+        <ul class="space-y-2 text-xs text-[#A69D90]">
+          <li><a href="wholesale.html" class="hover:text-gold transition">Supply Terms</a></li>
+          <li><a href="privacy.html" class="hover:text-gold transition">Privacy Policy</a></li>
+          <li><a href="privacy.html" class="hover:text-gold transition">NDA Secrecy</a></li>
+          <li><a href="404.html" class="hover:text-gold transition">404 Error</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 6: Atelier Contact Info -->
+      <div class="space-y-4">
+        <h4 class="font-serif text-base font-bold text-gold tracking-wide">Florence Atelier</h4>
+        <div class="space-y-2 text-xs text-[#A69D90]">
+          <p class="flex items-start gap-2">
+            <i class="bi bi-geo-alt text-gold shrink-0"></i>
+            <span>Via San Niccolò 48, 50125 Firenze, Italy</span>
+          </p>
+          <p class="flex items-center gap-2">
+            <i class="bi bi-telephone text-gold shrink-0"></i>
+            <span>+44 (0) 20 7946 0812</span>
+          </p>
+          <p class="flex items-center gap-2">
+            <i class="bi bi-envelope text-gold shrink-0"></i>
+            <a href="mailto:wholesale@vernonvale-craft.com" class="hover:text-gold transition">wholesale@vernonvale-craft.com</a>
+          </p>
+          <p class="flex items-center gap-2">
+            <i class="bi bi-clock text-gold shrink-0"></i>
+            <span>Mon–Fri: 8:30 AM – 6:30 PM CET</span>
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="container mx-auto px-4 sm:px-6 pt-8 border-t border-gold/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-[#8A8175] text-center sm:text-left">
+      <p>&copy; 1974 &ndash; 2026 Vernon &amp; Vale Leather Footwear Manufacturers Ltd. All Rights Reserved.</p>
+      <div class="flex gap-6">
+        <a href="wholesale.html" class="hover:text-gold transition">Terms of Supply</a>
+        <a href="privacy.html" class="hover:text-gold transition">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="fixed bottom-6 right-6 w-11 h-11 rounded-full bg-gold text-black flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 shadow-xl z-40 hover:bg-gold-hover" aria-label="Back to top">
+    <i class="bi bi-arrow-up text-lg font-bold"></i>
+  </button>
+
+  <!-- Notification Toast Container -->
+  <div id="toastContainer" class="fixed bottom-6 left-6 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('vv_theme') || 'dark';
+      if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      const savedDir = localStorage.getItem('vv_dir') || 'ltr';
+      document.documentElement.setAttribute('dir', savedDir);
+    })();
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — Fifty Years of Master Leather Footwear Craft | Vernon &amp; Vale</title>
+  <meta name="description" content="Discover the history, master cordwainers, Tuscan leather sourcing, and manufacturing heritage of Vernon & Vale, footwear makers since 1974.">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            gold: 'var(--color-gold)',
+            'gold-hover': 'var(--color-gold-hover)',
+            cognac: 'var(--color-cognac)',
+            tan: 'var(--color-tan)',
+            'text-primary': 'var(--text-primary)',
+            'text-secondary': 'var(--text-secondary)',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#FAF7F0] text-[#1C1C1C] dark:bg-[#0F0F0F] dark:text-[#F3ECE0] transition-colors duration-500">
+
+    <!-- Premium Sticky Header Navbar -->
+  <header class="fixed top-0 left-0 w-full z-50 py-3 lg:py-5 transition-all duration-300" id="site-header">
+    <div class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 xl:px-10 flex items-center justify-between gap-4 lg:gap-6 xl:gap-8">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-2.5 shrink-0 group">
+        <img src="assets/images/logo.png" alt="Vernon &amp; Vale Logo" class="w-8 h-8 rounded-full border border-gold/40 object-cover shrink-0 group-hover:scale-105 transition-transform">
+        <span class="font-serif text-lg sm:text-xl xl:text-2xl font-bold tracking-wider text-gold-gradient whitespace-nowrap">VERNON &amp; VALE</span>
+      </a>
+
+      <!-- Desktop Navigation links with Dropdowns -->
+      <nav class="hidden lg:flex items-center gap-2.5 xl:gap-5 2xl:gap-7 text-[11px] xl:text-xs uppercase tracking-wider font-bold whitespace-nowrap">
+        <a href="index.html" class="hover:text-gold transition py-1 text-text-primary">Home</a>
+        <a href="home2.html" class="hover:text-gold transition py-1 text-text-primary">Home 2</a>
+        <a href="about.html" class="text-gold active font-semibold py-1">About</a>
+
+        <!-- Products Dropdown -->
+        <a href="products.html" class="hover:text-gold transition py-1 text-text-primary">Products</a>
+
+        <a href="collections.html" class="hover:text-gold transition py-1 text-text-primary">Collections</a>
+        <a href="wholesale.html" class="hover:text-gold transition py-1 text-text-primary">Wholesale</a>
+        <a href="craftsmanship.html" class="hover:text-gold transition py-1 text-text-primary">Craftsmanship</a>
+        <a href="contact.html" class="hover:text-gold transition py-1 text-text-primary">Contact</a>
+      </nav>
+
+      <!-- Right Action Items -->
+      <div class="hidden lg:flex items-center gap-2 xl:gap-3 shrink-0">
+        <!-- Theme Toggle Circular Button -->
+        <button id="theme-toggle" class="theme-circle-btn shrink-0" title="Toggle Theme" aria-label="Toggle Theme">
+          <i class="bi bi-sun-fill text-base xl:text-lg"></i>
+        </button>
+        <!-- Language/RTL Toggle Pill Button -->
+        <button id="lang-toggle" class="rtl-toggle-pill shrink-0 px-2.5 xl:px-3 py-1.5 text-[11px] xl:text-xs" title="Toggle RTL" aria-label="Toggle RTL">
+          <i class="bi bi-arrow-left-right text-xs"></i>
+          <span id="lang-text">RTL</span>
+        </button>
+        <!-- Wholesale B2B Link (Visible on xl screens) -->
+        <a href="wholesale.html" class="hidden xl:inline-flex h-9 xl:h-10 items-center justify-center border border-gold text-gold hover:bg-gold hover:text-black transition px-3.5 xl:px-4 rounded-full text-[11px] xl:text-xs font-bold uppercase tracking-wider shrink-0">
+          B2B Portal
+        </a>
+        <!-- CTA button (Solid Gold Pill) -->
+        <a href="contact.html" class="magnetic-btn h-9 xl:h-10 inline-flex items-center justify-center bg-gold hover:bg-gold-hover text-black text-[11px] xl:text-xs uppercase tracking-wider font-bold px-4 xl:px-5 rounded-full shadow-lg transition shrink-0">
+          Inquire Now
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger button -->
+      <button id="mobile-menu-btn" class="lg:hidden text-text-primary p-2 shrink-0" aria-label="Open Menu">
+        <i class="bi bi-list text-2xl"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay & Drawer -->
+  <div id="mobile-drawer-overlay" class="fixed inset-0 bg-black/60 z-[9998] hidden opacity-0 transition-opacity duration-300"></div>
+  <div id="mobile-drawer" class="fixed top-0 right-0 h-full w-full sm:w-[85vw] sm:max-w-[380px] bg-[#0F0F0F] text-[#F3ECE0] z-[9999] transform translate-x-full transition-transform duration-300 overflow-y-auto flex flex-col justify-between border-l border-gold/15 shadow-2xl">
+    <div>
+      <div class="p-6 flex items-center justify-between border-b border-gold/15">
+        <a href="index.html" class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full border border-gold/40 bg-gradient-to-br from-amber-950 to-amber-700 flex items-center justify-center text-gold font-serif font-bold text-sm shadow-md">VV</div>
+          <span class="font-serif text-xl font-bold tracking-wider text-gold-gradient">VERNON &amp; VALE</span>
+        </a>
+        <button id="mobile-drawer-close" class="text-[#F3ECE0] hover:text-gold transition p-2">
+          <i class="bi bi-x-lg text-xl"></i>
+        </button>
+      </div>
+
+      <div class="px-6 py-4 flex gap-4 border-b border-gold/10 text-xs uppercase tracking-wider font-bold">
+        <button id="mobile-theme-toggle" class="flex-1 py-2.5 px-4 rounded-full border border-gold/20 hover:border-gold bg-[#171717] flex items-center justify-center gap-2 text-[#FAF7F0] transition">
+          <i class="bi bi-sun-fill text-gold"></i>
+        </button>
+        <button id="mobile-lang-toggle" class="flex-1 py-2.5 px-4 rounded-full border border-gold/20 hover:border-gold bg-[#171717] flex items-center justify-center gap-2 text-[#FAF7F0] transition">
+          <i class="bi bi-arrow-left-right text-gold"></i> <span id="mobile-lang-text">RTL</span>
+        </button>
+      </div>
+
+      <nav class="px-6 py-6 space-y-2 text-sm uppercase tracking-widest font-bold">
+        <a href="index.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Home</a>
+        <a href="home2.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Home 2</a>
+        <a href="about.html" class="block py-3 hover:text-gold transition border-b border-gold/5 text-gold font-semibold">About Us</a>
+        <a href="products.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Products</a>
+        <a href="collections.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Collections</a>
+        <a href="wholesale.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Wholesale (B2B)</a>
+        <a href="craftsmanship.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Craftsmanship</a>
+        <a href="contact.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Contact</a>
+      </nav>
+    </div>
+
+    <div class="p-6 border-t border-gold/15 space-y-3">
+      <a href="wholesale.html" class="w-full text-center py-3 rounded-full bg-gold hover:bg-gold-hover text-black font-bold uppercase tracking-wider text-xs block transition">
+        B2B Wholesale Inquiry
+      </a>
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero Banner Section (Matching Sole Craft's Exact Banner Format) -->
+    <section class="relative min-h-[75vh] flex items-center justify-center pt-32 pb-20 bg-cover bg-center" style="background-image: url('assets/images/hero_about_bg.jpg');">
+      <div class="absolute inset-0 bg-black/80 dark:bg-black/85 backdrop-blur-[1px]"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-black/90 via-black/75 to-black/90 pointer-events-none"></div>
+      
+      <div class="container mx-auto px-4 sm:px-6 text-center max-w-3xl relative z-10 page-transition text-white">
+        <span class="text-gold font-serif italic text-base sm:text-lg font-semibold tracking-wider uppercase block mb-3">
+          Atelier Lineage &bull; Est. 1974 Florence
+        </span>
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-serif font-bold text-white mt-1 mb-6 leading-tight">
+          Masters of the Cordwainer’s Art
+        </h1>
+        <div class="w-24 h-0.5 bg-gold mx-auto mb-6"></div>
+        <p class="text-gray-300 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+          Half a century of artisanal leather footwear manufacturing in the hills of Tuscany. Preserving anatomical lasts, Goodyear welting, and ethical vegetable tanning for global luxury houses.
+        </p>
+      </div>
+    </section>
+
+    <!-- Story & Vision Grid (Matching Sole Craft's Exact Layout) -->
+    <section class="py-24 relative z-10">
+      <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        
+        <div>
+          <h2 class="text-3xl lg:text-4xl font-serif font-bold text-text-primary mb-6">Manufacturing Heritage, Step by Step</h2>
+          <p class="text-text-secondary text-sm leading-relaxed mb-6">
+            Vernon &amp; Vale was founded in 1974 by master cordwainer Alistair Vernon and industrial lastmaker Marco Vale, who recognized that mass production had abandoned the enduring structural beauty of genuine Goodyear welting. What began as a single-bench workshop in Florence has grown into an international manufacturing atelier exporting over 120,000 pairs annually across 42 nations.
+          </p>
+          <p class="text-text-secondary text-sm leading-relaxed mb-6">
+            Our benchmarks remain uncompromising: 100% full-grain Tuscan vegetable-tanned shoulder, French Le Puy boxcalf, oak-bark pit-tanned outsoles, and 72-hour dwell lasting on carved wooden lasts.
+          </p>
+          
+          <!-- Mission & Vision Cards with Gold Border (Exact Sole Craft Style) -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+            <div class="glass-panel p-5 rounded-xl border-l-4 border-gold">
+              <h4 class="font-serif font-bold text-lg text-text-primary mb-2">Our Mission</h4>
+              <p class="text-xs text-text-secondary">To champion authentic cordwaining traditions through sustainable industrial scale and honest European bench quality.</p>
+            </div>
+            <div class="glass-panel p-5 rounded-xl border-l-4 border-gold">
+              <h4 class="font-serif font-bold text-lg text-text-primary mb-2">Our Vision</h4>
+              <p class="text-xs text-text-secondary">To be recognized globally as the gold standard for luxury private label and bespoke leather footwear manufacturing.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Workshop Image Grid (Expanded 6-item Atelier Showcase) -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+          <div class="relative group rounded-xl overflow-hidden shadow-md h-40">
+            <img src="assets/images/about_stage1_last_sculpt.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Last Sculpting Studio">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-3 flex items-end">
+              <span class="text-[10px] text-gold font-mono uppercase">I. Last Sculpting</span>
+            </div>
+          </div>
+          <div class="relative group rounded-xl overflow-hidden shadow-md h-40">
+            <img src="assets/images/about_stage2_clicking.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Clicking Bench">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-3 flex items-end">
+              <span class="text-[10px] text-gold font-mono uppercase">II. Hide Clicking</span>
+            </div>
+          </div>
+          <div class="relative group rounded-xl overflow-hidden shadow-md h-40">
+            <img src="assets/images/about_stage3_skiving.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Closing & Skiving">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-3 flex items-end">
+              <span class="text-[10px] text-gold font-mono uppercase">III. Upper Skiving</span>
+            </div>
+          </div>
+          <div class="relative group rounded-xl overflow-hidden shadow-md h-40">
+            <img src="assets/images/about_stage4_welting.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Welt Stitching Carousel">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-3 flex items-end">
+              <span class="text-[10px] text-gold font-mono uppercase">IV. Goodyear Welt</span>
+            </div>
+          </div>
+          <div class="relative group rounded-xl overflow-hidden shadow-md h-40">
+            <img src="assets/images/about_stage5_patina.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Hand Patina Art">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-3 flex items-end">
+              <span class="text-[10px] text-gold font-mono uppercase">V. Hand Patina</span>
+            </div>
+          </div>
+          <div class="relative group rounded-xl overflow-hidden shadow-md h-40">
+            <img src="assets/images/about_stage6_boxing.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Final Polish & Packing">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-3 flex items-end">
+              <span class="text-[10px] text-gold font-mono uppercase">VI. Cedar Boxing</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Animated Timeline Section (Matching Sole Craft's Exact Timeline Nodes) -->
+    <section class="py-24 bg-[#F3ECE0] dark:bg-[#171717] relative z-10 border-y border-[#8C6239]/10">
+      <div class="container mx-auto px-6 max-w-4xl">
+        
+        <div class="text-center mb-16">
+          <span class="text-gold font-serif italic text-lg font-semibold uppercase tracking-wider">Milestones</span>
+          <h2 class="text-3xl lg:text-4xl font-serif font-bold text-text-primary mt-2">Vernon &amp; Vale Timeline</h2>
+          <div class="w-16 h-0.5 bg-gold mx-auto mt-3"></div>
+        </div>
+
+        <div class="relative border-l border-gold/30 ml-4 md:ml-32 py-4">
+          
+          <!-- Timeline Item 1: 1974 -->
+          <div class="mb-12 relative pl-8">
+            <div class="absolute -left-[13px] top-1.5 w-6 h-6 rounded-full bg-gold border-4 border-[#FAF7F0] dark:border-[#0F0F0F] flex items-center justify-center"></div>
+            <span class="absolute -left-28 top-1.5 hidden md:block text-gold font-serif font-bold text-lg">1974</span>
+            <div class="glass-panel p-6 rounded-xl">
+              <span class="md:hidden text-gold font-bold text-sm block mb-1">1974</span>
+              <h4 class="font-serif font-bold text-lg text-text-primary mb-2">The First Last Carved</h4>
+              <p class="text-xs text-text-secondary leading-relaxed">
+                Master cordwainer Alistair Vernon hand-sculpts the legendary 82 Almond Last in a historic cordwaining atelier in Florence, Italy.
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2: 1991 -->
+          <div class="mb-12 relative pl-8">
+            <div class="absolute -left-[13px] top-1.5 w-6 h-6 rounded-full bg-gold border-4 border-[#FAF7F0] dark:border-[#0F0F0F] flex items-center justify-center"></div>
+            <span class="absolute -left-28 top-1.5 hidden md:block text-gold font-serif font-bold text-lg">1991</span>
+            <div class="glass-panel p-6 rounded-xl">
+              <span class="md:hidden text-gold font-bold text-sm block mb-1">1991</span>
+              <h4 class="font-serif font-bold text-lg text-text-primary mb-2">Private Label Contract Division</h4>
+              <p class="text-xs text-text-secondary leading-relaxed">
+                Initiated bespoke contract manufacturing for British tailoring houses and continental luxury boutiques seeking Goodyear durability.
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3: 2008 -->
+          <div class="mb-12 relative pl-8">
+            <div class="absolute -left-[13px] top-1.5 w-6 h-6 rounded-full bg-gold border-4 border-[#FAF7F0] dark:border-[#0F0F0F] flex items-center justify-center"></div>
+            <span class="absolute -left-28 top-1.5 hidden md:block text-gold font-serif font-bold text-lg">2008</span>
+            <div class="glass-panel p-6 rounded-xl">
+              <span class="md:hidden text-gold font-bold text-sm block mb-1">2008</span>
+              <h4 class="font-serif font-bold text-lg text-text-primary mb-2">Tuscan Tannery Consortium</h4>
+              <p class="text-xs text-text-secondary leading-relaxed">
+                Formed exclusive direct partnerships with century-old vegetable tanneries in Ponte a Egola to guarantee 100% traceably sourced full-grain hides.
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline Item 4: Today -->
+          <div class="mb-4 relative pl-8">
+            <div class="absolute -left-[13px] top-1.5 w-6 h-6 rounded-full bg-gold border-4 border-[#FAF7F0] dark:border-[#0F0F0F] flex items-center justify-center"></div>
+            <span class="absolute -left-28 top-1.5 hidden md:block text-gold font-serif font-bold text-lg">Today</span>
+            <div class="glass-panel p-6 rounded-xl">
+              <span class="md:hidden text-gold font-bold text-sm block mb-1">Today</span>
+              <h4 class="font-serif font-bold text-lg text-text-primary mb-2">Global Luxury Footwear Supplier</h4>
+              <p class="text-xs text-text-secondary leading-relaxed">
+                Operating Goodyear and Blake production lines across 45,000 sq ft, exporting over 120,000 pairs annually across 42 nations.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SUSTAINABILITY & ETHICAL SOURCING MANIFESTO -->
+    <section class="py-24 border-t border-[#8C6239]/10 relative z-10">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="relative rounded-2xl overflow-hidden glass-panel border border-gold/20 shadow-2xl">
+            <img src="assets/images/about_atelier_sustainability.jpg" class="w-full h-[450px] object-cover" alt="Sustainable Leather Footwear Atelier">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-8">
+              <span class="text-xs uppercase text-gold font-mono tracking-widest mb-1">Ethical Footwear Accord</span>
+              <h3 class="text-2xl font-serif font-bold text-white">100% Chrome-Free Vegetable Tanning</h3>
+              <p class="text-xs text-gray-300 mt-2">Zero synthetic aldehydes, closed-loop wastewater recovery, and certified European agricultural traceability.</p>
+            </div>
+          </div>
+          <div class="space-y-6">
+            <span class="text-gold font-serif italic text-lg font-semibold uppercase tracking-wider">Environmental Stewardship</span>
+            <h2 class="text-3xl lg:text-5xl font-serif font-bold text-text-primary">Crafted to Harmonize with Nature</h2>
+            <div class="w-20 h-0.5 bg-gold"></div>
+            <p class="text-text-secondary text-sm leading-relaxed">
+              In an era dominated by petrochemical fast fashion and non-biodegradable synthetic trainers, Vernon &amp; Vale preserves the oldest ecological craft on earth. True luxury does not poison the earth.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+              <div class="glass-panel p-4 rounded-xl border-l-4 border-gold">
+                <div class="text-gold font-bold text-lg font-serif mb-1">100% Organic Extracts</div>
+                <p class="text-xs text-text-secondary">Bark extracts from chestnut, mimosa, and quebracho replace heavy toxic chromium salts.</p>
+              </div>
+              <div class="glass-panel p-4 rounded-xl border-l-4 border-gold">
+                <div class="text-gold font-bold text-lg font-serif mb-1">Zero Landfill Scraps</div>
+                <p class="text-xs text-text-secondary">Clicking off-cuts are repurposed into bonded leather heel lifts and acoustic insulation boards.</p>
+              </div>
+              <div class="glass-panel p-4 rounded-xl border-l-4 border-gold">
+                <div class="text-gold font-bold text-lg font-serif mb-1">Oak-Bark Sole Pit</div>
+                <p class="text-xs text-text-secondary">Soling leathers are submerged in natural groundwater pits for 14 continuous months.</p>
+              </div>
+              <div class="glass-panel p-4 rounded-xl border-l-4 border-gold">
+                <div class="text-gold font-bold text-lg font-serif mb-1">Fair Artisan Wages</div>
+                <p class="text-xs text-text-secondary">Guild-certified Italian cordwainers earn living wages with full generational pension benefits.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Master Artisans & Leadership (Matching Sole Craft Team Cards) -->
+    <section class="py-24 bg-[#F3ECE0] dark:bg-[#171717] relative z-10 border-t border-[#8C6239]/10">
+      <div class="container mx-auto px-6">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="text-gold font-serif italic text-lg font-semibold uppercase tracking-wider">Guardians of the Craft</span>
+          <h2 class="text-4xl lg:text-5xl font-serif font-bold text-text-primary mt-2">master cordwainers &amp; Directors</h2>
+          <div class="w-24 h-0.5 bg-gold mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <div class="glass-panel p-6 rounded-2xl text-center group hover-lift">
+            <div class="w-28 h-28 mx-auto rounded-full overflow-hidden border-2 border-gold/40 mb-4 group-hover:scale-105 transition duration-300">
+              <img src="assets/images/team_giancarlo_vale.jpg" class="w-full h-full object-cover" alt="Giancarlo Vale">
+            </div>
+            <h3 class="text-lg font-serif font-bold text-text-primary mb-1">Giancarlo Vale</h3>
+            <span class="text-xs uppercase text-gold font-bold tracking-widest block mb-2">Master Lastmaker</span>
+            <p class="text-xs text-text-secondary leading-relaxed">
+              Over 40 years sculpting bespoke lasts for royal tailor houses and Savile Row.
+            </p>
+          </div>
+
+          <div class="glass-panel p-6 rounded-2xl text-center group hover-lift">
+            <div class="w-28 h-28 mx-auto rounded-full overflow-hidden border-2 border-gold/40 mb-4 group-hover:scale-105 transition duration-300">
+              <img src="assets/images/team_camilla_moretti.jpg" class="w-full h-full object-cover" alt="Camilla Moretti">
+            </div>
+            <h3 class="text-lg font-serif font-bold text-text-primary mb-1">Camilla Moretti</h3>
+            <span class="text-xs uppercase text-gold font-bold tracking-widest block mb-2">Leather Chemist</span>
+            <p class="text-xs text-text-secondary leading-relaxed">
+              Spearheads zero-chromium vegetable tanning and LWG Gold compliance protocols.
+            </p>
+          </div>
+
+          <div class="glass-panel p-6 rounded-2xl text-center group hover-lift">
+            <div class="w-28 h-28 mx-auto rounded-full overflow-hidden border-2 border-gold/40 mb-4 group-hover:scale-105 transition duration-300">
+              <img src="assets/images/team_arthur_vernon.jpg" class="w-full h-full object-cover" alt="Arthur Vernon">
+            </div>
+            <h3 class="text-lg font-serif font-bold text-text-primary mb-1">Arthur Vernon</h3>
+            <span class="text-xs uppercase text-gold font-bold tracking-widest block mb-2">Global Export Director</span>
+            <p class="text-xs text-text-secondary leading-relaxed">
+              Directs international OEM/ODM B2B client relations and global bonded freight.
+            </p>
+          </div>
+
+          <div class="glass-panel p-6 rounded-2xl text-center group hover-lift">
+            <div class="w-28 h-28 mx-auto rounded-full overflow-hidden border-2 border-gold/40 mb-4 group-hover:scale-105 transition duration-300">
+              <img src="assets/images/team_carlo_bellini.jpg" class="w-full h-full object-cover" alt="Carlo Bellini">
+            </div>
+            <h3 class="text-lg font-serif font-bold text-text-primary mb-1">Carlo Bellini</h3>
+            <span class="text-xs uppercase text-gold font-bold tracking-widest block mb-2">Master Patina Colorist</span>
+            <p class="text-xs text-text-secondary leading-relaxed">
+              Applies multi-layered alcohol patinas and mirror champagne glazes by hand.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 relative overflow-hidden bg-cover bg-center">
+      <div class="absolute inset-0 bg-[#FAF7F0] dark:bg-[#0F0F0F] transition-all"></div>
+      <div class="absolute inset-0 bg-gold/5 dark:bg-gold/10 pointer-events-none"></div>
+      <div class="container mx-auto px-6 relative z-10 text-center max-w-3xl">
+        <h2 class="text-4xl lg:text-5xl font-serif font-bold text-text-primary mb-6">Experience Our Workshop In Person</h2>
+        <p class="text-text-secondary mb-8 leading-relaxed max-w-xl mx-auto">
+          We welcome commercial procurement teams, private label founders, and retail buyers to visit our Florence manufacturing atelier and inspect our production benches.
+        </p>
+        <a href="contact.html" class="magnetic-btn bg-gold hover:bg-gold-hover text-black font-bold uppercase text-sm tracking-wider px-10 py-4 rounded-full shadow-xl transition inline-block">
+          Schedule Atelier Visit
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Complete Stylist Footer matching Sole Craft mockup -->
+  <footer class="bg-[#0C0C0C] text-[#FAF7F0] pt-16 sm:pt-20 pb-8 font-sans border-t border-gold/15 relative z-10 w-full">
+    <div class="container mx-auto px-4 sm:px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[2.3fr_2.1fr_1.1fr_1.4fr_1.1fr_2fr] gap-8 lg:gap-6 xl:gap-8 mb-16 text-left items-start">
+      
+      <div class="space-y-4">
+        <a href="index.html" class="h-8 flex items-center gap-2 mb-6">
+          <div class="w-8 h-8 rounded-full border border-gold/40 bg-gradient-to-br from-amber-950 to-amber-700 flex items-center justify-center text-gold font-serif font-bold text-sm shadow-md">VV</div>
+          <span class="font-serif text-xl xl:text-2xl font-bold tracking-wider text-gold-gradient whitespace-nowrap">VERNON &amp; VALE</span>
+        </a>
+        <p class="text-gray-400 text-xs leading-relaxed font-sans">
+          Our History, Your Heirlooms. Founded in 1974, handcrafting bench-grade Goodyear welted footwear with traditional Italian and English lasting techniques.
+        </p>
+        <div class="flex items-center gap-2 xl:gap-2.5 flex-nowrap pt-1">
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full border border-gray-800 flex items-center justify-center text-gold hover:border-gold hover:bg-gold hover:text-black transition shrink-0"><i class="bi bi-facebook text-xs"></i></a>
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full border border-gray-800 flex items-center justify-center text-gold hover:border-gold hover:bg-gold hover:text-black transition shrink-0"><i class="bi bi-instagram text-xs"></i></a>
+          <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full border border-gray-800 flex items-center justify-center text-gold hover:border-gold hover:bg-gold hover:text-black transition shrink-0"><i class="bi bi-twitter-x text-xs"></i></a>
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full border border-gray-800 flex items-center justify-center text-gold hover:border-gold hover:bg-gold hover:text-black transition shrink-0"><i class="bi bi-linkedin text-xs"></i></a>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <h4 class="font-serif text-lg font-bold text-gold tracking-wide">Subscribe</h4>
+        <p class="text-gray-400 text-xs leading-relaxed">
+          Subscribe for archival monographs, private museum exhibitions, and master cordwainer retrospectives.
+        </p>
+        <form class="newsletter-form relative flex items-center pt-2">
+          <input type="email" placeholder="Your work email" required class="w-full bg-[#171717] border border-gray-800 rounded-full py-2.5 pl-4 pr-12 text-xs text-white focus:outline-none focus:border-gold transition">
+          <button type="submit" class="absolute right-1.5 w-8 h-8 rounded-full bg-gold text-black flex items-center justify-center hover:bg-gold-hover transition">
+            <i class="bi bi-arrow-right text-xs"></i>
+          </button>
+        </form>
+      </div>
+
+      <div class="space-y-4">
+        <h4 class="font-serif text-lg font-bold text-gold tracking-wide">Explore</h4>
+        <ul class="space-y-2 text-xs text-gray-400">
+          <li><a href="index.html" class="hover:text-gold transition">Home</a></li>
+          <li><a href="about.html" class="hover:text-gold transition text-gold font-semibold">About Us</a></li>
+          <li><a href="products.html" class="hover:text-gold transition">Footwear Catalog</a></li>
+          <li><a href="collections.html" class="hover:text-gold transition">Collections</a></li>
+          <li><a href="wholesale.html" class="hover:text-gold transition">Wholesale B2B</a></li>
+          <li><a href="craftsmanship.html" class="hover:text-gold transition">Craftsmanship</a></li>
+          <li><a href="contact.html" class="hover:text-gold transition">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="space-y-4">
+        <h4 class="font-serif text-lg font-bold text-gold tracking-wide">Footwear Lines</h4>
+        <ul class="space-y-2 text-xs text-gray-400">
+          <li><a href="products.html?category=formal" class="hover:text-gold transition">Captoe Oxfords</a></li>
+          <li><a href="products.html?category=boots" class="hover:text-gold transition">Chelsea Boots</a></li>
+          <li><a href="products.html?category=loafers" class="hover:text-gold transition">Penny Loafers</a></li>
+          <li><a href="products.html?category=casual" class="hover:text-gold transition">Casual Driving</a></li>
+          <li><a href="products.html?category=handmade" class="hover:text-gold transition">Museum Patina</a></li>
+          <li><a href="craftsmanship.html" class="hover:text-gold transition">Goodyear Welting</a></li>
+        </ul>
+      </div>
+
+      <div class="space-y-4">
+        <h4 class="font-serif text-lg font-bold text-gold tracking-wide">Governance</h4>
+        <ul class="space-y-2 text-xs text-gray-400">
+          <li><a href="wholesale.html" class="hover:text-gold transition">B2B Terms</a></li>
+          <li><a href="privacy.html" class="hover:text-gold transition">Privacy Policy</a></li>
+          <li><a href="privacy.html" class="hover:text-gold transition">NDA Secrecy</a></li>
+          <li><a href="404.html" class="hover:text-gold transition">404 Error</a></li>
+        </ul>
+      </div>
+
+      <div class="space-y-4">
+        <h4 class="font-serif text-lg font-bold text-gold tracking-wide">Contact</h4>
+        <div class="space-y-2 text-xs text-gray-400">
+          <p class="flex items-start gap-2">
+            <i class="bi bi-geo-alt text-gold shrink-0"></i>
+            <span>Via San Niccolò 48, 50125 Firenze, Italy</span>
+          </p>
+          <p class="flex items-center gap-2">
+            <i class="bi bi-telephone text-gold shrink-0"></i>
+            <span>+44 (0) 20 7946 0812</span>
+          </p>
+          <p class="flex items-center gap-2">
+            <i class="bi bi-envelope text-gold shrink-0"></i>
+            <a href="mailto:wholesale@vernonvale-craft.com" class="hover:text-gold transition">wholesale@vernonvale-craft.com</a>
+          </p>
+          <div class="pt-2">
+            <a href="contact.html" class="inline-flex items-center gap-1.5 text-gold hover:text-gold-hover text-xs font-bold uppercase tracking-wider transition">
+              Get Directions <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container mx-auto px-4 sm:px-6 pt-8 border-t border-gray-900 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-500 text-center sm:text-left">
+      <p>&copy; 1974 &ndash; 2026 Vernon &amp; Vale Leather Footwear Manufacturers Ltd. All Rights Reserved.</p>
+      <div class="flex gap-6">
+        <a href="wholesale.html" class="hover:text-gold transition">Terms of Supply</a>
+        <a href="privacy.html" class="hover:text-gold transition">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" class="back-to-top fixed bottom-6 right-6 w-11 h-11 rounded-full bg-gold text-black flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 shadow-xl z-40 hover:bg-gold-hover" aria-label="Return to top">
+    <i class="bi bi-arrow-up text-lg font-bold"></i>
+  </button>
+
+  <!-- Notification Toast Container -->
+  <div id="toastContainer" class="fixed bottom-6 left-6 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <script src="js/products-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

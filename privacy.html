@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+  <!-- Theme Initializer Script -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('vv_theme') || 'dark';
+      if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      const savedDir = localStorage.getItem('vv_dir') || 'ltr';
+      document.documentElement.setAttribute('dir', savedDir);
+    })();
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy &amp; B2B Client Governance | Vernon &amp; Vale</title>
+  <meta name="description" content="Official privacy policy, GDPR compliance, intellectual property protection, and B2B non-disclosure agreements for Vernon & Vale Leather Footwear Manufacturers.">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  
+  <!-- Tailwind CSS CDN + Custom Configuration -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            gold: 'var(--color-gold)',
+            'gold-hover': 'var(--color-gold-hover)',
+            cognac: 'var(--color-cognac)',
+            tan: 'var(--color-tan)',
+            'text-primary': 'var(--text-primary)',
+            'text-secondary': 'var(--text-secondary)',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#FAF7F0] text-[#1C1C1C] dark:bg-[#0F0F0F] dark:text-[#F3ECE0] transition-colors duration-500">
+
+  <!-- Header Navbar matching Sole Craft -->
+    <!-- Premium Sticky Header Navbar -->
+  <header class="fixed top-0 left-0 w-full z-50 py-3 lg:py-5 transition-all duration-300" id="site-header">
+    <div class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 xl:px-10 flex items-center justify-between gap-4 lg:gap-6 xl:gap-8">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-2.5 shrink-0 group">
+        <img src="assets/images/logo.png" alt="Vernon &amp; Vale Logo" class="w-8 h-8 rounded-full border border-gold/40 object-cover shrink-0 group-hover:scale-105 transition-transform">
+        <span class="font-serif text-lg sm:text-xl xl:text-2xl font-bold tracking-wider text-gold-gradient whitespace-nowrap">VERNON &amp; VALE</span>
+      </a>
+
+      <!-- Desktop Navigation links with Dropdowns -->
+      <nav class="hidden lg:flex items-center gap-2.5 xl:gap-5 2xl:gap-7 text-[11px] xl:text-xs uppercase tracking-wider font-bold whitespace-nowrap">
+        <a href="index.html" class="hover:text-gold transition py-1 text-text-primary">Home</a>
+        <a href="home2.html" class="hover:text-gold transition py-1 text-text-primary">Home 2</a>
+        <a href="about.html" class="hover:text-gold transition py-1 text-text-primary">About</a>
+
+        <!-- Products Dropdown -->
+        <a href="products.html" class="hover:text-gold transition py-1 text-text-primary">Products</a>
+
+        <a href="collections.html" class="hover:text-gold transition py-1 text-text-primary">Collections</a>
+        <a href="wholesale.html" class="hover:text-gold transition py-1 text-text-primary">Wholesale</a>
+        <a href="craftsmanship.html" class="hover:text-gold transition py-1 text-text-primary">Craftsmanship</a>
+        <a href="contact.html" class="hover:text-gold transition py-1 text-text-primary">Contact</a>
+      </nav>
+
+      <!-- Right Action Items -->
+      <div class="hidden lg:flex items-center gap-2 xl:gap-3 shrink-0">
+        <!-- Theme Toggle Circular Button -->
+        <button id="theme-toggle" class="theme-circle-btn shrink-0" title="Toggle Theme" aria-label="Toggle Theme">
+          <i class="bi bi-sun-fill text-base xl:text-lg"></i>
+        </button>
+        <!-- Language/RTL Toggle Pill Button -->
+        <button id="lang-toggle" class="rtl-toggle-pill shrink-0 px-2.5 xl:px-3 py-1.5 text-[11px] xl:text-xs" title="Toggle RTL" aria-label="Toggle RTL">
+          <i class="bi bi-arrow-left-right text-xs"></i>
+          <span id="lang-text">RTL</span>
+        </button>
+        <!-- Wholesale B2B Link (Visible on xl screens) -->
+        <a href="wholesale.html" class="hidden xl:inline-flex h-9 xl:h-10 items-center justify-center border border-gold text-gold hover:bg-gold hover:text-black transition px-3.5 xl:px-4 rounded-full text-[11px] xl:text-xs font-bold uppercase tracking-wider shrink-0">
+          B2B Portal
+        </a>
+        <!-- CTA button (Solid Gold Pill) -->
+        <a href="contact.html" class="magnetic-btn h-9 xl:h-10 inline-flex items-center justify-center bg-gold hover:bg-gold-hover text-black text-[11px] xl:text-xs uppercase tracking-wider font-bold px-4 xl:px-5 rounded-full shadow-lg transition shrink-0">
+          Inquire Now
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger button -->
+      <button id="mobile-menu-btn" class="lg:hidden text-text-primary p-2 shrink-0" aria-label="Open Menu">
+        <i class="bi bi-list text-2xl"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay -->
+  <div id="mobile-drawer-overlay" class="fixed inset-0 bg-black/60 z-[9998] hidden opacity-0 transition-opacity duration-300"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="fixed top-0 right-0 h-full w-full sm:w-[85vw] sm:max-w-[380px] bg-[#0F0F0F] text-[#F3ECE0] z-[9999] transform translate-x-full transition-transform duration-300 overflow-y-auto flex flex-col justify-between border-l border-gold/15 shadow-2xl">
+    <div class="p-6 flex items-center justify-between border-b border-gold/15">
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="assets/images/logo.png" alt="Vernon &amp; Vale Logo" class="w-8 h-8 rounded-full border border-gold/30 object-cover">
+        <span class="font-serif text-xl font-bold tracking-wider text-gold-gradient">VERNON &amp; VALE</span>
+      </a>
+      <button id="mobile-drawer-close" class="text-[#F3ECE0] hover:text-gold transition p-2" aria-label="Close menu">
+        <i class="bi bi-x-lg text-xl"></i>
+      </button>
+    </div>
+
+    <!-- Theme & Orientation Toggles -->
+    <div class="px-6 py-4 flex gap-4 border-b border-gold/10 text-xs uppercase tracking-wider font-bold">
+      <button id="mobile-theme-toggle" class="flex-1 py-2.5 px-4 rounded-full border border-gold/20 hover:border-gold bg-[#171717] flex items-center justify-center gap-2 text-[#FAF7F0] transition" title="Toggle Theme">
+        <i class="bi bi-sun-fill text-gold"></i> Theme
+      </button>
+      <button id="mobile-lang-toggle" class="flex-1 py-2.5 px-4 rounded-full border border-gold/20 hover:border-gold bg-[#171717] flex items-center justify-center gap-2 text-[#FAF7F0] transition">
+        <i class="bi bi-arrow-left-right text-gold"></i> <span id="mobile-lang-text">RTL</span>
+      </button>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="flex-1 px-6 py-6 space-y-2 text-sm uppercase tracking-widest font-bold">
+      <a href="index.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Home</a>
+        <a href="home2.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Home 2</a>
+      <a href="about.html" class="block py-3 hover:text-gold transition border-b border-gold/5">About Us</a>
+      <a href="products.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Products</a>
+      <a href="collections.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Collections</a>
+      <a href="wholesale.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Wholesale (B2B)</a>
+      <a href="craftsmanship.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Craftsmanship</a>
+      <a href="contact.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Contact</a>
+      <a href="privacy.html" class="block py-3 text-gold transition border-b border-gold/5">Privacy Policy</a>
+    </nav>
+
+    <!-- Bottom Actions -->
+    <div class="p-6 border-t border-gold/15 bg-[#121212]">
+      <a href="wholesale.html" class="block text-center bg-gold hover:bg-gold-hover text-black py-4 rounded-full text-xs font-bold uppercase tracking-widest transition shadow-lg">
+        B2B Wholesale Inquiry
+      </a>
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero Banner matching Sole Craft -->
+    <section class="relative min-h-[65vh] flex items-center justify-center pt-32 pb-20 bg-cover bg-center" style="background-image: url('assets/images/hero_privacy_bg.jpg');">
+      <div class="absolute inset-0 bg-black/80 dark:bg-black/85 backdrop-blur-[1px]"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-black/90 via-black/75 to-black/90 pointer-events-none"></div>
+      
+      <div class="container mx-auto px-4 sm:px-6 text-center max-w-3xl relative z-10 page-transition text-white">
+        <span class="text-gold font-serif italic text-base sm:text-lg font-semibold tracking-wider uppercase block mb-3">
+          Institutional Governance &bull; Trade Compliance
+        </span>
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-serif font-bold text-white mt-1 mb-6 leading-tight">
+          Privacy &amp; Regulatory Standards
+        </h1>
+        <div class="w-24 h-0.5 bg-gold mx-auto mb-6"></div>
+        <p class="text-gray-300 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+          Proprietary shoe last copyright protection, strict non-disclosure agreement governance, GDPR transparency, and international customs documentation.
+        </p>
+      </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="py-20 relative z-10">
+      <div class="container mx-auto px-4 sm:px-6 max-w-4xl">
+        <article class="glass-panel p-8 sm:p-12 rounded-2xl border border-gold/15 shadow-2xl space-y-8 text-xs sm:text-sm text-text-secondary leading-relaxed">
+          
+          <div>
+            <h2 class="text-xl sm:text-2xl font-serif font-bold text-text-primary mb-3">1. Corporate Data Controller</h2>
+            <p>
+              Vernon &amp; Vale Atelier Footwear Manufacturers S.p.A. (registered under Italian Trade Register No. FI-928174, with operating atelier hubs in Florence, Italy and London Mayfair, UK) is the designated Data Controller regarding personal information, B2B wholesale inquiries, and technical manufacturing specifications gathered through this website.
+            </p>
+          </div>
+
+          <div class="border-t border-gold/10 pt-6">
+            <h2 class="text-xl sm:text-2xl font-serif font-bold text-text-primary mb-3">2. Information We Collect</h2>
+            <p class="mb-3">
+              When you interact with our B2B manufacturing portal, sample request modal, or newsletter dispatch, we may collect:
+            </p>
+            <ul class="space-y-2 list-disc list-inside">
+              <li>Representative Name, Corporate Brand Identity, and Job Title.</li>
+              <li>Corporate Work Email Address and WhatsApp / International Phone Numbers.</li>
+              <li>Export Destination Country, Target Footwear Categories, and Order Quantities.</li>
+              <li>Proprietary CAD Last files, Tech Packs, and Insole debossing files submitted for private label quotations.</li>
+            </ul>
+          </div>
+
+          <div class="border-t border-gold/10 pt-6">
+            <h2 class="text-xl sm:text-2xl font-serif font-bold text-text-primary mb-3">3. Strict B2B Non-Disclosure &amp; Proprietary Last Guarantee</h2>
+            <p class="mb-4">
+              We operate under strict industrial secrecy. When a commercial client commissions custom lasts, proprietary brogue perforations, or branded packaging dies from Vernon &amp; Vale:
+            </p>
+            <div class="glass-panel p-5 rounded-xl border border-gold/30 bg-gold/5">
+              <strong class="text-gold block font-serif text-base mb-1">Proprietary Last Guarantee:</strong>
+              <p>
+                Any last geometry, monogram emboss tooling, or proprietary shoe pattern developed under contract remains the sole intellectual property of the commissioning client. Under zero circumstance will such designs be licensed, exhibited, or shared with third-party competitors.
+              </p>
+            </div>
+          </div>
+
+          <div class="border-t border-gold/10 pt-6">
+            <h2 class="text-xl sm:text-2xl font-serif font-bold text-text-primary mb-3">4. Use of LocalStorage &amp; Essential Cookies</h2>
+            <p class="mb-3">
+              This website does not deploy predatory third-party advertising trackers or commercial remarketing pixels. We use browser <code class="px-2 py-0.5 rounded bg-black/20 dark:bg-white/10 text-gold font-mono text-xs">localStorage</code> exclusively to persist your user interface preferences:
+            </p>
+            <ul class="space-y-2 list-disc list-inside">
+              <li><strong>Theme Preference (<code class="text-gold font-mono text-xs">vv_theme</code>):</strong> Remembers whether you selected Ivory Light or Dark Mode.</li>
+              <li><strong>Layout Direction (<code class="text-gold font-mono text-xs">vv_dir</code>):</strong> Remembers whether you chose Left-to-Right (LTR) or Right-to-Left (RTL) reading view.</li>
+            </ul>
+          </div>
+
+          <div class="border-t border-gold/10 pt-6">
+            <h2 class="text-xl sm:text-2xl font-serif font-bold text-text-primary mb-3">5. GDPR Compliance &amp; Data Subject Rights</h2>
+            <p>
+              Under the EU General Data Protection Regulation (GDPR) and UK Data Protection Act 2018, you possess the right to access, rectify, export, or permanently erase your corporate representative data from our CRM records at any time with zero penalty.
+            </p>
+          </div>
+
+          <div class="border-t border-gold/10 pt-6">
+            <h2 class="text-xl sm:text-2xl font-serif font-bold text-text-primary mb-3">6. Data Protection Officer Contact</h2>
+            <p>
+              For privacy inquiries, NDA requests, or data deletion notices, contact our Legal Counsel directly at:<br>
+              <strong class="text-text-primary">Data Protection Desk:</strong> <a href="mailto:governance@vernonvale-craft.com" class="text-gold underline">governance@vernonvale-craft.com</a><br>
+              Vernon &amp; Vale Legal Department, 14 Savile Row, Mayfair, London W1S 3JN, UK
+            </p>
+          </div>
+
+        </article>
+      </div>
+    </section>
+
+    <!-- COMPLIANCE & LEGAL GOVERNANCE PROTOCOLS -->
+    <section class="py-20 bg-[#F3ECE0] dark:bg-[#171717] border-t border-gold/15 relative z-10">
+      <div class="container mx-auto px-4 sm:px-6 max-w-5xl">
+        <div class="text-center mb-12">
+          <span class="text-gold font-serif italic text-base uppercase tracking-widest font-semibold">Regulatory Framework</span>
+          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-text-primary mt-2">Institutional Compliance Standards</h2>
+          <div class="w-16 h-0.5 bg-gold mx-auto mt-3"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="glass-panel p-6 rounded-2xl hover-lift">
+            <div class="h-40 rounded-xl overflow-hidden mb-4">
+              <img src="assets/images/compliance_reach_testing.jpg" class="w-full h-full object-cover" alt="REACH Compliance">
+            </div>
+            <h3 class="font-serif font-bold text-lg text-text-primary mb-2">REACH Regulation (EC) 1907/2006</h3>
+            <p class="text-xs text-text-secondary leading-relaxed">Zero hazardous aromatic amines, azo colorants, or pentachlorophenol in any linings, outsoles, or upper leathers.</p>
+          </div>
+
+          <div class="glass-panel p-6 rounded-2xl hover-lift">
+            <div class="h-40 rounded-xl overflow-hidden mb-4">
+              <img src="assets/images/compliance_lwg_gold_audit.jpg" class="w-full h-full object-cover" alt="LWG Audit">
+            </div>
+            <h3 class="font-serif font-bold text-lg text-text-primary mb-2">Leather Working Group Gold</h3>
+            <p class="text-xs text-text-secondary leading-relaxed">All partnered Italian and French tanneries carry LWG Gold medals for effluent treatment, water recycling, and hide traceability.</p>
+          </div>
+
+          <div class="glass-panel p-6 rounded-2xl hover-lift">
+            <div class="h-40 rounded-xl overflow-hidden mb-4">
+              <img src="assets/images/compliance_nda_vault.jpg" class="w-full h-full object-cover" alt="Proprietary Last NDA">
+            </div>
+            <h3 class="font-serif font-bold text-lg text-text-primary mb-2">Strict B2B NDA Safeguards</h3>
+            <p class="text-xs text-text-secondary leading-relaxed">Client bespoke last CAD data and brand embossing dies are encrypted, stored in isolated vaults, and destroyed upon contract completion.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Standard Stylist Footer matching Sole Craft -->
+    <!-- Standard Stylist Footer -->
+  <footer class="bg-[#0C0C0C] text-[#FAF7F0] pt-16 sm:pt-20 pb-8 font-sans border-t border-gold/15 relative z-10 w-full">
+    <div class="container mx-auto px-4 sm:px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[2.3fr_2.1fr_1.1fr_1.4fr_1.1fr_2fr] gap-8 lg:gap-6 xl:gap-8 mb-16 text-left items-start">
+      
+      <!-- Column 1: Brand & Socials -->
+      <div class="space-y-4">
+        <a href="index.html" class="flex items-center gap-2">
+          <img src="assets/images/logo.png" alt="Vernon &amp; Vale Logo" class="w-8 h-8 rounded-full border border-gold/30 object-cover shrink-0">
+          <span class="font-serif text-xl font-bold tracking-wider text-gold-gradient">VERNON &amp; VALE</span>
+        </a>
+        <p class="text-xs text-[#A69D90] leading-relaxed">
+          Strict non-disclosure agreements, CAD last copyright safeguards, and full EU REACH chemical traceability standards.
+        </p>
+        <div class="flex items-center gap-2.5 pt-2">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-[#1A1A1A] hover:bg-gold hover:text-black flex items-center justify-center transition border border-gold/20 text-[#FAF7F0] text-sm" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-[#1A1A1A] hover:bg-gold hover:text-black flex items-center justify-center transition border border-gold/20 text-[#FAF7F0] text-sm" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-[#1A1A1A] hover:bg-gold hover:text-black flex items-center justify-center transition border border-gold/20 text-[#FAF7F0] text-sm" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
+        </div>
+      </div>
+
+      <!-- Column 2: Specific Newsletter / Notification -->
+      <div class="space-y-4">
+        <h4 class="font-serif text-base font-bold text-gold tracking-wide">Compliance Bulletin</h4>
+        <p class="text-xs text-[#A69D90] leading-relaxed">
+          Updates regarding international trade documentation, LWG sustainability audits, and export governance.
+        </p>
+        <form class="newsletter-form relative flex items-center pt-1" onsubmit="event.preventDefault(); alert('Subscribed to Vernon &amp; Vale Atelier updates!'); this.reset();">
+          <input type="email" placeholder="trade.buyer@brand.com" required class="w-full bg-[#171717] border border-gold/20 rounded-full py-2.5 pl-4 pr-12 text-xs text-[#FAF7F0] focus:outline-none focus:border-gold transition">
+          <button type="submit" class="absolute right-1 w-8 h-8 rounded-full bg-gold text-black flex items-center justify-center hover:bg-gold-hover transition">
+            <i class="bi bi-arrow-right text-xs"></i>
+          </button>
+        </form>
+      </div>
+
+      <!-- Column 3: Navigation -->
+      <div class="space-y-4">
+        <h4 class="font-serif text-base font-bold text-gold tracking-wide">Explore</h4>
+        <ul class="space-y-2 text-xs text-[#A69D90]">
+          <li><a href="index.html" class="hover:text-gold transition">Home</a></li>
+          <li><a href="home2.html" class="hover:text-gold transition">Home 2 (Atelier)</a></li>
+          <li><a href="about.html" class="hover:text-gold transition">About Us</a></li>
+          <li><a href="products.html" class="hover:text-gold transition">Products</a></li>
+          <li><a href="collections.html" class="hover:text-gold transition">Collections</a></li>
+          <li><a href="craftsmanship.html" class="hover:text-gold transition">Craftsmanship</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Manufacturing -->
+      <div class="space-y-4">
+        <h4 class="font-serif text-base font-bold text-gold tracking-wide">Benchcraft</h4>
+        <ul class="space-y-2 text-xs text-[#A69D90]">
+          <li><a href="products.html?category=oxfords" class="hover:text-gold transition">Captoe Oxfords</a></li>
+          <li><a href="products.html?category=boots" class="hover:text-gold transition">Chelsea Boots</a></li>
+          <li><a href="products.html?category=loafers" class="hover:text-gold transition">Penny Loafers</a></li>
+          <li><a href="wholesale.html" class="hover:text-gold transition">Private Label OEM</a></li>
+          <li><a href="craftsmanship.html" class="hover:text-gold transition">Goodyear Welt</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 5: Governance -->
+      <div class="space-y-4">
+        <h4 class="font-serif text-base font-bold text-gold tracking-wide">Governance</h4>
+        <ul class="space-y-2 text-xs text-[#A69D90]">
+          <li><a href="wholesale.html" class="hover:text-gold transition">Supply Terms</a></li>
+          <li><a href="privacy.html" class="hover:text-gold transition">Privacy Policy</a></li>
+          <li><a href="privacy.html" class="hover:text-gold transition">NDA Secrecy</a></li>
+          <li><a href="404.html" class="hover:text-gold transition">404 Error</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 6: Atelier Contact Info -->
+      <div class="space-y-4">
+        <h4 class="font-serif text-base font-bold text-gold tracking-wide">Florence Atelier</h4>
+        <div class="space-y-2 text-xs text-[#A69D90]">
+          <p class="flex items-start gap-2">
+            <i class="bi bi-geo-alt text-gold shrink-0"></i>
+            <span>Via San Niccolò 48, 50125 Firenze, Italy</span>
+          </p>
+          <p class="flex items-center gap-2">
+            <i class="bi bi-telephone text-gold shrink-0"></i>
+            <span>+44 (0) 20 7946 0812</span>
+          </p>
+          <p class="flex items-center gap-2">
+            <i class="bi bi-envelope text-gold shrink-0"></i>
+            <a href="mailto:wholesale@vernonvale-craft.com" class="hover:text-gold transition">wholesale@vernonvale-craft.com</a>
+          </p>
+          <p class="flex items-center gap-2">
+            <i class="bi bi-clock text-gold shrink-0"></i>
+            <span>Mon–Fri: 8:30 AM – 6:30 PM CET</span>
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="container mx-auto px-4 sm:px-6 pt-8 border-t border-gold/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-[#8A8175] text-center sm:text-left">
+      <p>&copy; 1974 &ndash; 2026 Vernon &amp; Vale Leather Footwear Manufacturers Ltd. All Rights Reserved.</p>
+      <div class="flex gap-6">
+        <a href="wholesale.html" class="hover:text-gold transition">Terms of Supply</a>
+        <a href="privacy.html" class="hover:text-gold transition">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="fixed bottom-6 right-6 w-11 h-11 rounded-full bg-gold text-black flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 shadow-xl z-40 hover:bg-gold-hover" aria-label="Back to top">
+    <i class="bi bi-arrow-up text-lg font-bold"></i>
+  </button>
+
+  <!-- Notification Toast Container -->
+  <div id="toastContainer" class="fixed bottom-6 left-6 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>
