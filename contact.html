@@ -58,8 +58,32 @@
 
       <!-- Desktop Navigation links with Dropdowns -->
       <nav class="hidden lg:flex items-center gap-2.5 xl:gap-5 2xl:gap-7 text-[11px] xl:text-xs uppercase tracking-wider font-bold whitespace-nowrap">
-        <a href="index.html" class="hover:text-gold transition py-1 text-text-primary">Home</a>
-        <a href="home2.html" class="hover:text-gold transition py-1 text-text-primary">Home 2</a>
+        <!-- Home Dropdown (Home 1 & Home 2) -->
+        <div class="relative group">
+          <button class="flex items-center gap-1.5 py-1 text-text-primary hover:text-gold transition font-bold uppercase tracking-wider focus:outline-none" aria-haspopup="true">
+            <span>Home</span>
+            <i class="bi bi-chevron-down text-[10px] text-gold group-hover:rotate-180 transition-transform duration-300"></i>
+          </button>
+          <div class="absolute left-0 top-full pt-2 hidden group-hover:block z-50 min-w-[230px]">
+            <div class="glass-panel rounded-xl p-2.5 shadow-2xl border border-gold/25 backdrop-blur-xl bg-[#0F0F0F]/95 dark:bg-[#121212]/95 text-[#F3ECE0]">
+              <a href="index.html" class="flex items-center justify-between px-3.5 py-2.5 rounded-lg text-xs hover:bg-gold/15 hover:text-gold transition font-normal normal-case group/item ">
+                <div>
+                  <span class="font-serif font-bold block text-sm text-text-primary group-hover/item:text-gold">Home 1</span>
+                  <span class="text-[10px] text-text-secondary block">Classic Atelier &amp; Heritage</span>
+                </div>
+                <i class="bi bi-arrow-right text-xs text-gold opacity-0 group-hover/item:opacity-100 transition-opacity"></i>
+              </a>
+              <div class="h-px bg-gold/15 my-1"></div>
+              <a href="home2.html" class="flex items-center justify-between px-3.5 py-2.5 rounded-lg text-xs hover:bg-gold/15 hover:text-gold transition font-normal normal-case group/item ">
+                <div>
+                  <span class="font-serif font-bold block text-sm text-text-primary group-hover/item:text-gold">Home 2</span>
+                  <span class="text-[10px] text-text-secondary block">Private Label &amp; Bespoke</span>
+                </div>
+                <i class="bi bi-arrow-right text-xs text-gold opacity-0 group-hover/item:opacity-100 transition-opacity"></i>
+              </a>
+            </div>
+          </div>
+        </div>
         <a href="about.html" class="hover:text-gold transition py-1 text-text-primary">About</a>
 
         <!-- Products Dropdown -->
@@ -126,8 +150,17 @@
 
     <!-- Navigation Links -->
     <nav class="flex-1 px-6 py-6 space-y-2 text-sm uppercase tracking-widest font-bold">
-      <a href="index.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Home</a>
-        <a href="home2.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Home 2</a>
+      <!-- Mobile Home Dropdown -->
+        <div class="border-b border-gold/5">
+          <button class="w-full flex items-center justify-between py-3 hover:text-gold transition text-left font-bold" onclick="const m = this.nextElementSibling; m.classList.toggle('hidden'); this.querySelector('i').classList.toggle('rotate-180')">
+            <span class="">Home</span>
+            <i class="bi bi-chevron-down text-xs text-gold transition-transform duration-300 "></i>
+          </button>
+          <div class="hidden pl-4 py-2 space-y-2 border-l border-gold/20 my-1">
+            <a href="index.html" class="block py-1.5 text-xs text-gray-300 hover:text-gold">Home 1 &bull; Classic Heritage</a>
+            <a href="home2.html" class="block py-1.5 text-xs text-gray-300 hover:text-gold">Home 2 &bull; Private Label Atelier</a>
+          </div>
+        </div>
       <a href="about.html" class="block py-3 hover:text-gold transition border-b border-gold/5">About Us</a>
       <a href="products.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Products</a>
       <a href="collections.html" class="block py-3 hover:text-gold transition border-b border-gold/5">Collections</a>
