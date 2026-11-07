@@ -423,7 +423,78 @@ html:not(.dark) .shoe-image-container img {
   display: none !important;
 }
 
-/* Light Theme Font Visibility Enhancements */
+#canvas-3d {
+  display: none !important;
+}
+
+/* 100% Guaranteed High-Contrast Visibility for All Hero Sections & Dark Overlays */
+.hero-dark-stage,
+[style*="hero_"],
+section.min-h-screen,
+header#site-header,
+footer {
+  color: #FFFFFF;
+}
+
+.hero-dark-stage h1,
+.hero-dark-stage h1 *,
+[style*="hero_"] h1,
+[style*="hero_"] h1 *,
+html:not(.dark) .hero-dark-stage h1,
+html:not(.dark) .hero-dark-stage h1 *,
+html:not(.dark) [style*="hero_"] h1,
+html:not(.dark) [style*="hero_"] h1 * {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 25px rgba(0, 0, 0, 0.95), 0 0 45px rgba(0, 0, 0, 0.8) !important;
+}
+
+.hero-dark-stage .text-gold-gradient,
+[style*="hero_"] .text-gold-gradient,
+html:not(.dark) .hero-dark-stage .text-gold-gradient,
+html:not(.dark) [style*="hero_"] .text-gold-gradient {
+  background: linear-gradient(135deg, #FFE89E 0%, #D4AF37 50%, #B8860B 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: #D4AF37 !important;
+  text-shadow: none !important;
+}
+
+.hero-dark-stage p,
+.hero-dark-stage p *,
+[style*="hero_"] p,
+[style*="hero_"] p *,
+html:not(.dark) .hero-dark-stage p,
+html:not(.dark) .hero-dark-stage p *,
+html:not(.dark) [style*="hero_"] p,
+html:not(.dark) [style*="hero_"] p *,
+html:not(.dark) .hero-dark-stage .text-gray-300,
+html:not(.dark) [style*="hero_"] .text-gray-300,
+html:not(.dark) .hero-dark-stage .text-gray-200,
+html:not(.dark) [style*="hero_"] .text-gray-200 {
+  color: #EDE8DF !important;
+  text-shadow: 0 1px 15px rgba(0, 0, 0, 0.9) !important;
+}
+
+.hero-dark-stage .hero-trust-strip,
+.hero-dark-stage .hero-trust-strip *,
+html:not(.dark) .hero-dark-stage .hero-trust-strip,
+html:not(.dark) .hero-dark-stage .hero-trust-strip * {
+  color: #DCD5C9 !important;
+}
+
+.hero-dark-stage .hero-trust-strip strong,
+html:not(.dark) .hero-dark-stage .hero-trust-strip strong {
+  color: #E5B23B !important;
+}
+
+.hero-dark-stage .hero-pill-badge,
+html:not(.dark) .hero-dark-stage .hero-pill-badge {
+  background-color: rgba(212, 175, 55, 0.18) !important;
+  border-color: rgba(212, 175, 55, 0.5) !important;
+  color: #F0C458 !important;
+}
+
+/* Light Theme Font Visibility Enhancements (Applied outside of dark hero banners) */
 html:not(.dark) {
   color: var(--text-primary);
 }
@@ -431,31 +502,35 @@ html:not(.dark) body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
 }
-html:not(.dark) p {
+html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]) p {
   color: var(--text-secondary);
 }
-html:not(.dark) h1, html:not(.dark) h2, html:not(.dark) h3, 
-html:not(.dark) h4, html:not(.dark) h5, html:not(.dark) h6 {
+html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]) h1, 
+html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]) h2, 
+html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]) h3, 
+html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]) h4, 
+html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]) h5, 
+html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]) h6 {
   color: var(--text-primary);
 }
-html:not(.dark) .text-gray-400,
-html:not(.dark) .text-stone-400 {
+html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]) .text-gray-400,
+html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]) .text-stone-400 {
   color: #4D4135 !important;
 }
-html:not(.dark) .text-gray-500,
-html:not(.dark) .text-stone-500 {
+html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]) .text-gray-500,
+html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]) .text-stone-500 {
   color: #382F26 !important;
 }
-html:not(.dark) .text-gray-300,
-html:not(.dark) .text-stone-300 {
+html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]) .text-gray-300,
+html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]) .text-stone-300 {
   color: #241D17 !important;
 }
-html:not(.dark) .text-gray-600,
-html:not(.dark) .text-stone-600 {
+html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]) .text-gray-600,
+html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]) .text-stone-600 {
   color: #1A1511 !important;
 }
-html:not(.dark) .text-gray-200,
-html:not(.dark) .text-stone-200 {
+html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]) .text-gray-200,
+html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]) .text-stone-200 {
   color: #2D251D !important;
 }
 html:not(.dark) .glass-panel {

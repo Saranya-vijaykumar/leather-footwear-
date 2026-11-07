@@ -186,7 +186,7 @@
 
   <main>
     <!-- HERO SECTION (Matching Sole Craft's Exact 3D Orbiting Trail, Floating Badges, and Editorial Layout) -->
-    <section class="min-h-screen pt-32 pb-20 flex items-center relative overflow-hidden bg-cover bg-center" style="background-image: url('assets/images/hero_home_bg.jpg');">
+    <section class="hero-dark-stage min-h-screen pt-32 pb-20 flex items-center relative overflow-hidden bg-cover bg-center" style="background-image: url('assets/images/hero_home_bg.jpg');">
       <div class="absolute inset-0 bg-black/80 dark:bg-black/85 backdrop-blur-[1px]"></div>
       <div class="absolute inset-0 bg-gradient-to-r from-black/95 via-black/85 to-black/60 pointer-events-none"></div>
       
@@ -200,14 +200,14 @@
         
         <!-- Left Hero Text Area -->
         <div class="lg:col-span-5 xl:col-span-5 space-y-6 text-white">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold/15 border border-gold/40 text-gold text-xs font-mono tracking-wider uppercase">
+          <div class="hero-pill-badge inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold/15 border border-gold/40 text-gold text-xs font-mono tracking-wider uppercase">
             <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span> Florence Atelier &bull; Master Shoemakers Est. 1974
           </div>
-          <h1 class="text-4xl sm:text-6xl xl:text-7xl font-bold font-serif leading-[1.1] text-white">
-            Handcrafted Footwear<br>
+          <h1 class="text-4xl sm:text-6xl xl:text-7xl font-bold font-serif leading-[1.1] !text-white text-white">
+            <span class="block !text-white text-white">Handcrafted Footwear</span>
             <span class="text-gold-gradient">Built For Decades.</span>
           </h1>
-          <p class="text-base sm:text-lg text-gray-300 max-w-xl leading-relaxed">
+          <p class="text-base sm:text-lg text-gray-200 !text-[#EAE5DC] max-w-xl leading-relaxed">
             Master leather footwear manufacturing engineered exclusively for luxury private labels and bespoke houses worldwide. We combine century-old Goodyear welting with hand-burnished Tuscan vegetable calfskin to craft footwear collections of timeless structural longevity.
           </p>
           <div class="flex flex-wrap gap-4 pt-2">
@@ -219,7 +219,7 @@
               B2B Wholesale Portal
             </a>
           </div>
-          <div class="flex items-center gap-6 pt-4 text-xs text-gray-400 font-mono border-t border-white/10">
+          <div class="hero-trust-strip flex items-center gap-6 pt-4 text-xs text-gray-400 font-mono border-t border-white/15">
             <div><strong class="text-gold">100%</strong> Hand-Lasted</div>
             <div>&bull;</div>
             <div><strong class="text-gold">Goodyear 360°</strong> Inseam</div>
@@ -233,8 +233,6 @@
           <div class="relative flex flex-col lg:block items-center justify-center w-full max-w-[620px] xl:max-w-[680px]">
             
             <div class="interactive-shoe-wrapper mx-auto">
-              <!-- Particles Background Canvas -->
-              <div id="canvas-3d" class="absolute inset-0 z-0"></div>
               <!-- Floating shoe image (Magnificent Glowing Cognac Oxford) -->
               <div class="shoe-image-container">
                 <img src="assets/images/hero_shoe_cutout.png" alt="Vernon &amp; Vale Bespoke Goodyear Welted Oxford (Handcrafted Patina)">
