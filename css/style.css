@@ -598,3 +598,141 @@ html:not(.dark) .bg-\[\#0F0F0F\] {
 [data-hero] .text-gold {
   color: var(--color-gold) !important;
 }
+
+/* ==========================================================================
+   FOOTER 100% CRYSTAL-CLEAR HIGH-CONTRAST VISIBILITY (LIGHT & DARK THEMES)
+   ========================================================================== */
+footer {
+  background-color: #0A0A0A !important;
+  color: #F5F2EB !important;
+  border-top: 1px solid rgba(212, 175, 55, 0.25) !important;
+}
+
+/* Footer Brand Title */
+footer .text-gold-gradient {
+  background: linear-gradient(135deg, #FFE89E 0%, #D4AF37 50%, #B8860B 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: #D4AF37 !important;
+}
+
+/* Footer Column Headings */
+footer h4,
+footer h3,
+footer .footer-title,
+html:not(.dark) footer h4,
+html:not(.dark) footer h3,
+.dark footer h4,
+.dark footer h3 {
+  color: #F0C458 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  font-size: 0.875rem !important;
+  margin-bottom: 0.85rem !important;
+}
+
+/* Footer Description & Paragraphs */
+footer p,
+footer span,
+html:not(.dark) footer p,
+html:not(.dark) footer span,
+.dark footer p,
+.dark footer span {
+  color: #E2DBD0 !important;
+  line-height: 1.7 !important;
+  font-size: 0.8125rem !important;
+}
+
+/* Footer Navigation Links */
+footer ul li a,
+footer a:not(.magnetic-btn):not([class*="bg-gold"]),
+html:not(.dark) footer ul li a,
+html:not(.dark) footer a:not(.magnetic-btn):not([class*="bg-gold"]),
+.dark footer ul li a,
+.dark footer a:not(.magnetic-btn):not([class*="bg-gold"]) {
+  color: #D4CCC0 !important;
+  font-size: 0.8125rem !important;
+  transition: all 0.2s ease !important;
+  display: inline-block !important;
+}
+
+footer ul li a:hover,
+footer a:hover,
+html:not(.dark) footer ul li a:hover,
+html:not(.dark) footer a:hover,
+.dark footer ul li a:hover,
+.dark footer a:hover {
+  color: #FFE48F !important;
+  transform: translateX(3px) !important;
+}
+
+/* Footer Contact Info */
+footer .bi,
+html:not(.dark) footer .bi,
+.dark footer .bi {
+  color: #E5B23B !important;
+}
+
+footer address,
+footer .contact-info,
+footer [class*="text-gray"],
+footer [class*="text-stone"],
+html:not(.dark) footer [class*="text-gray"],
+html:not(.dark) footer [class*="text-stone"],
+.dark footer [class*="text-gray"],
+.dark footer [class*="text-stone"] {
+  color: #E2DBD0 !important;
+}
+
+/* Footer Newsletter Input */
+footer input[type="email"] {
+  background-color: #171717 !important;
+  border: 1px solid rgba(212, 175, 55, 0.4) !important;
+  color: #FFFFFF !important;
+}
+
+footer input[type="email"]::placeholder {
+  color: #A39B8E !important;
+}
+
+/* Footer Bottom Copyright Bar */
+footer .border-t,
+footer .border-gray-900,
+html:not(.dark) footer .border-t,
+html:not(.dark) footer .border-gray-900 {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+footer .border-t p,
+footer .border-t a,
+footer .border-gray-900 p,
+footer .border-gray-900 a,
+html:not(.dark) footer .border-t p,
+html:not(.dark) footer .border-t a,
+.dark footer .border-t p,
+.dark footer .border-t a {
+  color: #C0B7AA !important;
+  font-size: 0.75rem !important;
+}
+
+footer .border-t a:hover,
+footer .border-gray-900 a:hover {
+  color: #FFE48F !important;
+}
+
+/* Social Icon Buttons in Footer */
+footer .w-8.h-8.rounded-full,
+footer a[class*="rounded-full"][class*="w-8"] {
+  background-color: #1A1A1A !important;
+  border-color: rgba(212, 175, 55, 0.4) !important;
+  color: #E5B23B !important;
+}
+
+footer .w-8.h-8.rounded-full:hover,
+footer a[class*="rounded-full"][class*="w-8"]:hover {
+  background-color: #E5B23B !important;
+  color: #000000 !important;
+  border-color: #E5B23B !important;
+}
+
