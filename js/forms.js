@@ -155,7 +155,7 @@ function showWholesaleSuccessModal(data) {
   }
 
   modalBackdrop.innerHTML = `
-    <div class="glass-panel max-w-xl w-full p-6 sm:p-8 rounded-2xl border border-gold/40 shadow-2xl relative bg-[#0F0F0F] text-[#F3ECE0] my-8">
+    <div class="glass-panel max-w-xl w-full max-h-[90vh] overflow-y-auto p-5 sm:p-8 rounded-2xl border border-gold/40 shadow-2xl relative bg-[#0F0F0F] text-[#F3ECE0] my-auto">
       <div class="flex items-start justify-between border-b border-gold/15 pb-4 mb-5">
         <div>
           <span class="text-gold text-[10px] font-bold uppercase tracking-widest block mb-1">B2B Manufacturing Registered</span>
@@ -459,7 +459,7 @@ function showBulkEnquirySuccessModal(data) {
   }
 
   modalBackdrop.innerHTML = `
-    <div class="glass-panel max-w-xl w-full p-6 sm:p-8 rounded-2xl border border-gold/40 shadow-2xl relative bg-[#0F0F0F] text-[#F3ECE0] my-8 animate-fade-in">
+    <div class="glass-panel max-w-xl w-full max-h-[90vh] overflow-y-auto p-5 sm:p-8 rounded-2xl border border-gold/40 shadow-2xl relative bg-[#0F0F0F] text-[#F3ECE0] my-auto animate-fade-in">
       <div class="flex items-start justify-between border-b border-gold/15 pb-4 mb-5">
         <div>
           <span class="text-gold text-[10px] font-bold uppercase tracking-widest block mb-1">Dossier Registered &bull; NDA Governed</span>

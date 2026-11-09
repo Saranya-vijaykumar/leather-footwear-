@@ -233,13 +233,13 @@
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
           
           <!-- Category Pills -->
-          <div class="flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-wider">
-            <button class="category-filter-btn px-5 py-2.5 rounded-full bg-gold text-black transition" data-category="all">All Models</button>
-            <button class="category-filter-btn px-5 py-2.5 rounded-full bg-[#FAF7F0] dark:bg-[#1E1E1E] text-text-primary border border-gold/20 hover:border-gold transition" data-category="formal">Formal Shoes</button>
-            <button class="category-filter-btn px-5 py-2.5 rounded-full bg-[#FAF7F0] dark:bg-[#1E1E1E] text-text-primary border border-gold/20 hover:border-gold transition" data-category="boots">Leather Boots</button>
-            <button class="category-filter-btn px-5 py-2.5 rounded-full bg-[#FAF7F0] dark:bg-[#1E1E1E] text-text-primary border border-gold/20 hover:border-gold transition" data-category="loafers">Loafers</button>
-            <button class="category-filter-btn px-5 py-2.5 rounded-full bg-[#FAF7F0] dark:bg-[#1E1E1E] text-text-primary border border-gold/20 hover:border-gold transition" data-category="casual">Casual &amp; Driving</button>
-            <button class="category-filter-btn px-5 py-2.5 rounded-full bg-[#FAF7F0] dark:bg-[#1E1E1E] text-text-primary border border-gold/20 hover:border-gold transition" data-category="handmade">Handmade Patina</button>
+          <div class="category-pill-group flex flex-nowrap overflow-x-auto pb-2 sm:flex-wrap sm:overflow-visible gap-2 text-xs font-semibold uppercase tracking-wider no-scrollbar -mx-2 px-2 sm:mx-0 sm:px-0">
+            <button class="category-filter-btn shrink-0 whitespace-nowrap px-5 py-2.5 rounded-full bg-gold text-black transition" data-category="all">All Models</button>
+            <button class="category-filter-btn shrink-0 whitespace-nowrap px-5 py-2.5 rounded-full bg-[#FAF7F0] dark:bg-[#1E1E1E] text-text-primary border border-gold/20 hover:border-gold transition" data-category="formal">Formal Shoes</button>
+            <button class="category-filter-btn shrink-0 whitespace-nowrap px-5 py-2.5 rounded-full bg-[#FAF7F0] dark:bg-[#1E1E1E] text-text-primary border border-gold/20 hover:border-gold transition" data-category="boots">Leather Boots</button>
+            <button class="category-filter-btn shrink-0 whitespace-nowrap px-5 py-2.5 rounded-full bg-[#FAF7F0] dark:bg-[#1E1E1E] text-text-primary border border-gold/20 hover:border-gold transition" data-category="loafers">Loafers</button>
+            <button class="category-filter-btn shrink-0 whitespace-nowrap px-5 py-2.5 rounded-full bg-[#FAF7F0] dark:bg-[#1E1E1E] text-text-primary border border-gold/20 hover:border-gold transition" data-category="casual">Casual &amp; Driving</button>
+            <button class="category-filter-btn shrink-0 whitespace-nowrap px-5 py-2.5 rounded-full bg-[#FAF7F0] dark:bg-[#1E1E1E] text-text-primary border border-gold/20 hover:border-gold transition" data-category="handmade">Handmade Patina</button>
           </div>
 
           <!-- Live Search Field -->
@@ -327,8 +327,13 @@
           <div class="w-16 h-0.5 bg-gold mx-auto mt-3"></div>
         </div>
 
-        <div class="glass-panel p-8 rounded-2xl border border-gold/15 overflow-x-auto">
-          <table class="w-full text-left text-xs text-text-secondary">
+        <div class="sm:hidden text-right text-[11px] text-gold mb-2 flex items-center justify-end gap-1 font-mono">
+          <i class="bi bi-arrow-left-right"></i>
+          <span>Swipe to explore SLA &rarr;</span>
+        </div>
+
+        <div class="glass-panel p-4 sm:p-8 rounded-2xl border border-gold/15 overflow-x-auto">
+          <table class="w-full text-left text-xs text-text-secondary min-w-[500px]">
             <thead>
               <tr class="border-b border-gold/20 text-gold uppercase tracking-wider text-[11px] font-serif">
                 <th class="pb-4 font-bold">Phase</th>

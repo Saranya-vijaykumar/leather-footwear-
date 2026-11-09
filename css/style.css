@@ -360,7 +360,7 @@ header.glass-panel {
   position: relative;
   width: 100%;
   max-width: 620px;
-  min-height: 420px;
+  min-height: 240px;
   height: auto;
   aspect-ratio: 16 / 11;
   display: flex;
@@ -368,6 +368,13 @@ header.glass-panel {
   justify-content: center;
   perspective: 1200px;
   background: transparent !important;
+  touch-action: pan-y;
+}
+
+@media (min-width: 768px) {
+  .interactive-shoe-wrapper {
+    min-height: 420px;
+  }
 }
 
 @media (min-width: 1280px) {

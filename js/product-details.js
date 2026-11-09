@@ -72,7 +72,7 @@ function renderProductDetails(product) {
   if (thumbsContainer && product.images) {
     thumbsContainer.innerHTML = product.images.map((imgUrl, idx) => `
       <button 
-        class="thumb-item w-20 h-20 rounded-xl overflow-hidden border-2 transition-all shrink-0 ${idx === 0 ? 'border-gold shadow-md' : 'border-gold/20 opacity-70 hover:opacity-100'}"
+        class="thumb-item w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden border-2 transition-all shrink-0 ${idx === 0 ? 'border-gold shadow-md' : 'border-gold/20 opacity-70 hover:opacity-100'}"
         data-img-url="${imgUrl}"
         aria-label="View angle ${idx + 1}"
       >
@@ -132,7 +132,7 @@ function renderProductDetails(product) {
 
     sizeGrid.innerHTML = product.sizes.map((sz, idx) => `
       <button 
-        class="size-pill-btn py-2 text-center rounded-lg text-xs font-bold transition border ${idx === 2 ? 'bg-gold text-black border-gold shadow' : 'border-gold/20 text-text-primary hover:border-gold'}"
+        class="size-pill-btn py-2.5 min-h-[44px] flex items-center justify-center text-center rounded-lg text-xs font-bold transition border ${idx === 2 ? 'bg-gold text-black border-gold shadow' : 'border-gold/20 text-text-primary hover:border-gold'}"
         data-size="${sz}"
       >
         ${sz}
@@ -143,9 +143,9 @@ function renderProductDetails(product) {
     sizeBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         sizeBtns.forEach(b => {
-          b.className = 'size-pill-btn py-2 text-center rounded-lg text-xs font-bold transition border border-gold/20 text-text-primary hover:border-gold';
+          b.className = 'size-pill-btn py-2.5 min-h-[44px] flex items-center justify-center text-center rounded-lg text-xs font-bold transition border border-gold/20 text-text-primary hover:border-gold';
         });
-        btn.className = 'size-pill-btn py-2 text-center rounded-lg text-xs font-bold transition border bg-gold text-black border-gold shadow';
+        btn.className = 'size-pill-btn py-2.5 min-h-[44px] flex items-center justify-center text-center rounded-lg text-xs font-bold transition border bg-gold text-black border-gold shadow';
         if (selectedSizeLabel) selectedSizeLabel.textContent = `EU ${btn.getAttribute('data-size')}`;
       });
     });

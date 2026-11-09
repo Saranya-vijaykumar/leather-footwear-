@@ -226,11 +226,14 @@ function initNewsletter() {
 
 /* --- Toast Notifications --- */
 function showToast(titleOrMsg, messageOrType, type = 'info') {
-  let container = document.querySelector('.toast-container') || document.getElementById('toastContainer');
+  let container = document.getElementById('toastContainer') || document.querySelector('.toast-container');
   if (!container) {
     container = document.createElement('div');
-    container.className = 'toast-container fixed bottom-6 left-6 z-50 flex flex-col gap-2 pointer-events-none';
+    container.id = 'toastContainer';
+    container.className = 'toast-container fixed bottom-4 inset-x-4 sm:inset-x-auto sm:left-6 sm:bottom-6 z-[10001] flex flex-col gap-2 pointer-events-none sm:max-w-md';
     document.body.appendChild(container);
+  } else {
+    container.classList.add('fixed', 'bottom-4', 'inset-x-4', 'sm:inset-x-auto', 'sm:left-6', 'sm:bottom-6', 'z-[10001]');
   }
 
   let finalTitle = titleOrMsg;
@@ -244,7 +247,7 @@ function showToast(titleOrMsg, messageOrType, type = 'info') {
   }
 
   const toast = document.createElement('div');
-  toast.className = 'glass-panel p-4 rounded-xl border border-gold/30 shadow-2xl flex items-center gap-3 bg-[#0F0F0F]/95 text-[#F3ECE0] pointer-events-auto max-w-sm transition-all duration-300';
+  toast.className = 'toast glass-panel p-4 rounded-xl border border-gold/30 shadow-2xl flex items-center gap-3 bg-[#0F0F0F]/95 text-[#F3ECE0] pointer-events-auto w-full max-w-full sm:max-w-md transition-all duration-300';
   
   const iconClass = finalType === 'success' 
     ? 'bi-check-circle-fill text-emerald-400' 
@@ -252,9 +255,9 @@ function showToast(titleOrMsg, messageOrType, type = 'info') {
 
   toast.innerHTML = `
     <i class="bi ${iconClass} text-xl shrink-0"></i>
-    <div class="flex-1">
+    <div class="flex-1 min-w-0">
       <div class="font-bold text-xs uppercase tracking-wider text-gold mb-0.5">${finalTitle}</div>
-      <div class="text-xs text-gray-300 leading-snug">${finalMsg}</div>
+      <div class="text-xs text-gray-300 leading-snug break-words">${finalMsg}</div>
     </div>
   `;
 

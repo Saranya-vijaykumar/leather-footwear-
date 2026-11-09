@@ -71,29 +71,45 @@ function initHero3DExperience() {
     });
   }
 
-  // 3D Parallax Mouse Tilt for the Hero Footwear
-  if (shoeWrapper && shoeImgContainer) {
-    shoeWrapper.addEventListener('mousemove', (e) => {
+    // 3D Parallax Mouse & Touch Tilt for the Hero Footwear
+    const handleTilt = (clientX, clientY) => {
       const rect = shoeWrapper.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width - 0.5;
-      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      const x = (clientX - rect.left) / rect.width - 0.5;
+      const y = (clientY - rect.top) / rect.height - 0.5;
 
-      const maxRotateX = 22;
-      const maxRotateY = 22;
+      const maxRotateX = 20;
+      const maxRotateY = 20;
       const rotateX = -y * maxRotateX;
       const rotateY = x * maxRotateY;
 
-      shoeImgContainer.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.06)`;
-    });
+      shoeImgContainer.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+    };
 
-    shoeWrapper.addEventListener('mouseleave', () => {
+    const resetTilt = () => {
       shoeImgContainer.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
       shoeImgContainer.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+    };
+
+    shoeWrapper.addEventListener('mousemove', (e) => {
+      handleTilt(e.clientX, e.clientY);
     });
+
+    shoeWrapper.addEventListener('mouseleave', resetTilt);
 
     shoeWrapper.addEventListener('mouseenter', () => {
       shoeImgContainer.style.transition = 'transform 0.08s ease-out';
     });
+
+    // Touch event support for mobile
+    shoeWrapper.addEventListener('touchmove', (e) => {
+      if (e.touches && e.touches[0]) {
+        shoeImgContainer.style.transition = 'transform 0.08s ease-out';
+        handleTilt(e.touches[0].clientX, e.touches[0].clientY);
+      }
+    }, { passive: true });
+
+    shoeWrapper.addEventListener('touchend', resetTilt);
+    shoeWrapper.addEventListener('touchcancel', resetTilt);
   }
 }
 
