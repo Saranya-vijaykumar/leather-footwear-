@@ -534,35 +534,35 @@ html:not(.dark) body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
 }
-html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]) p {
+html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) p {
   color: var(--text-secondary);
 }
-html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]) h1, 
-html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]) h2, 
-html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]) h3, 
-html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]) h4, 
-html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]) h5, 
-html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]) h6 {
+html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) h1, 
+html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) h2, 
+html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) h3, 
+html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) h4, 
+html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) h5, 
+html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) h6 {
   color: var(--text-primary);
 }
-html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]) .text-gray-400,
-html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]) .text-stone-400 {
+html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) .text-gray-400,
+html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) .text-stone-400 {
   color: #4D4135 !important;
 }
-html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]) .text-gray-500,
-html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]) .text-stone-500 {
+html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) .text-gray-500,
+html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) .text-stone-500 {
   color: #382F26 !important;
 }
-html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]) .text-gray-300,
-html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]) .text-stone-300 {
+html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) .text-gray-300,
+html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) .text-stone-300 {
   color: #241D17 !important;
 }
-html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]) .text-gray-600,
-html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]) .text-stone-600 {
+html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) .text-gray-600,
+html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) .text-stone-600 {
   color: #1A1511 !important;
 }
-html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]) .text-gray-200,
-html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]) .text-stone-200 {
+html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) .text-gray-200,
+html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) .text-stone-200 {
   color: #2D251D !important;
 }
 html:not(.dark) .glass-panel {

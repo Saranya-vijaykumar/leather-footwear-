@@ -44,8 +44,8 @@ function initWholesaleForm() {
     });
 
     // Validate Full Name
-    if (!fields.fullName.value.trim() || fields.fullName.value.trim().length < 2) {
-      markInvalid(fields.fullName, 'Please enter your full legal or representative name.');
+    if (!isValidName(fields.fullName.value)) {
+      markInvalid(fields.fullName, 'Please enter a valid full name with letters only (e.g. Julian Montgomery).');
       isValid = false;
     }
 
@@ -62,10 +62,9 @@ function initWholesaleForm() {
       isValid = false;
     }
 
-    // Validate Phone
-    const phoneVal = fields.phone.value.trim();
-    if (!phoneVal || phoneVal.length < 7) {
-      markInvalid(fields.phone, 'Please enter a valid international contact phone number.');
+    // Validate Phone / WhatsApp
+    if (!isValidPhone(fields.phone.value)) {
+      markInvalid(fields.phone, 'Please enter a valid phone number with digits only (e.g. +44 20 7946 0991).');
       isValid = false;
     }
 
@@ -129,6 +128,29 @@ function initWholesaleForm() {
       });
     }
   });
+}
+
+function isValidPhone(val) {
+  if (!val) return false;
+  const trimmed = val.trim();
+  // Reject if contains any letters
+  if (/[a-zA-Z]/.test(trimmed)) return false;
+  // Must match phone characters only
+  if (!/^[\+]?[(]?[0-9]{1,4}[)]?[-\s\./0-9]{6,16}$/.test(trimmed)) return false;
+  // Must contain between 7 and 15 digits
+  const digits = trimmed.replace(/\D/g, '');
+  return digits.length >= 7 && digits.length <= 15;
+}
+
+function isValidName(val) {
+  if (!val) return false;
+  const trimmed = val.trim();
+  if (trimmed.length < 3) return false;
+  // Must only contain letters, spaces, hyphens, and apostrophes
+  if (!/^[A-Za-zÀ-ÿ\s.'-]{3,60}$/.test(trimmed)) return false;
+  // Must have at least one vowel to avoid random keyboard smashes like "dfsf"
+  if (!/[aeiouyAEIOUY]/.test(trimmed)) return false;
+  return true;
 }
 
 function markInvalid(inputElement, errorMessage) {
@@ -229,8 +251,8 @@ function initContactForm() {
       }
     });
 
-    if (!nameInput.value.trim() || nameInput.value.trim().length < 2) {
-      markInvalid(nameInput, 'Please provide your full name.');
+    if (!isValidName(nameInput.value)) {
+      markInvalid(nameInput, 'Please provide a valid full name with letters only.');
       isValid = false;
     }
 
@@ -396,8 +418,8 @@ function initBulkContactForm() {
       markInvalid(company, 'Please specify your brand or corporate entity.');
       isValid = false;
     }
-    if (!representative.value.trim() || representative.value.trim().length < 2) {
-      markInvalid(representative, 'Please specify the authorized contact representative.');
+    if (!isValidName(representative.value)) {
+      markInvalid(representative, 'Please enter a valid representative name with letters only.');
       isValid = false;
     }
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -405,8 +427,8 @@ function initBulkContactForm() {
       markInvalid(email, 'Please enter a valid corporate email.');
       isValid = false;
     }
-    if (!phone.value.trim() || phone.value.trim().length < 7) {
-      markInvalid(phone, 'Please provide an international phone number.');
+    if (!isValidPhone(phone.value)) {
+      markInvalid(phone, 'Please provide a valid phone number with digits only (e.g. +44 20 7946 0812).');
       isValid = false;
     }
     if (!country.value.trim()) {
