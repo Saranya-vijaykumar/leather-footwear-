@@ -93,11 +93,36 @@ h1, h2, h3, h4, h5, h6, .font-serif {
   background: linear-gradient(135deg, #1C1C1C, #0F0F0F);
 }
 
-/* Gold Text Gradient */
+/* Gold Text Gradient & High-Contrast Light Mode Support */
 .text-gold-gradient {
-  background: linear-gradient(135deg, #c5a880 0%, #D4AF37 50%, #e5a93b 100%);
+  background: linear-gradient(135deg, #1A0D05 0%, #45240E 45%, #784719 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.dark .text-gold-gradient,
+.hero-dark-stage .text-gold-gradient,
+[style*="hero_"] .text-gold-gradient,
+footer .text-gold-gradient {
+  background: linear-gradient(135deg, #FDF7E7 0%, #E5C158 50%, #D4AF37 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* Specific Header & Mobile Drawer Brand Logo Typography */
+header a span.font-serif,
+#mobile-drawer a span.font-serif {
+  letter-spacing: 0.12em;
+}
+
+html:not(.dark) header a span.font-serif,
+html:not(.dark) #mobile-drawer a span.font-serif {
+  color: #1A0D05 !important;
+  background: linear-gradient(135deg, #1A0D05 0%, #3D1E0B 50%, #6E3F17 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 /* Hover and Animation Utilities */
