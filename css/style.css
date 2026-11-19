@@ -103,6 +103,7 @@ h1, h2, h3, h4, h5, h6, .font-serif {
 
 .dark .text-gold-gradient,
 .hero-dark-stage .text-gold-gradient,
+.video-hero-container .text-gold-gradient,
 [style*="hero_"] .text-gold-gradient,
 footer .text-gold-gradient {
   background: linear-gradient(135deg, #FDF7E7 0%, #E5C158 50%, #D4AF37 100%) !important;
@@ -470,10 +471,14 @@ footer {
 
 .hero-dark-stage h1,
 .hero-dark-stage h1 *,
+.video-hero-container h1,
+.video-hero-container h1 *,
 [style*="hero_"] h1,
 [style*="hero_"] h1 *,
 html:not(.dark) .hero-dark-stage h1,
 html:not(.dark) .hero-dark-stage h1 *,
+html:not(.dark) .video-hero-container h1,
+html:not(.dark) .video-hero-container h1 *,
 html:not(.dark) [style*="hero_"] h1,
 html:not(.dark) [style*="hero_"] h1 * {
   color: #FFFFFF !important;
@@ -481,8 +486,10 @@ html:not(.dark) [style*="hero_"] h1 * {
 }
 
 .hero-dark-stage .text-gold-gradient,
+.video-hero-container .text-gold-gradient,
 [style*="hero_"] .text-gold-gradient,
 html:not(.dark) .hero-dark-stage .text-gold-gradient,
+html:not(.dark) .video-hero-container .text-gold-gradient,
 html:not(.dark) [style*="hero_"] .text-gold-gradient {
   background: linear-gradient(135deg, #FFE89E 0%, #D4AF37 50%, #B8860B 100%) !important;
   -webkit-background-clip: text !important;
@@ -493,15 +500,21 @@ html:not(.dark) [style*="hero_"] .text-gold-gradient {
 
 .hero-dark-stage p,
 .hero-dark-stage p *,
+.video-hero-container p,
+.video-hero-container p *,
 [style*="hero_"] p,
 [style*="hero_"] p *,
 html:not(.dark) .hero-dark-stage p,
 html:not(.dark) .hero-dark-stage p *,
+html:not(.dark) .video-hero-container p,
+html:not(.dark) .video-hero-container p *,
 html:not(.dark) [style*="hero_"] p,
 html:not(.dark) [style*="hero_"] p *,
 html:not(.dark) .hero-dark-stage .text-gray-300,
+html:not(.dark) .video-hero-container .text-gray-300,
 html:not(.dark) [style*="hero_"] .text-gray-300,
 html:not(.dark) .hero-dark-stage .text-gray-200,
+html:not(.dark) .video-hero-container .text-gray-200,
 html:not(.dark) [style*="hero_"] .text-gray-200 {
   color: #EDE8DF !important;
   text-shadow: 0 1px 15px rgba(0, 0, 0, 0.9) !important;
@@ -509,18 +522,26 @@ html:not(.dark) [style*="hero_"] .text-gray-200 {
 
 .hero-dark-stage .hero-trust-strip,
 .hero-dark-stage .hero-trust-strip *,
+.video-hero-container .hero-trust-strip,
+.video-hero-container .hero-trust-strip *,
 html:not(.dark) .hero-dark-stage .hero-trust-strip,
-html:not(.dark) .hero-dark-stage .hero-trust-strip * {
+html:not(.dark) .hero-dark-stage .hero-trust-strip *,
+html:not(.dark) .video-hero-container .hero-trust-strip,
+html:not(.dark) .video-hero-container .hero-trust-strip * {
   color: #DCD5C9 !important;
 }
 
 .hero-dark-stage .hero-trust-strip strong,
-html:not(.dark) .hero-dark-stage .hero-trust-strip strong {
+.video-hero-container .hero-trust-strip strong,
+html:not(.dark) .hero-dark-stage .hero-trust-strip strong,
+html:not(.dark) .video-hero-container .hero-trust-strip strong {
   color: #E5B23B !important;
 }
 
 .hero-dark-stage .hero-pill-badge,
-html:not(.dark) .hero-dark-stage .hero-pill-badge {
+.video-hero-container .hero-pill-badge,
+html:not(.dark) .hero-dark-stage .hero-pill-badge,
+html:not(.dark) .video-hero-container .hero-pill-badge {
   background-color: rgba(212, 175, 55, 0.18) !important;
   border-color: rgba(212, 175, 55, 0.5) !important;
   color: #F0C458 !important;
@@ -534,35 +555,35 @@ html:not(.dark) body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
 }
-html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) p {
+html:not(.dark) main > section:not(.hero-dark-stage):not(.video-hero-container):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) p {
   color: var(--text-secondary);
 }
-html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) h1, 
-html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) h2, 
-html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) h3, 
-html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) h4, 
-html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) h5, 
-html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) h6 {
+html:not(.dark) main > section:not(.hero-dark-stage):not(.video-hero-container):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) h1, 
+html:not(.dark) main > section:not(.hero-dark-stage):not(.video-hero-container):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) h2, 
+html:not(.dark) main > section:not(.hero-dark-stage):not(.video-hero-container):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) h3, 
+html:not(.dark) main > section:not(.hero-dark-stage):not(.video-hero-container):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) h4, 
+html:not(.dark) main > section:not(.hero-dark-stage):not(.video-hero-container):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) h5, 
+html:not(.dark) main > section:not(.hero-dark-stage):not(.video-hero-container):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) h6 {
   color: var(--text-primary);
 }
-html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) .text-gray-400,
-html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) .text-stone-400 {
+html:not(.dark) main > section:not(.hero-dark-stage):not(.video-hero-container):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) .text-gray-400,
+html:not(.dark) main > section:not(.hero-dark-stage):not(.video-hero-container):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) .text-stone-400 {
   color: #4D4135 !important;
 }
-html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) .text-gray-500,
-html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) .text-stone-500 {
+html:not(.dark) main > section:not(.hero-dark-stage):not(.video-hero-container):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) .text-gray-500,
+html:not(.dark) main > section:not(.hero-dark-stage):not(.video-hero-container):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) .text-stone-500 {
   color: #382F26 !important;
 }
-html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) .text-gray-300,
-html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) .text-stone-300 {
+html:not(.dark) main > section:not(.hero-dark-stage):not(.video-hero-container):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) .text-gray-300,
+html:not(.dark) main > section:not(.hero-dark-stage):not(.video-hero-container):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) .text-stone-300 {
   color: #241D17 !important;
 }
-html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) .text-gray-600,
-html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) .text-stone-600 {
+html:not(.dark) main > section:not(.hero-dark-stage):not(.video-hero-container):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) .text-gray-600,
+html:not(.dark) main > section:not(.hero-dark-stage):not(.video-hero-container):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) .text-stone-600 {
   color: #1A1511 !important;
 }
-html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) .text-gray-200,
-html:not(.dark) main > section:not(.hero-dark-stage):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) .text-stone-200 {
+html:not(.dark) main > section:not(.hero-dark-stage):not(.video-hero-container):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) .text-gray-200,
+html:not(.dark) main > section:not(.hero-dark-stage):not(.video-hero-container):not([style*="hero_"]):not(.dark-overlay-stage):not([style*="collections_cta_banner"]) .text-stone-200 {
   color: #2D251D !important;
 }
 html:not(.dark) .glass-panel {
