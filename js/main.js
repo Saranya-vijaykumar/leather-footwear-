@@ -246,8 +246,13 @@ function showToast(titleOrMsg, messageOrType, type = 'info') {
     finalType = messageOrType;
   }
 
+  // Dismiss previous toasts so they never stack or overlap
+  while (container.firstChild) {
+    container.removeChild(container.firstChild);
+  }
+
   const toast = document.createElement('div');
-  toast.className = 'toast glass-panel p-4 rounded-xl border border-gold/30 shadow-2xl flex items-center gap-3 bg-[#0F0F0F]/95 text-[#F3ECE0] pointer-events-auto w-full max-w-full sm:max-w-md transition-all duration-300';
+  toast.className = 'toast glass-panel p-4 rounded-xl border border-gold/30 shadow-2xl flex items-center gap-3 bg-[#0F0F0F]/95 text-[#F3ECE0] pointer-events-auto w-full max-w-full sm:max-w-md transition-all duration-300 cursor-pointer';
   
   const iconClass = finalType === 'success' 
     ? 'bi-check-circle-fill text-emerald-400' 
@@ -261,13 +266,19 @@ function showToast(titleOrMsg, messageOrType, type = 'info') {
     </div>
   `;
 
+  // Click to dismiss
+  toast.addEventListener('click', () => {
+    toast.style.opacity = '0';
+    setTimeout(() => toast.remove(), 200);
+  });
+
   container.appendChild(toast);
 
   setTimeout(() => {
     toast.style.opacity = '0';
     toast.style.transform = 'translateY(10px)';
-    setTimeout(() => toast.remove(), 300);
-  }, 4000);
+    setTimeout(() => toast.remove(), 250);
+  }, 2500);
 }
 
 window.showToast = showToast;

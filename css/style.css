@@ -192,31 +192,30 @@ html:not(.dark) #mobile-drawer a span.font-serif {
   }
 }
 
-/* RTL Lang Toggle Pill */
+/* RTL Lang Toggle Pill (Text-only) */
 .rtl-toggle-pill {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   height: 36px;
   box-sizing: border-box;
-  gap: 5px;
   border: 1px solid var(--color-gold);
   border-radius: 9999px;
-  padding: 0 12px;
+  padding: 0 14px;
   font-size: 11px;
   font-weight: 800;
-  letter-spacing: 0.8px;
+  letter-spacing: 1.2px;
   color: var(--text-primary);
   background: transparent;
   transition: var(--transition-smooth);
   cursor: pointer;
+  text-align: center;
 }
 @media (min-width: 1280px) {
   .rtl-toggle-pill {
     height: 40px;
     padding: 0 16px;
-    gap: 6px;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
   }
 }
 

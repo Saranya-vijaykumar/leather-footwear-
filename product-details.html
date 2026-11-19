@@ -108,7 +108,6 @@
         </button>
         <!-- Language/RTL Toggle Pill Button -->
         <button id="lang-toggle" class="rtl-toggle-pill shrink-0 px-2.5 xl:px-3 py-1.5 text-[11px] xl:text-xs" title="Toggle RTL" aria-label="Toggle RTL">
-          <i class="bi bi-arrow-left-right text-xs"></i>
           <span id="lang-text">RTL</span>
         </button>
         <!-- Wholesale B2B Link (Visible on xl screens) -->
@@ -149,8 +148,8 @@
         <i class="bi bi-sun-fill text-gold"></i> Theme
       </button>
       <button id="mobile-lang-toggle" class="flex-1 py-2.5 px-4 rounded-full border border-gold/20 hover:border-gold bg-[#171717] flex items-center justify-center gap-2 text-[#FAF7F0] transition">
-        <i class="bi bi-arrow-left-right text-gold"></i> <span id="mobile-lang-text">RTL</span>
-      </button>
+          <span id="mobile-lang-text">RTL</span>
+        </button>
     </div>
 
     <!-- Navigation Links -->
@@ -185,40 +184,40 @@
 
   <main id="productDetailRoot">
     <!-- Service/Product Details Hero Section matching Sole Craft -->
-    <section class="relative min-h-[75vh] flex items-center pt-36 sm:pt-40 pb-20 bg-[#F3ECE0] dark:bg-[#121212] border-b border-gold/15 bg-cover bg-center" style="background-image: linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.65)), url('assets/images/hero_details_bg.jpg');">
+    <section class="relative min-h-[75vh] flex items-center pt-36 sm:pt-40 pb-20 border-b border-gold/15 bg-cover bg-center hero-dark-stage dark-overlay-stage" style="background-image: linear-gradient(to right, rgba(0,0,0,0.92), rgba(0,0,0,0.75)), url('assets/images/hero_details_bg.jpg');">
       <div class="container mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
         <div>
           <!-- Breadcrumb trail -->
-          <div class="flex items-center gap-2 text-xs uppercase tracking-wider text-text-secondary mb-4">
-            <a href="index.html" class="hover:text-gold transition">Home</a>
+          <div class="flex items-center gap-2 text-xs uppercase tracking-wider text-gray-300 !text-[#D4CCC0] mb-4">
+            <a href="index.html" class="hover:text-gold transition text-gray-300 !text-[#D4CCC0]">Home</a>
             <span>/</span>
-            <a href="products.html" class="hover:text-gold transition" id="breadcrumbCategory">Products</a>
+            <a href="products.html" class="hover:text-gold transition text-gray-300 !text-[#D4CCC0]" id="breadcrumbCategory">Products</a>
             <span>/</span>
-            <span class="text-gold" id="breadcrumbProduct">Dossier</span>
+            <span class="text-gold font-bold" id="breadcrumbProduct">Dossier</span>
           </div>
 
-          <span class="text-gold font-serif italic text-base sm:text-lg font-semibold tracking-wider uppercase block" id="det-category">
+          <span class="text-gold font-serif italic text-base sm:text-lg font-semibold tracking-wider uppercase block drop-shadow" id="det-category">
             Formal Oxfords &amp; Derbies
           </span>
-          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-text-primary mt-2 mb-4" id="det-name">
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white !text-white mt-2 mb-4 drop-shadow-lg" id="det-name">
             The Kensington Captoe Oxford
           </h1>
-          <p class="text-text-secondary text-sm sm:text-base leading-relaxed mb-6" id="det-desc">
+          <p class="text-gray-200 !text-[#EAE5DC] text-sm sm:text-base leading-relaxed mb-6 drop-shadow" id="det-desc">
             Classic closed-lacing Balmoral oxford in vegetable-tanned French calfskin with hand-beveled waist and oak-bark soles.
           </p>
           
-          <div class="flex flex-wrap gap-6 sm:gap-10 text-sm border-t border-[#8C6239]/20 pt-6">
+          <div class="flex flex-wrap gap-6 sm:gap-10 text-sm border-t border-white/20 pt-6">
             <div>
-              <span class="text-[#8C6239] dark:text-[#E6C387] font-semibold block text-xs uppercase tracking-wider">Wholesale Tier</span>
-              <strong class="text-2xl font-serif text-text-primary" id="det-price">$145 / pair</strong>
+              <span class="text-gold font-semibold block text-xs uppercase tracking-wider">Wholesale Tier</span>
+              <strong class="text-2xl font-serif text-white !text-white drop-shadow" id="det-price">$145 / pair</strong>
             </div>
             <div>
-              <span class="text-[#8C6239] dark:text-[#E6C387] font-semibold block text-xs uppercase tracking-wider">Minimum Order</span>
-              <strong class="text-2xl font-serif text-text-primary" id="det-moq">50 Pairs</strong>
+              <span class="text-gold font-semibold block text-xs uppercase tracking-wider">Minimum Order</span>
+              <strong class="text-2xl font-serif text-white !text-white drop-shadow" id="det-moq">50 Pairs</strong>
             </div>
             <div>
-              <span class="text-[#8C6239] dark:text-[#E6C387] font-semibold block text-xs uppercase tracking-wider">Production Cycle</span>
-              <strong class="text-2xl font-serif text-text-primary">4-6 Weeks</strong>
+              <span class="text-gold font-semibold block text-xs uppercase tracking-wider">Production Cycle</span>
+              <strong class="text-2xl font-serif text-white !text-white drop-shadow">4-6 Weeks</strong>
             </div>
           </div>
         </div>
