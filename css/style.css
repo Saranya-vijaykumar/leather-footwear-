@@ -604,6 +604,49 @@ html:not(.dark) .bg-\[\#0F0F0F\] {
   color: var(--text-primary) !important;
 }
 
+/* Dark Overlay Stage & Image Overlay Cards (Guaranteed Crisp Contrast across Themes) */
+.dark-overlay-stage,
+html:not(.dark) .dark-overlay-stage,
+html:not(.dark) .dark-overlay-stage.glass-panel {
+  background: transparent !important;
+  color: #FFFFFF !important;
+}
+
+.dark-overlay-stage h1,
+.dark-overlay-stage h2,
+.dark-overlay-stage h3,
+.dark-overlay-stage h4,
+.dark-overlay-stage h5,
+.dark-overlay-stage h6,
+html:not(.dark) .dark-overlay-stage h1,
+html:not(.dark) .dark-overlay-stage h2,
+html:not(.dark) .dark-overlay-stage h3,
+html:not(.dark) .dark-overlay-stage h4,
+html:not(.dark) .dark-overlay-stage h5,
+html:not(.dark) .dark-overlay-stage h6 {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 25px rgba(0, 0, 0, 0.95), 0 0 40px rgba(0, 0, 0, 0.8) !important;
+}
+
+.dark-overlay-stage p,
+.dark-overlay-stage p *,
+html:not(.dark) .dark-overlay-stage p,
+html:not(.dark) .dark-overlay-stage p *,
+html:not(.dark) .dark-overlay-stage .text-gray-300,
+html:not(.dark) .dark-overlay-stage .text-gray-200,
+html:not(.dark) .dark-overlay-stage .text-stone-300 {
+  color: #EDE8DF !important;
+  text-shadow: 0 1px 15px rgba(0, 0, 0, 0.9) !important;
+}
+
+.dark-overlay-stage span.text-gold,
+.dark-overlay-stage [class*="text-gold"],
+html:not(.dark) .dark-overlay-stage span.text-gold,
+html:not(.dark) .dark-overlay-stage [class*="text-gold"] {
+  color: #F0C458 !important;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.85) !important;
+}
+
 /* Dark Theme Font Visibility Enhancements */
 .dark body {
   background-color: var(--bg-primary);
